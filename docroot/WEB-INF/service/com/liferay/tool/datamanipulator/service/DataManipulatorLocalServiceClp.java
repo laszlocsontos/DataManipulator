@@ -85,6 +85,32 @@ public class DataManipulatorLocalServiceClp
 
 		_setBeanIdentifierMethodKey15 = new MethodKey(_classLoaderProxy.getClassName(),
 				"setBeanIdentifier", java.lang.String.class);
+
+		_addDataManipulatorMethodKey16 = new MethodKey(_classLoaderProxy.getClassName(),
+				"addDataManipulator", long.class, java.lang.String.class,
+				long.class);
+
+		_getDataManipulatorClassNamesMethodKey17 = new MethodKey(_classLoaderProxy.getClassName(),
+				"getDataManipulatorClassNames");
+
+		_getDataManipulatorCountByClassNameMethodKey18 = new MethodKey(_classLoaderProxy.getClassName(),
+				"getDataManipulatorCountByClassName", java.lang.String.class);
+
+		_getDataManipulatorCountByG_CMethodKey19 = new MethodKey(_classLoaderProxy.getClassName(),
+				"getDataManipulatorCountByG_C", long.class,
+				java.lang.String.class);
+
+		_getDataManipulatorCountByGroupIdMethodKey20 = new MethodKey(_classLoaderProxy.getClassName(),
+				"getDataManipulatorCountByGroupId", long.class);
+
+		_getDataManipulatorsByClassNameMethodKey21 = new MethodKey(_classLoaderProxy.getClassName(),
+				"getDataManipulatorsByClassName", java.lang.String.class);
+
+		_getDataManipulatorsByG_CMethodKey22 = new MethodKey(_classLoaderProxy.getClassName(),
+				"getDataManipulatorsByG_C", long.class, java.lang.String.class);
+
+		_getDataManipulatorsByGroupIdMethodKey23 = new MethodKey(_classLoaderProxy.getClassName(),
+				"getDataManipulatorsByGroupId", long.class);
 	}
 
 	public com.liferay.tool.datamanipulator.model.DataManipulator addDataManipulator(
@@ -524,6 +550,226 @@ public class DataManipulatorLocalServiceClp
 		}
 	}
 
+	public com.liferay.tool.datamanipulator.model.DataManipulator addDataManipulator(
+		long groupId, java.lang.String className, long classPK)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		MethodHandler methodHandler = new MethodHandler(_addDataManipulatorMethodKey16,
+				groupId, ClpSerializer.translateInput(className), classPK);
+
+		try {
+			returnObj = _classLoaderProxy.invoke(methodHandler);
+		}
+		catch (Throwable t) {
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (com.liferay.tool.datamanipulator.model.DataManipulator)ClpSerializer.translateOutput(returnObj);
+	}
+
+	public java.util.List<?> getDataManipulatorClassNames()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		MethodHandler methodHandler = new MethodHandler(_getDataManipulatorClassNamesMethodKey17);
+
+		try {
+			returnObj = _classLoaderProxy.invoke(methodHandler);
+		}
+		catch (Throwable t) {
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<?>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	public int getDataManipulatorCountByClassName(java.lang.String className)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		MethodHandler methodHandler = new MethodHandler(_getDataManipulatorCountByClassNameMethodKey18,
+				ClpSerializer.translateInput(className));
+
+		try {
+			returnObj = _classLoaderProxy.invoke(methodHandler);
+		}
+		catch (Throwable t) {
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return ((Integer)returnObj).intValue();
+	}
+
+	public int getDataManipulatorCountByG_C(long groupId,
+		java.lang.String className)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		MethodHandler methodHandler = new MethodHandler(_getDataManipulatorCountByG_CMethodKey19,
+				groupId, ClpSerializer.translateInput(className));
+
+		try {
+			returnObj = _classLoaderProxy.invoke(methodHandler);
+		}
+		catch (Throwable t) {
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return ((Integer)returnObj).intValue();
+	}
+
+	public int getDataManipulatorCountByGroupId(long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		MethodHandler methodHandler = new MethodHandler(_getDataManipulatorCountByGroupIdMethodKey20,
+				groupId);
+
+		try {
+			returnObj = _classLoaderProxy.invoke(methodHandler);
+		}
+		catch (Throwable t) {
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return ((Integer)returnObj).intValue();
+	}
+
+	public java.util.List<com.liferay.tool.datamanipulator.model.DataManipulator> getDataManipulatorsByClassName(
+		java.lang.String className)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		MethodHandler methodHandler = new MethodHandler(_getDataManipulatorsByClassNameMethodKey21,
+				ClpSerializer.translateInput(className));
+
+		try {
+			returnObj = _classLoaderProxy.invoke(methodHandler);
+		}
+		catch (Throwable t) {
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<com.liferay.tool.datamanipulator.model.DataManipulator>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	public java.util.List<com.liferay.tool.datamanipulator.model.DataManipulator> getDataManipulatorsByG_C(
+		long groupId, java.lang.String className)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		MethodHandler methodHandler = new MethodHandler(_getDataManipulatorsByG_CMethodKey22,
+				groupId, ClpSerializer.translateInput(className));
+
+		try {
+			returnObj = _classLoaderProxy.invoke(methodHandler);
+		}
+		catch (Throwable t) {
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<com.liferay.tool.datamanipulator.model.DataManipulator>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	public java.util.List<com.liferay.tool.datamanipulator.model.DataManipulator> getDataManipulatorsByGroupId(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		MethodHandler methodHandler = new MethodHandler(_getDataManipulatorsByGroupIdMethodKey23,
+				groupId);
+
+		try {
+			returnObj = _classLoaderProxy.invoke(methodHandler);
+		}
+		catch (Throwable t) {
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<com.liferay.tool.datamanipulator.model.DataManipulator>)ClpSerializer.translateOutput(returnObj);
+	}
+
 	public ClassLoaderProxy getClassLoaderProxy() {
 		return _classLoaderProxy;
 	}
@@ -545,4 +791,12 @@ public class DataManipulatorLocalServiceClp
 	private MethodKey _updateDataManipulatorMethodKey13;
 	private MethodKey _getBeanIdentifierMethodKey14;
 	private MethodKey _setBeanIdentifierMethodKey15;
+	private MethodKey _addDataManipulatorMethodKey16;
+	private MethodKey _getDataManipulatorClassNamesMethodKey17;
+	private MethodKey _getDataManipulatorCountByClassNameMethodKey18;
+	private MethodKey _getDataManipulatorCountByG_CMethodKey19;
+	private MethodKey _getDataManipulatorCountByGroupIdMethodKey20;
+	private MethodKey _getDataManipulatorsByClassNameMethodKey21;
+	private MethodKey _getDataManipulatorsByG_CMethodKey22;
+	private MethodKey _getDataManipulatorsByGroupIdMethodKey23;
 }
