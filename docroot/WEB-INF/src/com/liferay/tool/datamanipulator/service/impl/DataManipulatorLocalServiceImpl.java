@@ -14,6 +14,15 @@
 
 package com.liferay.tool.datamanipulator.service.impl;
 
+import java.util.List;
+
+import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil;
+import com.liferay.portal.kernel.dao.orm.ProjectionFactoryUtil;
+import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.PortalClassLoaderUtil;
+import com.liferay.tool.datamanipulator.model.DataManipulator;
+import com.liferay.tool.datamanipulator.model.impl.DataManipulatorImpl;
 import com.liferay.tool.datamanipulator.service.base.DataManipulatorLocalServiceBaseImpl;
 
 /**
@@ -37,4 +46,73 @@ public class DataManipulatorLocalServiceImpl
 	 *
 	 * Never reference this interface directly. Always use {@link com.liferay.tool.datamanipulator.service.DataManipulatorLocalServiceUtil} to access the data manipulator local service.
 	 */
+
+	public DataManipulator addDataManipulator(
+			long groupId, String className, long classPK)
+		throws SystemException {
+
+		long dataManipulatorId = counterLocalService.increment(
+			DataManipulator.class.getName());
+
+		DataManipulator dataManipulator = dataManipulatorPersistence.create(
+			dataManipulatorId);
+
+		dataManipulator.setGroupId(groupId);
+		dataManipulator.setClassName(className);
+		dataManipulator.setClassPK(classPK);
+
+		dataManipulatorPersistence.update(dataManipulator, false);
+
+		return dataManipulator;
+	}
+
+	public List<?> getDataManipulatorClassNames() throws SystemException {
+		DynamicQuery dynamicQuery = DynamicQueryFactoryUtil.forClass(
+			DataManipulator.class, DataManipulatorImpl.TABLE_NAME,
+			PortalClassLoaderUtil.getClassLoader());
+
+		dynamicQuery.setProjection(
+			ProjectionFactoryUtil. groupProperty("className"));
+
+		return dataManipulatorPersistence.findWithDynamicQuery(dynamicQuery);
+	}
+
+	public int getDataManipulatorCountByClassName(String className)
+		throws SystemException {
+
+		return dataManipulatorPersistence.countByClassName(className);
+	}
+
+	public int getDataManipulatorCountByG_C(long groupId, String className)
+		throws SystemException {
+
+		return dataManipulatorPersistence.countByG_C(groupId, className);
+	}
+
+	public int getDataManipulatorCountByGroupId(long groupId)
+		throws SystemException {
+
+		return dataManipulatorPersistence.countByGroupId(groupId);
+	}
+
+	public List<DataManipulator> getDataManipulatorsByClassName(
+			String className)
+		throws SystemException {
+
+		return dataManipulatorPersistence.findByClassName(className);
+	}
+
+	public List<DataManipulator> getDataManipulatorsByG_C(
+			long groupId, String className)
+		throws SystemException {
+
+		return dataManipulatorPersistence.findByG_C(groupId, className);
+	}
+
+	public List<DataManipulator> getDataManipulatorsByGroupId(long groupId)
+		throws SystemException {
+
+		return dataManipulatorPersistence.findByGroupId(groupId);
+	}
+
 }
