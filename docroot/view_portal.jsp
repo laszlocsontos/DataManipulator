@@ -1,6 +1,6 @@
-<%
+<%--
 /**
- * Copyright (c) 2000-2011 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-2012 Liferay, Inc. All rights reserved.
  *
  * The contents of this file are subject to the terms of the Liferay Enterprise
  * Subscription License ("License"). You may not use this file except in
@@ -12,10 +12,17 @@
  *
  *
  */
+--%>
+
+<%@ page import="com.liferay.tool.datamanipulator.entry.EntryTypeKeys"%>
+<%@ page import="java.util.ArrayList" %>
+
+<%@include file="/init.jsp" %>
+
+<%
+List<String> entryTypeNavigation = new ArrayList<String>();
+
+entryTypeNavigation.add(EntryTypeKeys.ENTRY_TYPE_PORTAL);
 %>
 
-<%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
-
-<portlet:defineObjects />
-
-This is the <b>Data Manipulator</b> portlet.
+<%@include file="/view_base.jsp" %>
