@@ -159,7 +159,8 @@ public class DataManipulatorWrapper implements DataManipulator {
 		return _dataManipulator.clone();
 	}
 
-	public int compareTo(DataManipulator dataManipulator) {
+	public int compareTo(
+		com.liferay.tool.datamanipulator.model.DataManipulator dataManipulator) {
 		return _dataManipulator.compareTo(dataManipulator);
 	}
 
@@ -167,7 +168,7 @@ public class DataManipulatorWrapper implements DataManipulator {
 		return _dataManipulator.hashCode();
 	}
 
-	public DataManipulator toEscapedModel() {
+	public com.liferay.tool.datamanipulator.model.DataManipulator toEscapedModel() {
 		return _dataManipulator.toEscapedModel();
 	}
 
