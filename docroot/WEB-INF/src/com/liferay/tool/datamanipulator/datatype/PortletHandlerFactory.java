@@ -16,6 +16,8 @@ package com.liferay.tool.datamanipulator.datatype;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.tool.datamanipulator.datatype.blogs.BlogsHandler;
+import com.liferay.tool.datamanipulator.entry.EntryTypeKeys;
 import com.liferay.tool.datamanipulator.handler.portlethandler.model.PortletHandlerModel;
 
 /**
@@ -27,6 +29,11 @@ public final class PortletHandlerFactory {
 	public static PortletHandlerModel getHandlerInstance(String entryTypeKey)
 		throws PortalException, SystemException {
 
+		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_BLOGS)) {
+			return new BlogsHandler();
+		}
+
 		return null;
 	}
+
 }
