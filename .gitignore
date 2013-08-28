@@ -4,9 +4,12 @@
 .sass-cache/*
 
 # Package Files #
-*.jar
 *.war
 *.ear
 
-# Eclipse Settings Files #
+# Eclipse Related Files #
 .settings/*
+.classpath
+.project
+docroot/WEB-INF/web.xml
+docroot/META-INF/MANIFEST.MF
