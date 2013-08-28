@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.liferay.tool.datamanipulator.model.DataManipulator">
+		<field name="id" type="long" />
+		<field name="groupId" type="long" />
+		<field name="className" type="String" />
+		<field name="classPK" type="long" />
+	</model>
+</model-hints>
