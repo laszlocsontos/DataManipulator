@@ -209,4 +209,40 @@ public interface DataManipulatorLocalService {
 		com.liferay.tool.datamanipulator.model.DataManipulator dataManipulator,
 		boolean merge)
 		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public com.liferay.tool.datamanipulator.model.DataManipulator addDataManipulator(
+		long groupId, java.lang.String className, long classPK)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<?> getDataManipulatorClassNames()
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public int getDataManipulatorCountByClassName(java.lang.String className)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public int getDataManipulatorCountByG_C(long groupId,
+		java.lang.String className)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public int getDataManipulatorCountByGroupId(long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.liferay.tool.datamanipulator.model.DataManipulator> getDataManipulatorsByClassName(
+		java.lang.String className)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.liferay.tool.datamanipulator.model.DataManipulator> getDataManipulatorsByG_C(
+		long groupId, java.lang.String className)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.liferay.tool.datamanipulator.model.DataManipulator> getDataManipulatorsByGroupId(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException;
 }

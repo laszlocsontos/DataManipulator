@@ -231,6 +231,52 @@ public class DataManipulatorLocalServiceUtil {
 		return getService().updateDataManipulator(dataManipulator, merge);
 	}
 
+	public static com.liferay.tool.datamanipulator.model.DataManipulator addDataManipulator(
+		long groupId, java.lang.String className, long classPK)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().addDataManipulator(groupId, className, classPK);
+	}
+
+	public static java.util.List<?> getDataManipulatorClassNames()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getDataManipulatorClassNames();
+	}
+
+	public static int getDataManipulatorCountByClassName(
+		java.lang.String className)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getDataManipulatorCountByClassName(className);
+	}
+
+	public static int getDataManipulatorCountByG_C(long groupId,
+		java.lang.String className)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getDataManipulatorCountByG_C(groupId, className);
+	}
+
+	public static int getDataManipulatorCountByGroupId(long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getDataManipulatorCountByGroupId(groupId);
+	}
+
+	public static java.util.List<com.liferay.tool.datamanipulator.model.DataManipulator> getDataManipulatorsByClassName(
+		java.lang.String className)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getDataManipulatorsByClassName(className);
+	}
+
+	public static java.util.List<com.liferay.tool.datamanipulator.model.DataManipulator> getDataManipulatorsByG_C(
+		long groupId, java.lang.String className)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getDataManipulatorsByG_C(groupId, className);
+	}
+
+	public static java.util.List<com.liferay.tool.datamanipulator.model.DataManipulator> getDataManipulatorsByGroupId(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getDataManipulatorsByGroupId(groupId);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}
