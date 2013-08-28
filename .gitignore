@@ -1,6 +1,12 @@
 *.class
+**/classes/*
+.sass-cache
+.sass-cache/*
 
 # Package Files #
 *.jar
 *.war
 *.ear
+
+# Eclipse Settings Files #
+.settings/*
