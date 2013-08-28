@@ -248,7 +248,8 @@ public class DataManipulatorWrapper implements DataManipulator,
 	}
 
 	@Override
-	public int compareTo(DataManipulator dataManipulator) {
+	public int compareTo(
+		com.liferay.tool.datamanipulator.model.DataManipulator dataManipulator) {
 		return _dataManipulator.compareTo(dataManipulator);
 	}
 
@@ -258,17 +259,17 @@ public class DataManipulatorWrapper implements DataManipulator,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DataManipulator> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<com.liferay.tool.datamanipulator.model.DataManipulator> toCacheModel() {
 		return _dataManipulator.toCacheModel();
 	}
 
 	@Override
-	public DataManipulator toEscapedModel() {
+	public com.liferay.tool.datamanipulator.model.DataManipulator toEscapedModel() {
 		return new DataManipulatorWrapper(_dataManipulator.toEscapedModel());
 	}
 
 	@Override
-	public DataManipulator toUnescapedModel() {
+	public com.liferay.tool.datamanipulator.model.DataManipulator toUnescapedModel() {
 		return new DataManipulatorWrapper(_dataManipulator.toUnescapedModel());
 	}
 

@@ -113,6 +113,40 @@ public class DataManipulatorLocalServiceClpInvoker {
 		_methodName33 = "setBeanIdentifier";
 
 		_methodParameterTypes33 = new String[] { "java.lang.String" };
+
+		_methodName38 = "addDataManipulator";
+
+		_methodParameterTypes38 = new String[] {
+				"long", "java.lang.String", "long"
+			};
+
+		_methodName39 = "getDataManipulatorClassNames";
+
+		_methodParameterTypes39 = new String[] {  };
+
+		_methodName40 = "getDataManipulatorCountByClassName";
+
+		_methodParameterTypes40 = new String[] { "java.lang.String" };
+
+		_methodName41 = "getDataManipulatorCountByG_C";
+
+		_methodParameterTypes41 = new String[] { "long", "java.lang.String" };
+
+		_methodName42 = "getDataManipulatorCountByGroupId";
+
+		_methodParameterTypes42 = new String[] { "long" };
+
+		_methodName43 = "getDataManipulatorsByClassName";
+
+		_methodParameterTypes43 = new String[] { "java.lang.String" };
+
+		_methodName44 = "getDataManipulatorsByG_C";
+
+		_methodParameterTypes44 = new String[] { "long", "java.lang.String" };
+
+		_methodName45 = "getDataManipulatorsByGroupId";
+
+		_methodParameterTypes45 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -216,6 +250,49 @@ public class DataManipulatorLocalServiceClpInvoker {
 			return null;
 		}
 
+		if (_methodName38.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes38, parameterTypes)) {
+			return DataManipulatorLocalServiceUtil.addDataManipulator(((Long)arguments[0]).longValue(),
+				(java.lang.String)arguments[1], ((Long)arguments[2]).longValue());
+		}
+
+		if (_methodName39.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes39, parameterTypes)) {
+			return DataManipulatorLocalServiceUtil.getDataManipulatorClassNames();
+		}
+
+		if (_methodName40.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes40, parameterTypes)) {
+			return DataManipulatorLocalServiceUtil.getDataManipulatorCountByClassName((java.lang.String)arguments[0]);
+		}
+
+		if (_methodName41.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes41, parameterTypes)) {
+			return DataManipulatorLocalServiceUtil.getDataManipulatorCountByG_C(((Long)arguments[0]).longValue(),
+				(java.lang.String)arguments[1]);
+		}
+
+		if (_methodName42.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes42, parameterTypes)) {
+			return DataManipulatorLocalServiceUtil.getDataManipulatorCountByGroupId(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName43.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes43, parameterTypes)) {
+			return DataManipulatorLocalServiceUtil.getDataManipulatorsByClassName((java.lang.String)arguments[0]);
+		}
+
+		if (_methodName44.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes44, parameterTypes)) {
+			return DataManipulatorLocalServiceUtil.getDataManipulatorsByG_C(((Long)arguments[0]).longValue(),
+				(java.lang.String)arguments[1]);
+		}
+
+		if (_methodName45.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes45, parameterTypes)) {
+			return DataManipulatorLocalServiceUtil.getDataManipulatorsByGroupId(((Long)arguments[0]).longValue());
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -255,4 +332,20 @@ public class DataManipulatorLocalServiceClpInvoker {
 	private String[] _methodParameterTypes32;
 	private String _methodName33;
 	private String[] _methodParameterTypes33;
+	private String _methodName38;
+	private String[] _methodParameterTypes38;
+	private String _methodName39;
+	private String[] _methodParameterTypes39;
+	private String _methodName40;
+	private String[] _methodParameterTypes40;
+	private String _methodName41;
+	private String[] _methodParameterTypes41;
+	private String _methodName42;
+	private String[] _methodParameterTypes42;
+	private String _methodName43;
+	private String[] _methodParameterTypes43;
+	private String _methodName44;
+	private String[] _methodParameterTypes44;
+	private String _methodName45;
+	private String[] _methodParameterTypes45;
 }

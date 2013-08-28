@@ -288,6 +288,62 @@ public class DataManipulatorLocalServiceWrapper
 			arguments);
 	}
 
+	@Override
+	public com.liferay.tool.datamanipulator.model.DataManipulator addDataManipulator(
+		long groupId, java.lang.String className, long classPK)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _dataManipulatorLocalService.addDataManipulator(groupId,
+			className, classPK);
+	}
+
+	@Override
+	public java.util.List<?> getDataManipulatorClassNames()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _dataManipulatorLocalService.getDataManipulatorClassNames();
+	}
+
+	@Override
+	public int getDataManipulatorCountByClassName(java.lang.String className)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _dataManipulatorLocalService.getDataManipulatorCountByClassName(className);
+	}
+
+	@Override
+	public int getDataManipulatorCountByG_C(long groupId,
+		java.lang.String className)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _dataManipulatorLocalService.getDataManipulatorCountByG_C(groupId,
+			className);
+	}
+
+	@Override
+	public int getDataManipulatorCountByGroupId(long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _dataManipulatorLocalService.getDataManipulatorCountByGroupId(groupId);
+	}
+
+	@Override
+	public java.util.List<com.liferay.tool.datamanipulator.model.DataManipulator> getDataManipulatorsByClassName(
+		java.lang.String className)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _dataManipulatorLocalService.getDataManipulatorsByClassName(className);
+	}
+
+	@Override
+	public java.util.List<com.liferay.tool.datamanipulator.model.DataManipulator> getDataManipulatorsByG_C(
+		long groupId, java.lang.String className)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _dataManipulatorLocalService.getDataManipulatorsByG_C(groupId,
+			className);
+	}
+
+	@Override
+	public java.util.List<com.liferay.tool.datamanipulator.model.DataManipulator> getDataManipulatorsByGroupId(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _dataManipulatorLocalService.getDataManipulatorsByGroupId(groupId);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */
