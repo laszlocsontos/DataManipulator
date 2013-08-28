@@ -40,6 +40,10 @@ public class EntryTypeKeys {
 
 	// General Entry types
 
+	public static final String GENERAL_BLOGS = "blogs";
+
+	public static final String GENERAL_BLOGS_ENTRY = "blogs-entry";
+
 	//Plugin Entry types
 
 	//Poral Entry types
@@ -48,6 +52,8 @@ public class EntryTypeKeys {
 
 	private static ArrayList<String> _generalEntryTypes() {
 		ArrayList<String> types = new ArrayList<String>();
+
+		types.add(GENERAL_BLOGS);
 
 		return types;
 	}
