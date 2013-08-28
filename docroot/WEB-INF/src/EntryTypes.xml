@@ -1,3 +1,52 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ns2:entryWrapperReader xmlns:ns2="com.liferay.tool.datamanipulator.entryreader">
+	<entry name="blogs-entry">
+		<method type="add">
+			<clazz>com.liferay.portlet.blogs.service.BlogsEntryLocalServiceUtil</clazz>
+			<method-name>addEntry</method-name>
+			<parameter-list>
+				<parameter name="userId" type="long" />
+				<parameter name="title" type="java.lang.String" />
+				<parameter name="description" type="java.lang.String" />
+				<parameter name="content" type="java.lang.String" />
+				<parameter name="displayDateMonth" type="int" />
+				<parameter name="displayDateDay" type="int" />
+				<parameter name="displayDateYear" type="int" />
+				<parameter name="displayDateHour" type="int" />
+				<parameter name="displayDateMinute" type="int" />
+				<parameter name="allowPingbacks" type="boolean" />
+				<parameter name="allowTrackbacks" type="boolean" />
+				<parameter name="trackbacks" type="java.lang.String[]" />
+				<parameter name="smallImage" type="boolean" />
+				<parameter name="smallImageURL" type="java.lang.String" />
+				<parameter name="smallImageFileName" type="java.lang.String" />
+				<parameter name="smallImageInputStream" type="java.io.InputStream" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+		<method type="update">
+			<clazz>com.liferay.portlet.blogs.service.BlogsEntryLocalServiceUtil</clazz>
+			<method-name>updateEntry</method-name>
+			<parameter-list>
+				<parameter name="userId" type="long" />
+				<parameter name="entryId" type="long" />
+				<parameter name="title" type="java.lang.String" />
+				<parameter name="description" type="java.lang.String" />
+				<parameter name="content" type="java.lang.String" />
+				<parameter name="displayDateMonth" type="int" />
+				<parameter name="displayDateDay" type="int" />
+				<parameter name="displayDateYear" type="int" />
+				<parameter name="displayDateHour" type="int" />
+				<parameter name="displayDateMinute" type="int" />
+				<parameter name="allowPingbacks" type="boolean" />
+				<parameter name="allowTrackbacks" type="boolean" />
+				<parameter name="trackbacks" type="java.lang.String[]" />
+				<parameter name="smallImage" type="boolean" />
+				<parameter name="smallImageURL" type="java.lang.String" />
+				<parameter name="smallImageFileName" type="java.lang.String" />
+				<parameter name="smallImageInputStream" type="java.io.InputStream" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+	</entry>
 </ns2:entryWrapperReader>
