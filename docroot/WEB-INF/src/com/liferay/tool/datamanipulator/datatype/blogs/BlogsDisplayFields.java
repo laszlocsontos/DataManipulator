@@ -12,11 +12,10 @@
  *
  */
 
-package com.liferay.tool.datamanipulator.datatype;
+package com.liferay.tool.datamanipulator.datatype.blogs;
 
-import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.tool.datamanipulator.datatype.blogs.BlogsDisplayFields;
+import com.liferay.tool.datamanipulator.displayfield.DisplayFields;
 import com.liferay.tool.datamanipulator.displayfield.Field;
 import com.liferay.tool.datamanipulator.entry.EntryTypeKeys;
 
@@ -26,16 +25,22 @@ import java.util.List;
  * @author Tibor Kovács
  *
  */
-public final class EntryDisplayFieldsFactory {
+public class BlogsDisplayFields {
+	public static List<Field> getDisplayFields() throws SystemException {
+		DisplayFields fields = new DisplayFields();
 
-	public static List<Field> getDisplayFields(String entryTypeKey)
-		throws PortalException, SystemException {
+		fields.addUserMultiSelect();
+		fields.addSeparator();
 
-		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_BLOGS)) {
-			return BlogsDisplayFields.getDisplayFields();
-		}
+		fields.addCount(EntryTypeKeys.GENERAL_BLOGS_ENTRY, true);
+		fields.addUpdateLevel(EntryTypeKeys.GENERAL_BLOGS_ENTRY);
+		fields.addSeparator();
 
-		return null;
+		fields.addLabel("display-date");
+		fields.addDate("display-date");
+		fields.addSeparator();
+
+		return fields.getDisplayFields();
 	}
 
 }
