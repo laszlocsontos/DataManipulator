@@ -193,6 +193,61 @@
 			</parameter-list>
 		</method>
 	</entry>
+	<entry name="documents-and-media-file">
+		<method type="add">
+			<clazz>com.liferay.portlet.documentlibrary.service.DLAppServiceUtil</clazz>
+			<method-name>addFileEntry</method-name>
+			<parameter-list>
+				<parameter name="repositoryId" type="long" />
+				<parameter name="folderId" type="long" />
+				<parameter name="sourceFileName" type="java.lang.String" />
+				<parameter name="mimeType" type="java.lang.String" />
+				<parameter name="title" type="java.lang.String" />
+				<parameter name="description" type="java.lang.String" />
+				<parameter name="changeLog" type="java.lang.String" />
+				<parameter name="file" type="java.io.File" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+		<method type="update">
+			<clazz>com.liferay.portlet.documentlibrary.service.DLAppServiceUtil</clazz>
+			<method-name>updateFileEntry</method-name>
+			<parameter-list>
+				<parameter name="fileEntryId" type="long" />
+				<parameter name="sourceFileName" type="java.lang.String" />
+				<parameter name="mimeType" type="java.lang.String" />
+				<parameter name="title" type="java.lang.String" />
+				<parameter name="description" type="java.lang.String" />
+				<parameter name="changeLog" type="java.lang.String" />
+				<parameter name="majorVersion" type="boolean" />
+				<parameter name="file" type="java.io.File" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+	</entry>
+	<entry name="documents-and-media-folder">
+		<method type="add">
+			<clazz>com.liferay.portlet.documentlibrary.service.DLAppServiceUtil</clazz>
+			<method-name>addFolder</method-name>
+			<parameter-list>
+				<parameter name="repositoryId" type="long" />
+				<parameter name="parentFolderId" type="long" />
+				<parameter name="name" type="java.lang.String" />
+				<parameter name="description" type="java.lang.String" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+		<method type="update">
+			<clazz>com.liferay.portlet.documentlibrary.service.DLAppServiceUtil</clazz>
+			<method-name>updateFolder</method-name>
+			<parameter-list>
+				<parameter name="folderId" type="long" />
+				<parameter name="name" type="java.lang.String" />
+				<parameter name="description" type="java.lang.String" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+	</entry>
 	<entry name="vocabulary">
 		<method type="add">
 			<clazz>com.liferay.portlet.asset.service.AssetVocabularyLocalServiceUtil</clazz>
