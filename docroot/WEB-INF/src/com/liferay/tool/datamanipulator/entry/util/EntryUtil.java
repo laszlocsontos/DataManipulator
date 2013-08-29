@@ -97,6 +97,10 @@ public class EntryUtil {
 			_rnd = new Random();
 		}
 
+		if (max <= 0) {
+			return 0;
+		}
+
 		return _rnd.nextInt(max);
 	}
 
