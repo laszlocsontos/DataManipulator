@@ -53,7 +53,7 @@ public class JournalFolderHandler extends AbstractEntryHandler implements
 
 		args.setParameter("parentFolderId", parentId);
 		args.setParameter(
-			"title", "Test WebContent Folder" + postString + " Name");
+			"name", "Test WebContent Folder" + postString + " Name");
 
 		args.setParameter(
 			"description",
@@ -90,7 +90,7 @@ public class JournalFolderHandler extends AbstractEntryHandler implements
 		args.setParameter("folderId", entryId);
 		args.setParameter("parentFolderId", folder.getParentFolderId());
 		args.setParameter(
-			"title", EntryUtil.getEditString(folder.getName(), postString));
+			"name", EntryUtil.getEditString(folder.getName(), postString));
 
 		args.setParameter(
 			"description",
