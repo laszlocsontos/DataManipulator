@@ -152,4 +152,57 @@
 			</parameter-list>
 		</method>
 	</entry>
+	<entry name="category">
+		<method type="add">
+			<clazz>com.liferay.portlet.asset.service.AssetCategoryLocalServiceUtil</clazz>
+			<method-name>addCategory</method-name>
+			<parameter-list>
+				<parameter name="userId" type="long" />
+				<parameter name="parentCategoryId" type="long" />
+				<parameter name="titleMap" type="java.util.Map&lt;java.util.Locale, java.lang.String&gt;" />
+				<parameter name="vocabularyId" type="long" />
+				<parameter name="categoryProperties" type="java.lang.String[]" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+		<method type="update">
+			<clazz>com.liferay.portlet.asset.service.AssetCategoryLocalServiceUtil</clazz>
+			<method-name>updateCategory</method-name>
+			<parameter-list>
+				<parameter name="userId" type="long" />
+				<parameter name="categoryId" type="long" />
+				<parameter name="parentCategoryId" type="long" />
+				<parameter name="titleMap" type="java.util.Map&lt;java.util.Locale, java.lang.String&gt;" />
+				<parameter name="vocabularyId" type="long" />
+				<parameter name="categoryProperties" type="java.lang.String[]" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+	</entry>
+	<entry name="vocabulary">
+		<method type="add">
+			<clazz>com.liferay.portlet.asset.service.AssetVocabularyLocalServiceUtil</clazz>
+			<method-name>addVocabulary</method-name>
+			<parameter-list>
+				<parameter name="userId" type="long" />
+				<parameter name="title" type="java.lang.String" />
+				<parameter name="titleMap" type="java.util.Map&lt;java.util.Locale, java.lang.String&gt;" />
+				<parameter name="descriptionMap" type="java.util.Map&lt;java.util.Locale, java.lang.String&gt;" />
+				<parameter name="settings" type="java.lang.String" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+		<method type="update">
+			<clazz>com.liferay.portlet.asset.service.AssetVocabularyLocalServiceUtil</clazz>
+			<method-name>updateVocabulary</method-name>
+			<parameter-list>
+				<parameter name="vocabularyId" type="long" />
+				<parameter name="title" type="java.lang.String" />
+				<parameter name="titleMap" type="java.util.Map&lt;java.util.Locale, java.lang.String&gt;" />
+				<parameter name="descriptionMap" type="java.util.Map&lt;java.util.Locale, java.lang.String&gt;" />
+				<parameter name="settings" type="java.lang.String" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+	</entry>
 </ns2:entryWrapperReader>
