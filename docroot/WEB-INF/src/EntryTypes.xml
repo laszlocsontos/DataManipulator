@@ -548,6 +548,88 @@
 			</parameter-list>
 		</method>
 	</entry>
+	<entry name="user">
+		<method type="add">
+			<clazz>com.liferay.portal.service.UserLocalServiceUtil</clazz>
+			<method-name>addUser</method-name>
+			<parameter-list>
+				<parameter name="creatorUserId" type="long" />
+				<parameter name="companyId" type="long" />
+				<parameter name="autoPassword" type="boolean" />
+				<parameter name="password1" type="java.lang.String" />
+				<parameter name="password2" type="java.lang.String" />
+				<parameter name="autoScreenName" type="boolean" />
+				<parameter name="screenName" type="java.lang.String" />
+				<parameter name="emailAddress" type="java.lang.String" />
+				<parameter name="facebookId" type="long" />
+				<parameter name="openId" type="java.lang.String" />
+				<parameter name="locale" type="java.util.Locale" />
+				<parameter name="firstName" type="java.lang.String" />
+				<parameter name="middleName" type="java.lang.String" />
+				<parameter name="lastName" type="java.lang.String" />
+				<parameter name="prefixId" type="int" />
+				<parameter name="suffixId" type="int" />
+				<parameter name="male" type="boolean" />
+				<parameter name="birthdayMonth" type="int" />
+				<parameter name="birthdayDay" type="int" />
+				<parameter name="birthdayYear" type="int" />
+				<parameter name="jobTitle" type="java.lang.String" />
+				<parameter name="groupIds" type="long[]" />
+				<parameter name="organizationIds" type="long[]" />
+				<parameter name="roleIds" type="long[]" />
+				<parameter name="userGroupIds" type="long[]" />
+				<parameter name="sendEmail" type="boolean" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+		<method type="update">
+			<clazz>com.liferay.portal.service.UserLocalServiceUtil</clazz>
+			<method-name>updateUser</method-name>
+			<parameter-list>
+				<parameter name="userId" type="long" />
+				<parameter name="oldPassword" type="java.lang.String" />
+				<parameter name="newPassword1" type="java.lang.String" />
+				<parameter name="newPassword2" type="java.lang.String" />
+				<parameter name="passwordReset" type="boolean" />
+				<parameter name="reminderQueryQuestion" type="java.lang.String" />
+				<parameter name="reminderQueryAnswer" type="java.lang.String" />
+				<parameter name="screenName" type="java.lang.String" />
+				<parameter name="emailAddress" type="java.lang.String" />
+				<parameter name="facebookId" type="long" />
+				<parameter name="openId" type="java.lang.String" />
+				<parameter name="languageId" type="java.lang.String" />
+				<parameter name="timeZoneId" type="java.lang.String" />
+				<parameter name="greeting" type="java.lang.String" />
+				<parameter name="comments" type="java.lang.String" />
+				<parameter name="firstName" type="java.lang.String" />
+				<parameter name="middleName" type="java.lang.String" />
+				<parameter name="lastName" type="java.lang.String" />
+				<parameter name="prefixId" type="int" />
+				<parameter name="suffixId" type="int" />
+				<parameter name="male" type="boolean" />
+				<parameter name="birthdayMonth" type="int" />
+				<parameter name="birthdayDay" type="int" />
+				<parameter name="birthdayYear" type="int" />
+				<parameter name="smsSn" type="java.lang.String" />
+				<parameter name="aimSn" type="java.lang.String" />
+				<parameter name="facebookSn" type="java.lang.String" />
+				<parameter name="icqSn" type="java.lang.String" />
+				<parameter name="jabberSn" type="java.lang.String" />
+				<parameter name="msnSn" type="java.lang.String" />
+				<parameter name="mySpaceSn" type="java.lang.String" />
+				<parameter name="skypeSn" type="java.lang.String" />
+				<parameter name="twitterSn" type="java.lang.String" />
+				<parameter name="ymSn" type="java.lang.String" />
+				<parameter name="jobTitle" type="java.lang.String" />
+				<parameter name="groupIds" type="long[]" />
+				<parameter name="organizationIds" type="long[]" />
+				<parameter name="roleIds" type="long[]" />
+				<parameter name="userGroupRoles" type="java.util.List&lt;com.liferay.portal.model.UserGroupRole&gt;" />
+				<parameter name="userGroupIds" type="long[]" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+	</entry>
 	<entry name="vocabulary">
 		<method type="add">
 			<clazz>com.liferay.portlet.asset.service.AssetVocabularyLocalServiceUtil</clazz>
