@@ -44,6 +44,12 @@ public class EntryTypeKeys {
 
 	public static final String GENERAL_BLOGS_ENTRY = "blogs-entry";
 
+	public static final String GENERAL_BOOKMARKS = "bookmarks";
+
+	public static final String GENERAL_BOOKMARKS_ENTRY = "bookmarks-entry";
+
+	public static final String GENERAL_BOOKMARKS_FOLDER = "bookmarks-folder";
+
 	//Plugin Entry types
 
 	//Poral Entry types
@@ -54,6 +60,7 @@ public class EntryTypeKeys {
 		ArrayList<String> types = new ArrayList<String>();
 
 		types.add(GENERAL_BLOGS);
+		types.add(GENERAL_BOOKMARKS);
 
 		return types;
 	}
