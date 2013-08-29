@@ -17,6 +17,7 @@ package com.liferay.tool.datamanipulator.datatype;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.tool.datamanipulator.datatype.blogs.BlogsDisplayFields;
+import com.liferay.tool.datamanipulator.datatype.bookmarks.BookmarksDisplayFields;
 import com.liferay.tool.datamanipulator.displayfield.Field;
 import com.liferay.tool.datamanipulator.entry.EntryTypeKeys;
 
@@ -33,6 +34,10 @@ public final class EntryDisplayFieldsFactory {
 
 		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_BLOGS)) {
 			return BlogsDisplayFields.getDisplayFields();
+		}
+
+		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_BOOKMARKS)) {
+			return BookmarksDisplayFields.getDisplayFields();
 		}
 
 		return null;
