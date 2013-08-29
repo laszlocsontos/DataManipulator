@@ -83,6 +83,17 @@ public class EntryTypeKeys {
 
 	public static final String GENERAL_LAYOUT_PORTLET = "layout-portlet";
 
+	public static final String GENERAL_MESSAGE_BOARDS = "message-boards";
+
+	public static final String GENERAL_MESSAGE_BOARDS_CATEGORY =
+		"message-boards-category";
+
+	public static final String GENERAL_MESSAGE_BOARDS_MESSAGE =
+		"message-boards-message";
+
+	public static final String GENERAL_MESSAGE_BOARDS_THREAD =
+		"message-boards-thread";
+
 	//Plugin Entry types
 
 	//Poral Entry types
@@ -99,6 +110,7 @@ public class EntryTypeKeys {
 		types.add(GENERAL_DOCUMENTS_AND_MEDIA);
 		types.add(GENERAL_JOURNAL);
 		types.add(GENERAL_LAYOUT);
+		types.add(GENERAL_MESSAGE_BOARDS);
 
 		return types;
 	}

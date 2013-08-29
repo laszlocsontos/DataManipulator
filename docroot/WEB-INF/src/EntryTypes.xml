@@ -364,6 +364,122 @@
 			</parameter-list>
 		</method>
 	</entry>
+	<entry name="message-boards-category">
+		<method type="add">
+			<clazz>com.liferay.portlet.messageboards.service.MBCategoryLocalServiceUtil</clazz>
+			<method-name>addCategory</method-name>
+			<parameter-list>
+				<parameter name="userId" type="long" />
+				<parameter name="parentCategoryId" type="long" />
+				<parameter name="name" type="java.lang.String" />
+				<parameter name="description" type="java.lang.String" />
+				<parameter name="displayStyle" type="java.lang.String" />
+				<parameter name="emailAddress" type="java.lang.String" />
+				<parameter name="inProtocol" type="java.lang.String" />
+				<parameter name="inServerName" type="java.lang.String" />
+				<parameter name="inServerPort" type="int" />
+				<parameter name="inUseSSL" type="boolean" />
+				<parameter name="inUserName" type="java.lang.String" />
+				<parameter name="inPassword" type="java.lang.String" />
+				<parameter name="inReadInterval" type="int" />
+				<parameter name="outEmailAddress" type="java.lang.String" />
+				<parameter name="outCustom" type="boolean" />
+				<parameter name="outServerName" type="java.lang.String" />
+				<parameter name="outServerPort" type="int" />
+				<parameter name="outUseSSL" type="boolean" />
+				<parameter name="outUserName" type="java.lang.String" />
+				<parameter name="outPassword" type="java.lang.String" />
+				<parameter name="allowAnonymous" type="boolean" />
+				<parameter name="mailingListActive" type="boolean" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+		<method type="update">
+			<clazz>com.liferay.portlet.messageboards.service.MBCategoryLocalServiceUtil</clazz>
+			<method-name>updateCategory</method-name>
+			<parameter-list>
+				<parameter name="categoryId" type="long" />
+				<parameter name="parentCategoryId" type="long" />
+				<parameter name="name" type="java.lang.String" />
+				<parameter name="description" type="java.lang.String" />
+				<parameter name="displayStyle" type="java.lang.String" />
+				<parameter name="emailAddress" type="java.lang.String" />
+				<parameter name="inProtocol" type="java.lang.String" />
+				<parameter name="inServerName" type="java.lang.String" />
+				<parameter name="inServerPort" type="int" />
+				<parameter name="inUseSSL" type="boolean" />
+				<parameter name="inUserName" type="java.lang.String" />
+				<parameter name="inPassword" type="java.lang.String" />
+				<parameter name="inReadInterval" type="int" />
+				<parameter name="outEmailAddress" type="java.lang.String" />
+				<parameter name="outCustom" type="boolean" />
+				<parameter name="outServerName" type="java.lang.String" />
+				<parameter name="outServerPort" type="int" />
+				<parameter name="outUseSSL" type="boolean" />
+				<parameter name="outUserName" type="java.lang.String" />
+				<parameter name="outPassword" type="java.lang.String" />
+				<parameter name="allowAnonymous" type="boolean" />
+				<parameter name="mailingListActive" type="boolean" />
+				<parameter name="mergeWithParentCategory" type="boolean" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+	</entry>
+	<entry name="message-boards-message">
+		<method type="add">
+			<clazz>com.liferay.portlet.messageboards.service.MBMessageLocalServiceUtil</clazz>
+			<method-name>addMessage</method-name>
+			<parameter-list>
+				<parameter name="userId" type="long" />
+				<parameter name="userName" type="java.lang.String" />
+				<parameter name="groupId" type="long" />
+				<parameter name="categoryId" type="long" />
+				<parameter name="threadId" type="long" />
+				<parameter name="parentMessageId" type="long" />
+				<parameter name="subject" type="java.lang.String" />
+				<parameter name="body" type="java.lang.String" />
+				<parameter name="format" type="java.lang.String" />
+				<parameter name="inputStreamOVPs" type="java.util.List&lt;com.liferay.portal.kernel.util.ObjectValuePair&lt;java.lang.String, java.io.InputStream&gt;&gt;" />
+				<parameter name="anonymous" type="boolean" />
+				<parameter name="priority" type="double" />
+				<parameter name="allowPingbacks" type="boolean" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+		<method type="update">
+			<clazz>com.liferay.portlet.messageboards.service.MBMessageLocalServiceUtil</clazz>
+			<method-name>updateMessage</method-name>
+			<parameter-list>
+				<parameter name="userId" type="long" />
+				<parameter name="messageId" type="long" />
+				<parameter name="subject" type="java.lang.String" />
+				<parameter name="body" type="java.lang.String" />
+				<parameter name="inputStreamOVPs" type="java.util.List&lt;com.liferay.portal.kernel.util.ObjectValuePair&lt;java.lang.String, java.io.InputStream&gt;&gt;" />
+				<parameter name="existingFiles" type="java.util.List&lt;java.lang.String&gt;" />
+				<parameter name="priority" type="double" />
+				<parameter name="allowPingbacks" type="boolean" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+	</entry>
+	<entry name="message-boards-thread">
+		<method type="add">
+			<clazz>com.liferay.portlet.messageboards.service.MBThreadLocalServiceUtil</clazz>
+			<method-name>addThread</method-name>
+			<parameter-list>
+				<parameter name="categoryId" type="long" />
+				<parameter name="message" type="com.liferay.portlet.messageboards.model.MBMessage" />
+			</parameter-list>
+		</method>
+		<method type="update">
+			<clazz>com.liferay.portlet.messageboards.service.MBThreadLocalServiceUtil</clazz>
+			<method-name>updateThread</method-name>
+			<parameter-list>
+				<parameter name="threadId" type="long" />
+				<parameter name="viewCount" type="int" />
+			</parameter-list>
+		</method>
+	</entry>
 	<entry name="vocabulary">
 		<method type="add">
 			<clazz>com.liferay.portlet.asset.service.AssetVocabularyLocalServiceUtil</clazz>
