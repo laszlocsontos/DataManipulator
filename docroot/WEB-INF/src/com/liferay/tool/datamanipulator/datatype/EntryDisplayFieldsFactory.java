@@ -19,6 +19,7 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.tool.datamanipulator.datatype.blogs.BlogsDisplayFields;
 import com.liferay.tool.datamanipulator.datatype.bookmarks.BookmarksDisplayFields;
 import com.liferay.tool.datamanipulator.datatype.calendar.CalendarDisplayFields;
+import com.liferay.tool.datamanipulator.datatype.categories.CategoriesDisplayFields;
 import com.liferay.tool.datamanipulator.displayfield.Field;
 import com.liferay.tool.datamanipulator.entry.EntryTypeKeys;
 
@@ -32,6 +33,10 @@ public final class EntryDisplayFieldsFactory {
 
 	public static List<Field> getDisplayFields(String entryTypeKey)
 		throws PortalException, SystemException {
+
+		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_ASSET_CATEGORIES)) {
+			return CategoriesDisplayFields.getDisplayFields();
+		}
 
 		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_BLOGS)) {
 			return BlogsDisplayFields.getDisplayFields();
