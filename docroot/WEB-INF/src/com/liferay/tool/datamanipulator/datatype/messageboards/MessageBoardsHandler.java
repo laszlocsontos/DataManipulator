@@ -79,7 +79,7 @@ public class MessageBoardsHandler extends AbstractPortletHandler implements
 
 		BaseEntry threadEntry = new BaseEntry(threadEntryType);
 
-		EntryHandlerModel threadHandler = new MBMessageHandler(
+		EntryHandlerModel threadHandler = new MBThreadHandler(
 			threadCount, threadUpdate, 0, 0, threadEntry, messageHandler,
 			requestProcessor);
 
