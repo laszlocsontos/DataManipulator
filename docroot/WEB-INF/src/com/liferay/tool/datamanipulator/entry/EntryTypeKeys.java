@@ -69,6 +69,14 @@ public class EntryTypeKeys {
 	public static final String GENERAL_DOCUMENTS_AND_MEDIA_FOLDER =
 		"documents-and-media-folder";
 
+	public static final String GENERAL_JOURNAL = "journal";
+
+	public static final String GENERAL_JOURNAL_ARTICLE = "journal-article";
+
+	public static final String GENERAL_JOURNAL_STRUCTURE = "journal-structure";
+
+	public static final String GENERAL_JOURNAL_TEMPLATE = "journal-template";
+
 	//Plugin Entry types
 
 	//Poral Entry types
@@ -83,6 +91,7 @@ public class EntryTypeKeys {
 		types.add(GENERAL_CALENDAR);
 		types.add(GENERAL_ASSET_CATEGORIES);
 		types.add(GENERAL_DOCUMENTS_AND_MEDIA);
+		types.add(GENERAL_JOURNAL);
 
 		return types;
 	}
