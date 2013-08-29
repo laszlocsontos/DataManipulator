@@ -25,6 +25,7 @@ import com.liferay.tool.datamanipulator.datatype.journal.JournalDisplayFields;
 import com.liferay.tool.datamanipulator.datatype.layout.LayoutDisplayFields;
 import com.liferay.tool.datamanipulator.datatype.messageboards.MessageBoardsDisplayFields;
 import com.liferay.tool.datamanipulator.datatype.organization.OrganizationDisplayFields;
+import com.liferay.tool.datamanipulator.datatype.user.UserDisplayFields;
 import com.liferay.tool.datamanipulator.datatype.wiki.WikiDisplayFields;
 import com.liferay.tool.datamanipulator.displayfield.Field;
 import com.liferay.tool.datamanipulator.entry.EntryTypeKeys;
@@ -78,6 +79,10 @@ public final class EntryDisplayFieldsFactory {
 
 		if (entryTypeKey.equals(EntryTypeKeys.PORTAL_ORGANIZATION)) {
 			return OrganizationDisplayFields.getDisplayFields();
+		}
+
+		if (entryTypeKey.equals(EntryTypeKeys.PORTAL_USER)) {
+			return UserDisplayFields.getDisplayFields();
 		}
 
 		return null;
