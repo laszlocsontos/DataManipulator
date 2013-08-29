@@ -22,6 +22,7 @@ import com.liferay.tool.datamanipulator.datatype.calendar.CalendarDisplayFields;
 import com.liferay.tool.datamanipulator.datatype.categories.CategoriesDisplayFields;
 import com.liferay.tool.datamanipulator.datatype.documentsandmedia.DocumentsAndMediaDisplayFields;
 import com.liferay.tool.datamanipulator.datatype.journal.JournalDisplayFields;
+import com.liferay.tool.datamanipulator.datatype.layout.LayoutDisplayFields;
 import com.liferay.tool.datamanipulator.displayfield.Field;
 import com.liferay.tool.datamanipulator.entry.EntryTypeKeys;
 
@@ -58,6 +59,10 @@ public final class EntryDisplayFieldsFactory {
 
 		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_JOURNAL)) {
 			return JournalDisplayFields.getDisplayFields();
+		}
+
+		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_LAYOUT)) {
+			return LayoutDisplayFields.getDisplayFields();
 		}
 
 		return null;
