@@ -60,6 +60,15 @@ public class EntryTypeKeys {
 
 	public static final String GENERAL_CALENDAR_EVENT = "calendar-event";
 
+	public static final String GENERAL_DOCUMENTS_AND_MEDIA =
+		"documents-and-media";
+
+	public static final String GENERAL_DOCUMENTS_AND_MEDIA_FILE =
+		"documents-and-media-file";
+
+	public static final String GENERAL_DOCUMENTS_AND_MEDIA_FOLDER =
+		"documents-and-media-folder";
+
 	//Plugin Entry types
 
 	//Poral Entry types
@@ -73,6 +82,7 @@ public class EntryTypeKeys {
 		types.add(GENERAL_BOOKMARKS);
 		types.add(GENERAL_CALENDAR);
 		types.add(GENERAL_ASSET_CATEGORIES);
+		types.add(GENERAL_DOCUMENTS_AND_MEDIA);
 
 		return types;
 	}
