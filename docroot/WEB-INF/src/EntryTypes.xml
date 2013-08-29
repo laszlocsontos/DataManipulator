@@ -335,6 +335,35 @@
 			</parameter-list>
 		</method>
 	</entry>
+	<entry name="layout-entry">
+		<method type="add">
+			<clazz>com.liferay.portal.service.LayoutLocalServiceUtil</clazz>
+			<method-name>addLayout</method-name>
+			<parameter-list>
+				<parameter name="userId" type="long" />
+				<parameter name="groupId" type="long" />
+				<parameter name="privateLayout" type="boolean" />
+				<parameter name="parentLayoutId" type="long" />
+				<parameter name="name" type="java.lang.String" />
+				<parameter name="title" type="java.lang.String" />
+				<parameter name="description" type="java.lang.String" />
+				<parameter name="type" type="java.lang.String" />
+				<parameter name="hidden" type="boolean" />
+				<parameter name="friendlyURL" type="java.lang.String" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+		<method type="update">
+			<clazz>com.liferay.portal.service.LayoutLocalServiceUtil</clazz>
+			<method-name>updateLayout</method-name>
+			<parameter-list>
+				<parameter name="groupId" type="long" />
+				<parameter name="privateLayout" type="boolean" />
+				<parameter name="layoutId" type="long" />
+				<parameter name="typeSettings" type="java.lang.String" />
+			</parameter-list>
+		</method>
+	</entry>
 	<entry name="vocabulary">
 		<method type="add">
 			<clazz>com.liferay.portlet.asset.service.AssetVocabularyLocalServiceUtil</clazz>
