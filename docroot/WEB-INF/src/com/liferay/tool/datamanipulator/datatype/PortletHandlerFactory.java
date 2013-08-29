@@ -18,6 +18,7 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.tool.datamanipulator.datatype.blogs.BlogsHandler;
 import com.liferay.tool.datamanipulator.datatype.bookmarks.BookmarksHandler;
+import com.liferay.tool.datamanipulator.datatype.calendar.CalendarHandler;
 import com.liferay.tool.datamanipulator.entry.EntryTypeKeys;
 import com.liferay.tool.datamanipulator.handler.portlethandler.model.PortletHandlerModel;
 
@@ -36,6 +37,10 @@ public final class PortletHandlerFactory {
 
 		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_BOOKMARKS)) {
 			return new BookmarksHandler();
+		}
+
+		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_CALENDAR)) {
+			return new CalendarHandler();
 		}
 
 		return null;
