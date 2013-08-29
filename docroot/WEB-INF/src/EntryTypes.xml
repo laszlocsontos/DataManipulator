@@ -104,4 +104,65 @@
 			</parameter-list>
 		</method>
 	</entry>
+	<entry name="calendar-event">
+		<method type="add">
+			<clazz>com.liferay.portlet.calendar.service.CalEventLocalServiceUtil</clazz>
+			<method-name>addEvent</method-name>
+			<parameter-list>
+				<parameter name="userId" type="long" />
+				<parameter name="title" type="java.lang.String" />
+				<parameter name="description" type="java.lang.String" />
+				<parameter name="location" type="java.lang.String" />
+				<parameter name="startDateMonth" type="int" />
+				<parameter name="startDateDay" type="int" />
+				<parameter name="startDateYear" type="int" />
+				<parameter name="startDateHour" type="int" />
+				<parameter name="startDateMinute" type="int" />
+				<parameter name="endDateMonth" type="int" />
+				<parameter name="endDateDay" type="int" />
+				<parameter name="endDateYear" type="int" />
+				<parameter name="durationHour" type="int" />
+				<parameter name="durationMinute" type="int" />
+				<parameter name="allDay" type="boolean" />
+				<parameter name="timeZoneSensitive" type="boolean" />
+				<parameter name="type" type="java.lang.String" />
+				<parameter name="repeating" type="boolean" />
+				<parameter name="recurrence" type="com.liferay.portal.kernel.cal.TZSRecurrence" />
+				<parameter name="remindBy" type="int" />
+				<parameter name="firstReminder" type="int" />
+				<parameter name="secondReminder" type="int" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+		<method type="update">
+			<clazz>com.liferay.portlet.calendar.service.CalEventLocalServiceUtil</clazz>
+			<method-name>updateEvent</method-name>
+			<parameter-list>
+				<parameter name="userId" type="long" />
+				<parameter name="eventId" type="long" />
+				<parameter name="title" type="java.lang.String" />
+				<parameter name="description" type="java.lang.String" />
+				<parameter name="location" type="java.lang.String" />
+				<parameter name="startDateMonth" type="int" />
+				<parameter name="startDateDay" type="int" />
+				<parameter name="startDateYear" type="int" />
+				<parameter name="startDateHour" type="int" />
+				<parameter name="startDateMinute" type="int" />
+				<parameter name="endDateMonth" type="int" />
+				<parameter name="endDateDay" type="int" />
+				<parameter name="endDateYear" type="int" />
+				<parameter name="durationHour" type="int" />
+				<parameter name="durationMinute" type="int" />
+				<parameter name="allDay" type="boolean" />
+				<parameter name="timeZoneSensitive" type="boolean" />
+				<parameter name="type" type="java.lang.String" />
+				<parameter name="repeating" type="boolean" />
+				<parameter name="recurrence" type="com.liferay.portal.kernel.cal.TZSRecurrence" />
+				<parameter name="remindBy" type="int" />
+				<parameter name="firstReminder" type="int" />
+				<parameter name="secondReminder" type="int" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+	</entry>
 </ns2:entryWrapperReader>
