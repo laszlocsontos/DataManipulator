@@ -17,6 +17,7 @@ package com.liferay.tool.datamanipulator.datatype;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.tool.datamanipulator.datatype.blogs.BlogsHandler;
+import com.liferay.tool.datamanipulator.datatype.bookmarks.BookmarksHandler;
 import com.liferay.tool.datamanipulator.entry.EntryTypeKeys;
 import com.liferay.tool.datamanipulator.handler.portlethandler.model.PortletHandlerModel;
 
@@ -31,6 +32,10 @@ public final class PortletHandlerFactory {
 
 		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_BLOGS)) {
 			return new BlogsHandler();
+		}
+
+		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_BOOKMARKS)) {
+			return new BookmarksHandler();
 		}
 
 		return null;
