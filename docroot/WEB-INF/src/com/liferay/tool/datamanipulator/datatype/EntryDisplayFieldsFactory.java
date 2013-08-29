@@ -23,6 +23,7 @@ import com.liferay.tool.datamanipulator.datatype.categories.CategoriesDisplayFie
 import com.liferay.tool.datamanipulator.datatype.documenlibrary.DocumentLibraryDisplayFields;
 import com.liferay.tool.datamanipulator.datatype.journal.JournalDisplayFields;
 import com.liferay.tool.datamanipulator.datatype.layout.LayoutDisplayFields;
+import com.liferay.tool.datamanipulator.datatype.messageboards.MessageBoardsDisplayFields;
 import com.liferay.tool.datamanipulator.displayfield.Field;
 import com.liferay.tool.datamanipulator.entry.EntryTypeKeys;
 
@@ -63,6 +64,10 @@ public final class EntryDisplayFieldsFactory {
 
 		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_LAYOUT)) {
 			return LayoutDisplayFields.getDisplayFields();
+		}
+
+		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_MESSAGE_BOARDS)) {
+			return MessageBoardsDisplayFields.getDisplayFields();
 		}
 
 		return null;
