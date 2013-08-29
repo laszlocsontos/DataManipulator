@@ -36,6 +36,7 @@ import com.liferay.tool.datamanipulator.service.DataManipulatorLocalServiceUtil;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -137,6 +138,10 @@ public class JournalArticleHandler extends AbstractEntryHandler implements
 		Calendar expirationDate = EntryUtil.getRandomCalendar(
 			_expirationDateFrom, _expirationDateTo);
 
+		while (expirationDate.before(Calendar.getInstance())) {
+			expirationDate.add(Calendar.YEAR, 1);
+		}
+
 		Calendar reviewDate = EntryUtil.getRandomCalendar(
 			_reviewDateFrom, _reviewDateTo);
 
@@ -236,6 +241,10 @@ public class JournalArticleHandler extends AbstractEntryHandler implements
 		Calendar expirationDate = EntryUtil.getRandomCalendar(
 			_expirationDateFrom, _expirationDateTo);
 
+		while (expirationDate.before(Calendar.getInstance())) {
+			expirationDate.add(Calendar.YEAR, 1);
+		}
+
 		Calendar reviewDate = EntryUtil.getRandomCalendar(
 			_reviewDateFrom, _reviewDateTo);
 
@@ -260,7 +269,9 @@ public class JournalArticleHandler extends AbstractEntryHandler implements
 		args.setParameter("displayDateDay", displayDate.get(Calendar.DATE));
 		args.setParameter("displayDateYear", displayDate.get(Calendar.YEAR));
 		args.setParameter("displayDateHour", displayDate.get(Calendar.HOUR));
-		args.setParameter("displayDateMinute", displayDate.get(Calendar.MINUTE));
+		args.setParameter(
+			"displayDateMinute", displayDate.get(Calendar.MINUTE));
+
 		args.setParameter(
 			"expirationDateMonth", expirationDate.get(Calendar.MONTH));
 
