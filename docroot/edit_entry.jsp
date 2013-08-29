@@ -15,6 +15,7 @@
  --%>
 
 <%@ page import="com.liferay.tool.datamanipulator.datatype.EntryDisplayFieldsFactory"%>
+<%@ page import="com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel"%>
 <%@ page import="com.liferay.portal.kernel.util.CalendarFactoryUtil" %>
 <%@ page import="com.liferay.portal.kernel.util.KeyValuePair" %>
 <%@ page import="com.liferay.portal.kernel.util.StringPool" %>
@@ -66,7 +67,7 @@
 			dateTo.add(Calendar.MONTH, 5);
 			%>
 
-			<aui:model-context bean="<%= null %>" model="<%= HandlerModel.class %>" />
+			<aui:model-context bean="<%= null %>" model="<%= EntryHandlerModel.class %>" />
 			<aui:layout>
 				<aui:input label='<%= label + "-from" %>' name='<%= field.getKey() + "-from" %>' value="<%= dateFrom %>" />
 				<aui:input label='<%= label + "-to" %>' name='<%= field.getKey() + "-to" %>' value="<%= dateTo %>" />
