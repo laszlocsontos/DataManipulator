@@ -19,6 +19,7 @@ import com.liferay.portal.kernel.cal.Recurrence;
 import com.liferay.portal.kernel.cal.TZSRecurrence;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portlet.calendar.model.CalEvent;
 import com.liferay.portlet.calendar.model.CalEventConstants;
 import com.liferay.portlet.calendar.service.CalEventLocalServiceUtil;
@@ -86,8 +87,20 @@ public class CalendarEventHandler extends AbstractEntryHandler implements
 		Calendar endDate = EntryUtil.getRandomCalendar(
 			_endDateFrom, _endDateTo);
 
-		int typeIndex = EntryUtil.nextInt(
-			CalEventConstants.TYPES.length);
+		int durationHour =  EntryUtil.nextInt(_durationHour);
+		int durationMinute = EntryUtil.nextInt(_durationMinute);
+
+		if ((durationHour <= 0) && (durationMinute <= 0)) {
+			durationMinute = 5;
+		}
+
+		String type = StringPool.BLANK;
+		if (CalEventConstants.TYPES.length > 0) {
+			int typeIndex = EntryUtil.nextInt(
+				CalEventConstants.TYPES.length);
+
+			type = CalEventConstants.TYPES[typeIndex];
+		}
 
 		boolean repeating = EntryUtil.nextBoolean();
 
@@ -115,10 +128,10 @@ public class CalendarEventHandler extends AbstractEntryHandler implements
 		args.setParameter("endDateYear", endDate.get(Calendar.YEAR));
 		args.setParameter("endDateHour", endDate.get(Calendar.HOUR));
 		args.setParameter("endDateMinute", endDate.get(Calendar.MINUTE));
-		args.setParameter("durationHour", EntryUtil.nextInt(_durationHour));
-		args.setParameter("durationMinute", EntryUtil.nextInt(_durationMinute));
+		args.setParameter("durationHour",durationHour);
+		args.setParameter("durationMinute", durationMinute);
 		args.setParameter("timeZoneSensitive", EntryUtil.nextBoolean());
-		args.setParameter("type", CalEventConstants.TYPES[typeIndex]);
+		args.setParameter("type", type);
 		args.setParameter("repeating", repeating);
 		args.setParameter("recurrence", recurrence);
 		args.setParameter("remindBy", CalEventConstants.REMIND_BY_NONE);
@@ -163,8 +176,20 @@ public class CalendarEventHandler extends AbstractEntryHandler implements
 		Calendar endDate = EntryUtil.getRandomCalendar(
 			_endDateFrom, _endDateTo);
 
-		int typeIndex = EntryUtil.nextInt(
-			CalEventConstants.TYPES.length);
+		int durationHour =  EntryUtil.nextInt(_durationHour);
+		int durationMinute = EntryUtil.nextInt(_durationMinute);
+
+		if ((durationHour <= 0) && (durationMinute <= 0)) {
+			durationMinute = 5;
+		}
+
+		String type = StringPool.BLANK;
+		if (CalEventConstants.TYPES.length > 0) {
+			int typeIndex = EntryUtil.nextInt(
+				CalEventConstants.TYPES.length);
+
+			type = CalEventConstants.TYPES[typeIndex];
+		}
 
 		boolean repeating = EntryUtil.nextBoolean();
 
@@ -189,10 +214,10 @@ public class CalendarEventHandler extends AbstractEntryHandler implements
 		args.setParameter("endDateYear", endDate.get(Calendar.YEAR));
 		args.setParameter("endDateHour", endDate.get(Calendar.HOUR));
 		args.setParameter("endDateMinute", endDate.get(Calendar.MINUTE));
-		args.setParameter("durationHour", EntryUtil.nextInt(_durationHour));
-		args.setParameter("durationMinute", EntryUtil.nextInt(_durationMinute));
+		args.setParameter("durationHour", durationHour);
+		args.setParameter("durationMinute", durationMinute);
 		args.setParameter("timeZoneSensitive", EntryUtil.nextBoolean());
-		args.setParameter("type", CalEventConstants.TYPES[typeIndex]);
+		args.setParameter("type", type);
 		args.setParameter("repeating", repeating);
 		args.setParameter("recurrence", recurrence);
 		args.setParameter("remindBy", CalEventConstants.REMIND_BY_NONE);
