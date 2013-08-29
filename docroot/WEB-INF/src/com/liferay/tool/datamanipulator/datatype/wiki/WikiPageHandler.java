@@ -68,12 +68,9 @@ public class WikiPageHandler extends AbstractEntryHandler implements
 		EntryArgs args = new EntryArgs(requestProcessor);
 
 		if (Validator.isNull(wikiPage)) {
-			int formatIndex = EntryUtil.nextInt(
-				WikiPageConstants.FORMATS.length);
-
 			args.setParameter("nodeId", parentId);
 			args.setParameter("version", WikiPageConstants.VERSION_DEFAULT);
-			args.setParameter("format", WikiPageConstants.FORMATS[formatIndex]);
+			args.setParameter("format", WikiPageConstants.DEFAULT_FORMAT);
 			args.setParameter("head", true);
 			args.setParameter("parentTitle", null);
 			args.setParameter("redirectTitle", null);
