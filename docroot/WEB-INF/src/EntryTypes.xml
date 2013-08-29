@@ -480,6 +480,43 @@
 			</parameter-list>
 		</method>
 	</entry>
+	<entry name="organization">
+		<method type="add">
+			<clazz>com.liferay.portal.service.OrganizationLocalServiceUtil</clazz>
+			<method-name>addOrganization</method-name>
+			<parameter-list>
+				<parameter name="userId" type="long" />
+				<parameter name="parentOrganizationId" type="long" />
+				<parameter name="name" type="java.lang.String" />
+				<parameter name="type" type="java.lang.String" />
+				<parameter name="recursable" type="boolean" />
+				<parameter name="regionId" type="long" />
+				<parameter name="countryId" type="long" />
+				<parameter name="statusId" type="int" />
+				<parameter name="comments" type="java.lang.String" />
+				<parameter name="site" type="boolean" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+		<method type="update">
+			<clazz>com.liferay.portal.service.OrganizationLocalServiceUtil</clazz>
+			<method-name>updateOrganization</method-name>
+			<parameter-list>
+				<parameter name="companyId" type="long" />
+				<parameter name="organizationId" type="long" />
+				<parameter name="parentOrganizationId" type="long" />
+				<parameter name="name" type="java.lang.String" />
+				<parameter name="type" type="java.lang.String" />
+				<parameter name="recursable" type="boolean" />
+				<parameter name="regionId" type="long" />
+				<parameter name="countryId" type="long" />
+				<parameter name="statusId" type="int" />
+				<parameter name="comments" type="java.lang.String" />
+				<parameter name="site" type="boolean" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+	</entry>
 	<entry name="vocabulary">
 		<method type="add">
 			<clazz>com.liferay.portlet.asset.service.AssetVocabularyLocalServiceUtil</clazz>
