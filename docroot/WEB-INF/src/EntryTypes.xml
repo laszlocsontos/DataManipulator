@@ -506,4 +506,63 @@
 			</parameter-list>
 		</method>
 	</entry>
+	<entry name="wiki-node">
+		<method type="add">
+			<clazz>com.liferay.portlet.wiki.service.WikiNodeLocalServiceUtil</clazz>
+			<method-name>addNode</method-name>
+			<parameter-list>
+				<parameter name="userId" type="long" />
+				<parameter name="name" type="java.lang.String" />
+				<parameter name="description" type="java.lang.String" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+		<method type="update">
+			<clazz>com.liferay.portlet.wiki.service.WikiNodeLocalServiceUtil</clazz>
+			<method-name>updateNode</method-name>
+			<parameter-list>
+				<parameter name="nodeId" type="long" />
+				<parameter name="name" type="java.lang.String" />
+				<parameter name="description" type="java.lang.String" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+	</entry>
+	<entry name="wiki-page">
+		<method type="add">
+			<clazz>com.liferay.portlet.wiki.service.WikiPageLocalServiceUtil</clazz>
+			<method-name>addPage</method-name>
+			<parameter-list>
+				<parameter name="userId" type="long" />
+				<parameter name="nodeId" type="long" />
+				<parameter name="title" type="java.lang.String" />
+				<parameter name="version" type="double" />
+				<parameter name="content" type="java.lang.String" />
+				<parameter name="summary" type="java.lang.String" />
+				<parameter name="minorEdit" type="boolean" />
+				<parameter name="format" type="java.lang.String" />
+				<parameter name="head" type="boolean" />
+				<parameter name="parentTitle" type="java.lang.String" />
+				<parameter name="redirectTitle" type="java.lang.String" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+		<method type="update">
+			<clazz>com.liferay.portlet.wiki.service.WikiPageLocalServiceUtil</clazz>
+			<method-name>updatePage</method-name>
+			<parameter-list>
+				<parameter name="userId" type="long" />
+				<parameter name="nodeId" type="long" />
+				<parameter name="title" type="java.lang.String" />
+				<parameter name="version" type="double" />
+				<parameter name="content" type="java.lang.String" />
+				<parameter name="summary" type="java.lang.String" />
+				<parameter name="minorEdit" type="boolean" />
+				<parameter name="format" type="java.lang.String" />
+				<parameter name="parentTitle" type="java.lang.String" />
+				<parameter name="redirectTitle" type="java.lang.String" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+	</entry>
 </ns2:entryWrapperReader>
