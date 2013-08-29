@@ -248,6 +248,93 @@
 			</parameter-list>
 		</method>
 	</entry>
+	<entry name="journal-article">
+		<method type="add">
+			<clazz>com.liferay.portlet.journal.service.JournalArticleLocalServiceUtil</clazz>
+			<method-name>addArticle</method-name>
+			<parameter-list>
+				<parameter name="userId" type="long" />
+				<parameter name="groupId" type="long" />
+				<parameter name="classNameId" type="long" />
+				<parameter name="classPK" type="long" />
+				<parameter name="articleId" type="java.lang.String" />
+				<parameter name="autoArticleId" type="boolean" />
+				<parameter name="version" type="double" />
+				<parameter name="titleMap" type="java.util.Map&lt;java.util.Locale, java.lang.String&gt;" />
+				<parameter name="descriptionMap" type="java.util.Map&lt;java.util.Locale, java.lang.String&gt;" />
+				<parameter name="LocalizedContent" type="java.lang.String" />
+				<parameter name="type" type="java.lang.String" />
+				<parameter name="structureId" type="java.lang.String" />
+				<parameter name="templateId" type="java.lang.String" />
+				<parameter name="layoutUuid" type="java.lang.String" />
+				<parameter name="displayDateMonth" type="int" />
+				<parameter name="displayDateDay" type="int" />
+				<parameter name="displayDateYear" type="int" />
+				<parameter name="displayDateHour" type="int" />
+				<parameter name="displayDateMinute" type="int" />
+				<parameter name="expirationDateMonth" type="int" />
+				<parameter name="expirationDateDay" type="int" />
+				<parameter name="expirationDateYear" type="int" />
+				<parameter name="expirationDateHour" type="int" />
+				<parameter name="expirationDateMinute" type="int" />
+				<parameter name="neverExpire" type="boolean" />
+				<parameter name="reviewDateMonth" type="int" />
+				<parameter name="reviewDateDay" type="int" />
+				<parameter name="reviewDateYear" type="int" />
+				<parameter name="reviewDateHour" type="int" />
+				<parameter name="reviewDateMinute" type="int" />
+				<parameter name="neverReview" type="boolean" />
+				<parameter name="indexable" type="boolean" />
+				<parameter name="smallImage" type="boolean" />
+				<parameter name="smallImageURL" type="java.lang.String" />
+				<parameter name="smallImageFile" type="java.io.File" />
+				<parameter name="images" type="java.util.Map&lt;java.lang.String, byte[]&gt;" />
+				<parameter name="articleURL" type="java.lang.String" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+		<method type="update">
+			<clazz>com.liferay.portlet.journal.service.JournalArticleLocalServiceUtil</clazz>
+			<method-name>updateArticle</method-name>
+			<parameter-list>
+				<parameter name="userId" type="long" />
+				<parameter name="groupId" type="long" />
+				<parameter name="articleId" type="java.lang.String" />
+				<parameter name="version" type="double" />
+				<parameter name="titleMap" type="java.util.Map&lt;java.util.Locale, java.lang.String&gt;" />
+				<parameter name="descriptionMap" type="java.util.Map&lt;java.util.Locale, java.lang.String&gt;" />
+				<parameter name="LocalizedContent" type="java.lang.String" />
+				<parameter name="type" type="java.lang.String" />
+				<parameter name="structureId" type="java.lang.String" />
+				<parameter name="templateId" type="java.lang.String" />
+				<parameter name="layoutUuid" type="java.lang.String" />
+				<parameter name="displayDateMonth" type="int" />
+				<parameter name="displayDateDay" type="int" />
+				<parameter name="displayDateYear" type="int" />
+				<parameter name="displayDateHour" type="int" />
+				<parameter name="displayDateMinute" type="int" />
+				<parameter name="expirationDateMonth" type="int" />
+				<parameter name="expirationDateDay" type="int" />
+				<parameter name="expirationDateYear" type="int" />
+				<parameter name="expirationDateHour" type="int" />
+				<parameter name="expirationDateMinute" type="int" />
+				<parameter name="neverExpire" type="boolean" />
+				<parameter name="reviewDateMonth" type="int" />
+				<parameter name="reviewDateDay" type="int" />
+				<parameter name="reviewDateYear" type="int" />
+				<parameter name="reviewDateHour" type="int" />
+				<parameter name="reviewDateMinute" type="int" />
+				<parameter name="neverReview" type="boolean" />
+				<parameter name="indexable" type="boolean" />
+				<parameter name="smallImage" type="boolean" />
+				<parameter name="smallImageURL" type="java.lang.String" />
+				<parameter name="smallImageFile" type="java.io.File" />
+				<parameter name="images" type="java.util.Map&lt;java.lang.String, byte[]&gt;" />
+				<parameter name="articleURL" type="java.lang.String" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+	</entry>
 	<entry name="vocabulary">
 		<method type="add">
 			<clazz>com.liferay.portlet.asset.service.AssetVocabularyLocalServiceUtil</clazz>
