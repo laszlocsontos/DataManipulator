@@ -104,6 +104,8 @@ public class EntryTypeKeys {
 
 	//Poral Entry types
 
+	public static final String PORTAL_ORGANIZATION = "organization";
+
 	//Private methods for declare the DataTypes location
 
 	private static ArrayList<String> _generalEntryTypes() {
@@ -130,6 +132,8 @@ public class EntryTypeKeys {
 
 	private static ArrayList<String> _portalEntryTypes() {
 		ArrayList<String> types = new ArrayList<String>();
+
+		types.add(PORTAL_ORGANIZATION);
 
 		return types;
 	}
