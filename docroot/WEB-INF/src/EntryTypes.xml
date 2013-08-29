@@ -39,4 +39,58 @@
 			</parameter-list>
 		</method>
 	</entry>
+	<entry name="bookmarks-entry">
+		<method type="add">
+			<clazz>com.liferay.portlet.bookmarks.service.BookmarksEntryLocalServiceUtil</clazz>
+			<method-name>addEntry</method-name>
+			<parameter-list>
+				<parameter name="userId" type="long" />
+				<parameter name="groupId" type="long" />
+				<parameter name="folderId" type="long" />
+				<parameter name="name" type="java.lang.String" />
+				<parameter name="url" type="java.lang.String" />
+				<parameter name="description" type="java.lang.String" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+		<method type="update">
+			<clazz>com.liferay.portlet.bookmarks.service.BookmarksEntryLocalServiceUtil</clazz>
+			<method-name>updateEntry</method-name>
+			<parameter-list>
+				<parameter name="userId" type="long" />
+				<parameter name="entryId" type="long" />
+				<parameter name="groupId" type="long" />
+				<parameter name="folderId" type="long" />
+				<parameter name="name" type="java.lang.String" />
+				<parameter name="url" type="java.lang.String" />
+				<parameter name="description" type="java.lang.String" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+	</entry>
+	<entry name="bookmarks-folder">
+		<method type="add">
+			<clazz>com.liferay.portlet.bookmarks.service.BookmarksFolderLocalServiceUtil</clazz>
+			<method-name>addFolder</method-name>
+			<parameter-list>
+				<parameter name="userId" type="long" />
+				<parameter name="parentFolderId" type="long" />
+				<parameter name="name" type="java.lang.String" />
+				<parameter name="description" type="java.lang.String" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+		<method type="update">
+			<clazz>com.liferay.portlet.bookmarks.service.BookmarksFolderLocalServiceUtil</clazz>
+			<method-name>updateFolder</method-name>
+			<parameter-list>
+				<parameter name="folderId" type="long" />
+				<parameter name="parentFolderId" type="long" />
+				<parameter name="name" type="java.lang.String" />
+				<parameter name="description" type="java.lang.String" />
+				<parameter name="mergeWithParentFolder" type="boolean" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+	</entry>
 </ns2:entryWrapperReader>
