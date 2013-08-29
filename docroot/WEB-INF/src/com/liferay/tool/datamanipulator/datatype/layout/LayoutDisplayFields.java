@@ -16,6 +16,7 @@ package com.liferay.tool.datamanipulator.datatype.layout;
 
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.KeyValuePair;
+import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.model.Portlet;
 import com.liferay.portal.service.PortletLocalServiceUtil;
 import com.liferay.tool.datamanipulator.displayfield.DisplayFields;
@@ -38,7 +39,7 @@ public class LayoutDisplayFields {
 		for (Portlet portlet : portlets) {
 			if (!portlet.isSystem() &&
 				!portlet.isAddDefaultResource() &&
-				(portlet.getControlPanelEntryCategory() == null)) {
+				(portlet.getControlPanelEntryCategory() == StringPool.BLANK)) {
 
 				portletKVP.add(
 					new KeyValuePair(
