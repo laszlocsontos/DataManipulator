@@ -40,6 +40,12 @@ public class EntryTypeKeys {
 
 	// General Entry types
 
+	public static final String GENERAL_ASSET_CATEGORIES = "categories";
+
+	public static final String GENERAL_ASSET_CATEGORY = "category";
+
+	public static final String GENERAL_ASSET_VOCABULARY = "vocabulary";
+
 	public static final String GENERAL_BLOGS = "blogs";
 
 	public static final String GENERAL_BLOGS_ENTRY = "blogs-entry";
@@ -66,6 +72,7 @@ public class EntryTypeKeys {
 		types.add(GENERAL_BLOGS);
 		types.add(GENERAL_BOOKMARKS);
 		types.add(GENERAL_CALENDAR);
+		types.add(GENERAL_ASSET_CATEGORIES);
 
 		return types;
 	}
