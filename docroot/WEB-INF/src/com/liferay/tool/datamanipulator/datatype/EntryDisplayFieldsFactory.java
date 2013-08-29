@@ -21,6 +21,7 @@ import com.liferay.tool.datamanipulator.datatype.bookmarks.BookmarksDisplayField
 import com.liferay.tool.datamanipulator.datatype.calendar.CalendarDisplayFields;
 import com.liferay.tool.datamanipulator.datatype.categories.CategoriesDisplayFields;
 import com.liferay.tool.datamanipulator.datatype.documenlibrary.DocumentLibraryDisplayFields;
+import com.liferay.tool.datamanipulator.datatype.journal.JournalDisplayFields;
 import com.liferay.tool.datamanipulator.displayfield.Field;
 import com.liferay.tool.datamanipulator.entry.EntryTypeKeys;
 
@@ -53,6 +54,10 @@ public final class EntryDisplayFieldsFactory {
 
 		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_DOCUMENTS_AND_MEDIA)) {
 			return DocumentLibraryDisplayFields.getDisplayFields();
+		}
+
+		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_JOURNAL)) {
+			return JournalDisplayFields.getDisplayFields();
 		}
 
 		return null;
