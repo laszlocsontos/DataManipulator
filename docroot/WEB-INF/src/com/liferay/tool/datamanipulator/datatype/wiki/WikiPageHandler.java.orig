@@ -75,8 +75,13 @@ public class WikiPageHandler extends AbstractEntryHandler implements
 
 		if (Validator.isNull(wikiPage)) {
 			args.setParameter("nodeId", parentId);
+<<<<<<< HEAD
 			args.setParameter("version", WikiPageConstants.DEFAULT_VERSION);
+			args.setParameter("format", WikiPageConstants.FORMATS[formatIndex]);
+=======
+			args.setParameter("version", WikiPageConstants.VERSION_DEFAULT);
 			args.setParameter("format", WikiPageConstants.DEFAULT_FORMAT);
+>>>>>>> 5fc4255... Wiki Page format caused exceptions
 			args.setParameter("head", true);
 			args.setParameter("parentTitle", null);
 			args.setParameter("redirectTitle", null);
