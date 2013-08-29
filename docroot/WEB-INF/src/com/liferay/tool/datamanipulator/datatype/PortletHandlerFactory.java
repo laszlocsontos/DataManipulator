@@ -22,6 +22,7 @@ import com.liferay.tool.datamanipulator.datatype.calendar.CalendarHandler;
 import com.liferay.tool.datamanipulator.datatype.categories.CategoriesHandler;
 import com.liferay.tool.datamanipulator.datatype.documentsandmedia.DocumentsAndMediaHandler;
 import com.liferay.tool.datamanipulator.datatype.journal.JournalHandler;
+import com.liferay.tool.datamanipulator.datatype.layout.LayoutHandler;
 import com.liferay.tool.datamanipulator.entry.EntryTypeKeys;
 import com.liferay.tool.datamanipulator.handler.portlethandler.model.PortletHandlerModel;
 
@@ -56,6 +57,10 @@ public final class PortletHandlerFactory {
 
 		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_JOURNAL)) {
 			return new JournalHandler();
+		}
+
+		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_LAYOUT)) {
+			return new LayoutHandler();
 		}
 
 		return null;
