@@ -7,7 +7,7 @@
 		<field name="className" type="String" />
 		<field name="classPK" type="long" />
 	</model>
-	<model name="com.liferay.tool.datamanipulator.datatype.handler.model.HandlerModel">
+	<model name="com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel">
 		<field name="display-date-from" type="Date" />
 		<field name="display-date-to" type="Date" />
 		<field name="end-date-from" type="Date" />
