@@ -94,6 +94,12 @@ public class EntryTypeKeys {
 	public static final String GENERAL_MESSAGE_BOARDS_THREAD =
 		"message-boards-thread";
 
+	public static final String GENERAL_WIKI = "wiki";
+
+	public static final String GENERAL_WIKI_NODE = "wiki-node";
+
+	public static final String GENERAL_WIKI_PAGE = "wiki-page";
+
 	//Plugin Entry types
 
 	//Poral Entry types
@@ -111,6 +117,7 @@ public class EntryTypeKeys {
 		types.add(GENERAL_JOURNAL);
 		types.add(GENERAL_LAYOUT);
 		types.add(GENERAL_MESSAGE_BOARDS);
+		types.add(GENERAL_WIKI);
 
 		return types;
 	}
