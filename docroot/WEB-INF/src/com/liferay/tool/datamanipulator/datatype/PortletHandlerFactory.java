@@ -68,6 +68,10 @@ public final class PortletHandlerFactory {
 			return new MessageBoardsHandler();
 		}
 
+		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_WIKI)) {
+			return new WikiHandler();
+		}
+
 		return null;
 	}
 
