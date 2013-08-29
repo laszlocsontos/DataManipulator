@@ -50,6 +50,10 @@ public class EntryTypeKeys {
 
 	public static final String GENERAL_BOOKMARKS_FOLDER = "bookmarks-folder";
 
+	public static final String GENERAL_CALENDAR = "calendar";
+
+	public static final String GENERAL_CALENDAR_EVENT = "calendar-event";
+
 	//Plugin Entry types
 
 	//Poral Entry types
@@ -61,6 +65,7 @@ public class EntryTypeKeys {
 
 		types.add(GENERAL_BLOGS);
 		types.add(GENERAL_BOOKMARKS);
+		types.add(GENERAL_CALENDAR);
 
 		return types;
 	}
