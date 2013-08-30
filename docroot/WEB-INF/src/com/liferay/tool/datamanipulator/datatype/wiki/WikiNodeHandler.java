@@ -16,6 +16,8 @@ package com.liferay.tool.datamanipulator.datatype.wiki;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.CharPool;
+import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portlet.wiki.model.WikiNode;
 import com.liferay.portlet.wiki.service.WikiNodeLocalServiceUtil;
@@ -62,7 +64,7 @@ public class WikiNodeHandler extends AbstractEntryHandler implements
 		throws PortalException, SystemException {
 
 		String name = "Test Wiki Node" + postString + " Name";
-		name = name.replace(StringPool.DASH, StringPool.UNDERLINE);
+		name = _changeNumberToChar(name);
 
 		EntryArgs args = new EntryArgs(requestProcessor);
 
@@ -96,8 +98,7 @@ public class WikiNodeHandler extends AbstractEntryHandler implements
 		WikiNode node = WikiNodeLocalServiceUtil.getNode(entryId);
 
 		String name = EntryUtil.getEditString(node.getName(), postString);
-		name = name.replace(StringPool.DASH, StringPool.UNDERLINE);
-
+		name = _changeNumberToChar(name);
 
 		String description = EntryUtil.getEditString(
 			node.getDescription(), postString);
@@ -109,6 +110,51 @@ public class WikiNodeHandler extends AbstractEntryHandler implements
 		args.setParameter("description", description);
 
 		return args;
+	}
+
+	private static String _changeNumberToChar(String baseString) {
+		StringBundler sb = new StringBundler(baseString.length());
+
+		for (char c : baseString.toCharArray()) {
+			if (c == CharPool.DASH) {
+				sb.append(StringPool.UNDERLINE);
+			}
+			else if (c == CharPool.NUMBER_0) {
+				sb.append(CharPool.UPPER_CASE_O);
+			}
+			else if (c == CharPool.NUMBER_1) {
+				sb.append(CharPool.UPPER_CASE_I);
+			}
+			else if (c == CharPool.NUMBER_2) {
+				sb.append("II");
+			}
+			else if (c == CharPool.NUMBER_3) {
+				sb.append("III");
+			}
+			else if (c == CharPool.NUMBER_4) {
+				sb.append("IV");
+			}
+			else if (c == CharPool.NUMBER_5) {
+				sb.append("V");
+			}
+			else if (c == CharPool.NUMBER_6) {
+				sb.append("VI");
+			}
+			else if (c == CharPool.NUMBER_7) {
+				sb.append("VII");
+			}
+			else if (c == CharPool.NUMBER_8) {
+				sb.append("VIII");
+			}
+			else if (c == CharPool.NUMBER_9) {
+				sb.append("IX");
+			}
+			else {
+				sb.append(c);
+			}
+		}
+
+		return sb.toString();
 	}
 
 }
