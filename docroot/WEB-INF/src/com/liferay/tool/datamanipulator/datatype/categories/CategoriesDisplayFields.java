@@ -15,6 +15,7 @@
 package com.liferay.tool.datamanipulator.datatype.categories;
 
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.tool.datamanipulator.displayfield.DisplayFields;
 import com.liferay.tool.datamanipulator.displayfield.Field;
 import com.liferay.tool.datamanipulator.displayfield.FieldKeys;
@@ -41,7 +42,9 @@ public class CategoriesDisplayFields {
 		fields.addUpdateLevel(EntryTypeKeys.GENERAL_ASSET_CATEGORY);
 		fields.addDepth(EntryTypeKeys.GENERAL_ASSET_CATEGORY);
 		fields.addSubCount(EntryTypeKeys.GENERAL_ASSET_CATEGORY);
-		fields.addHidden(FieldKeys.ADD_TO_PARENT, FieldKeys.ADD_TO_ALL_PARENT);
+		fields.addHidden(
+			EntryTypeKeys.GENERAL_ASSET_CATEGORY + StringPool.DASH +
+				FieldKeys.ADD_TO_PARENT, FieldKeys.ADD_TO_ALL_PARENT);
 
 		fields.addSeparator();
 
