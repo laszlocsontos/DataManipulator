@@ -33,7 +33,7 @@
 		<display-name>Data Manipulator Portal</display-name>
 		<portlet-class>com.liferay.tool.datamanipulator.portlet.DataManipulatorAdminPortlet</portlet-class>
 		<init-param>
-			<name>view-template</name>
+			<name>view-jsp</name>
 			<value>/view_portal.jsp</value>
 		</init-param>
 		<expiration-cache>0</expiration-cache>
