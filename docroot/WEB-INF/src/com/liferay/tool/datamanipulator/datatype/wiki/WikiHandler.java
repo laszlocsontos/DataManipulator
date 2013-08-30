@@ -51,7 +51,7 @@ public class WikiHandler extends AbstractPortletHandler implements
 
 		// Wiki Page
 
-		int pageCount = requestProcessor.getSubCount(
+		int pageCount = requestProcessor.getCount(
 			EntryTypeKeys.GENERAL_WIKI_PAGE);
 
 		int pageUpdate = requestProcessor.getUpdateLevel(
