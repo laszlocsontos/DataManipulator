@@ -16,6 +16,7 @@ package com.liferay.tool.datamanipulator.datatype.wiki;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portlet.wiki.model.WikiNode;
 import com.liferay.portlet.wiki.service.WikiNodeLocalServiceUtil;
 import com.liferay.tool.datamanipulator.entry.BaseEntry;
@@ -60,9 +61,12 @@ public class WikiNodeHandler extends AbstractEntryHandler implements
 			long parentId, String postString, RequestProcessor requestProcessor)
 		throws PortalException, SystemException {
 
+		String name = "Test Wiki Node" + postString + " Name";
+		name = name.replace(StringPool.DASH, StringPool.UNDERLINE);
+
 		EntryArgs args = new EntryArgs(requestProcessor);
 
-		args.setParameter("name", "Test Wiki Node" + postString + " Name");
+		args.setParameter("name", name);
 		args.setParameter(
 			"description", "Test Wiki Node" + postString + " Description");
 
@@ -92,6 +96,8 @@ public class WikiNodeHandler extends AbstractEntryHandler implements
 		WikiNode node = WikiNodeLocalServiceUtil.getNode(entryId);
 
 		String name = EntryUtil.getEditString(node.getName(), postString);
+		name = name.replace(StringPool.DASH, StringPool.UNDERLINE);
+
 
 		String description = EntryUtil.getEditString(
 			node.getDescription(), postString);
