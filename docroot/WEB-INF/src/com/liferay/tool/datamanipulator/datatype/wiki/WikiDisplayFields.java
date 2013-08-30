@@ -15,6 +15,7 @@
 package com.liferay.tool.datamanipulator.datatype.wiki;
 
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.tool.datamanipulator.displayfield.DisplayFields;
 import com.liferay.tool.datamanipulator.displayfield.Field;
 import com.liferay.tool.datamanipulator.displayfield.FieldKeys;
@@ -41,7 +42,10 @@ public class WikiDisplayFields {
 		fields.addUpdateLevel(EntryTypeKeys.GENERAL_WIKI_PAGE);
 		fields.addDepth(EntryTypeKeys.GENERAL_WIKI_PAGE);
 		fields.addSubCount(EntryTypeKeys.GENERAL_WIKI_PAGE);
-		fields.addHidden(FieldKeys.ADD_TO_PARENT, FieldKeys.ADD_TO_ALL_PARENT);
+		fields.addHidden(
+			EntryTypeKeys.GENERAL_WIKI_PAGE + StringPool.DASH +
+				FieldKeys.ADD_TO_PARENT, FieldKeys.ADD_TO_ALL_PARENT);
+
 		fields.addSeparator();
 
 		return fields.getDisplayFields();
