@@ -86,7 +86,7 @@
 			%>
 
 			<aui:input label="<%= label %>" name="<%= field.getKey() %>" type="file">
-				<aui:validator name="required" />
+				
 			</aui:input>
 
 			<%
@@ -134,7 +134,7 @@
 			%>
 
 			<aui:input label="<%= label %>" name="<%= field.getKey() %>" type="input" value="<%= field.getValue() %>">
-				<aui:validator name="required" />
+				
 			</aui:input>
 
 			<%
