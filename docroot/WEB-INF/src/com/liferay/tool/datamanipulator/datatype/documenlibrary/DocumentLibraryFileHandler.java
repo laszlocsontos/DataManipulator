@@ -107,10 +107,9 @@ public class DocumentLibraryFileHandler extends AbstractEntryHandler
 		EntryArgs args = new EntryArgs(requestProcessor);
 
 		args.setParameter("folderId", fileEntry.getFolderId());
-		args.setParameter(
-			"name", EntryUtil.getEditString(fileEntry.getName(), postString));
+		args.setParameter("name", fileEntry.getName());
 		args.setParameter("sourceFileName", _file.getName());
-		args.setParameter("file", null);
+		args.setParameter("file", _file);
 		args.setParameter(
 			"title", EntryUtil.getEditString(fileEntry.getTitle(), postString));
 
