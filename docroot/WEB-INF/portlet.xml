@@ -18,6 +18,7 @@
 		<supports>
 			<mime-type>text/html</mime-type>
 		</supports>
+		<resource-bundle>content/Language</resource-bundle>
 		<portlet-info>
 			<title>Data Manipulator (Content)</title>
 			<short-title>Data Manipulator (Content)</short-title>
@@ -45,6 +46,7 @@
 		<supports>
 			<mime-type>text/html</mime-type>
 		</supports>
+		<resource-bundle>content/Language</resource-bundle>
 		<portlet-info>
 			<title>Data Manipulator (Portal)</title>
 			<short-title>Data Manipulator (Portal)</short-title>
