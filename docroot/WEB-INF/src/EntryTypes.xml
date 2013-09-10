@@ -497,6 +497,27 @@
 			</parameter-list>
 		</method>
 	</entry>
+	<entry name="team">
+		<method type="add">
+			<clazz>com.liferay.portal.service.TeamLocalServiceUtil</clazz>
+			<method-name>addTeam</method-name>
+			<parameter-list>
+				<parameter name="userId" type="long" />
+				<parameter name="groupId" type="long" />
+				<parameter name="name" type="java.lang.String" />
+				<parameter name="description" type="java.lang.String" />
+			</parameter-list>
+		</method>
+		<method type="update">
+			<clazz>com.liferay.portal.service.TeamLocalServiceUtil</clazz>
+			<method-name>updateTeam</method-name>
+			<parameter-list>
+				<parameter name="teamId" type="long" />
+				<parameter name="name" type="java.lang.String" />
+				<parameter name="description" type="java.lang.String" />
+			</parameter-list>
+		</method>
+	</entry>
 	<entry name="user">
 		<method type="add">
 			<clazz>com.liferay.portal.service.UserLocalServiceUtil</clazz>
