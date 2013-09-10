@@ -108,6 +108,8 @@ public class EntryTypeKeys {
 
 	public static final String PORTAL_ROLE = "role";
 
+	public static final String PORTAL_TEAM = "team";
+
 	public static final String PORTAL_SITE = "site";
 
 	public static final String PORTAL_USER = "user";
@@ -142,6 +144,7 @@ public class EntryTypeKeys {
 		ArrayList<String> types = new ArrayList<String>();
 
 		types.add(PORTAL_ORGANIZATION);
+		types.add(PORTAL_TEAM);
 		types.add(PORTAL_USER);
 
 		return types;
