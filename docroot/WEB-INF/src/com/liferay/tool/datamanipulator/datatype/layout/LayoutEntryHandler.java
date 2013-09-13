@@ -59,6 +59,9 @@ public class LayoutEntryHandler extends AbstractEntryHandler implements
 
 		_portletIds = requestProcessor.getStringValues("portlet");
 
+		_privateLayout = requestProcessor.getBoolean(
+			EntryTypeKeys.GENERAL_LAYOUT_ENTRY);
+
 		_userId = requestProcessor.getUserId();
 	}
 
@@ -80,7 +83,7 @@ public class LayoutEntryHandler extends AbstractEntryHandler implements
 
 		EntryArgs args = new EntryArgs(requestProcessor);
 
-		args.setParameter("privateLayout", false);
+		args.setParameter("privateLayout", _privateLayout);
 		args.setParameter("parentLayoutId", parentLayoutId);
 		args.setParameter("name", "Test Page" + postString + " Name");
 		args.setParameter("title", "Test Page" + postString + " Title");
@@ -137,6 +140,7 @@ public class LayoutEntryHandler extends AbstractEntryHandler implements
 
 	private int _portletCount;
 	private String[] _portletIds;
+	private boolean _privateLayout;
 	private long _userId;
 
 }
