@@ -52,6 +52,9 @@ public class LayoutDisplayFields {
 		fields.addUserMultiSelect();
 		fields.addSeparator();
 
+		fields.addCheckbox(EntryTypeKeys.GENERAL_LAYOUT_ENTRY);
+		fields.addSeparator();
+
 		fields.addCount(EntryTypeKeys.GENERAL_LAYOUT_ENTRY, true);
 		fields.addDepth(EntryTypeKeys.GENERAL_LAYOUT_ENTRY);
 		fields.addSubCount(EntryTypeKeys.GENERAL_LAYOUT_ENTRY);
