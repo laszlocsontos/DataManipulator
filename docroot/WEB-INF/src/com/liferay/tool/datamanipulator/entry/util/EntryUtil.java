@@ -43,6 +43,7 @@ public class EntryUtil {
 		serviceContext.setAddCommunityPermissions(false);
 		serviceContext.setAddGroupPermissions(false);
 		serviceContext.setAddGuestPermissions(false);
+		serviceContext.setDeriveDefaultPermissions(true);
 		serviceContext.setScopeGroupId(groupId);
 		serviceContext.setIndexingEnabled(false);
 		serviceContext.setUserId(userId);
