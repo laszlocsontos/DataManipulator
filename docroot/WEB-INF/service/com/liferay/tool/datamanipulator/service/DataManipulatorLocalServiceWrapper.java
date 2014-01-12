@@ -347,6 +347,7 @@ public class DataManipulatorLocalServiceWrapper
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */
+	@Deprecated
 	public DataManipulatorLocalService getWrappedDataManipulatorLocalService() {
 		return _dataManipulatorLocalService;
 	}
@@ -354,6 +355,7 @@ public class DataManipulatorLocalServiceWrapper
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #setWrappedService}
 	 */
+	@Deprecated
 	public void setWrappedDataManipulatorLocalService(
 		DataManipulatorLocalService dataManipulatorLocalService) {
 		_dataManipulatorLocalService = dataManipulatorLocalService;

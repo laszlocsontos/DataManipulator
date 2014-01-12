@@ -128,6 +128,9 @@ public class DataManipulatorModelImpl extends BaseModelImpl<DataManipulator>
 		attributes.put("className", getClassName());
 		attributes.put("classPK", getClassPK());
 
+		attributes.put("entityCacheEnabled", isEntityCacheEnabled());
+		attributes.put("finderCacheEnabled", isFinderCacheEnabled());
+
 		return attributes;
 	}
 
@@ -318,6 +321,16 @@ public class DataManipulatorModelImpl extends BaseModelImpl<DataManipulator>
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
+	}
+
+	@Override
+	public boolean isEntityCacheEnabled() {
+		return ENTITY_CACHE_ENABLED;
+	}
+
+	@Override
+	public boolean isFinderCacheEnabled() {
+		return FINDER_CACHE_ENABLED;
 	}
 
 	@Override

@@ -346,6 +346,7 @@ public class DataManipulatorLocalServiceUtil {
 	/**
 	 * @deprecated As of 6.2.0
 	 */
+	@Deprecated
 	public void setService(DataManipulatorLocalService service) {
 	}
 
