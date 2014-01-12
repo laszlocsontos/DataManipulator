@@ -39,7 +39,8 @@ import java.util.List;
  */
 public final class EntryDisplayFieldsFactory {
 
-	public static List<Field> getDisplayFields(String entryTypeKey)
+	public static List<Field> getDisplayFields(
+			String entryTypeKey, long groupId)
 		throws PortalException, SystemException {
 
 		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_ASSET_CATEGORIES)) {

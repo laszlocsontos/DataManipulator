@@ -45,7 +45,7 @@
 	<%
 	boolean neverExpired = true;
 
-	List<Field> fields = EntryDisplayFieldsFactory.getDisplayFields(entryType);
+	List<Field> fields = EntryDisplayFieldsFactory.getDisplayFields(entryType, themeDisplay.getScopeGroupId());
 
 	for (Field field : fields) {
 		String label = entryType + StringPool.DASH + field.getKey();
