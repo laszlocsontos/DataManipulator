@@ -102,6 +102,10 @@ public class DisplayFields {
 		_put(key, FieldTypeKeys.HIDDEN, value);
 	}
 
+	public void addInfo(String key) {
+		_put(key, FieldTypeKeys.INFO);
+	}
+
 	public void addInput(String key) {
 		addInput(key, StringPool.BLANK, false);
 	}
