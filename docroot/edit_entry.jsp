@@ -98,6 +98,15 @@
 
 			<%
 		}
+		else if (field.isTypeOf(FieldTypeKeys.INFO)) {
+			%>
+
+			<div class="portlet-msg-info">
+				<liferay-ui:message key="<%= label %>" />
+			</div>
+
+			<%
+		}
 		else if (field.isTypeOf(FieldTypeKeys.INPUT)) {
 			%>
 
