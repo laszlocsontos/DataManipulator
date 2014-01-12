@@ -44,7 +44,7 @@ public final class EntryDisplayFieldsFactory {
 		throws PortalException, SystemException {
 
 		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_ASSET_CATEGORIES)) {
-			return CategoriesDisplayFields.getDisplayFields();
+			return CategoriesDisplayFields.getDisplayFields(groupId);
 		}
 
 		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_BLOGS)) {
