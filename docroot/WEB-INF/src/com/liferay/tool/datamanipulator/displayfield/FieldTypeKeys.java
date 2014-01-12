@@ -30,6 +30,8 @@ public class FieldTypeKeys {
 
 	public static final String HIDDEN = "hidden";
 
+	public static final String INFO = "info";
+
 	public static final String INPUT = "input";
 
 	public static final String INPUT_REQUIRED = "required-input";
