@@ -312,6 +312,7 @@ public class DataManipulatorWrapper implements DataManipulator,
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedModel}
 	 */
+	@Deprecated
 	public DataManipulator getWrappedDataManipulator() {
 		return _dataManipulator;
 	}
@@ -319,6 +320,16 @@ public class DataManipulatorWrapper implements DataManipulator,
 	@Override
 	public DataManipulator getWrappedModel() {
 		return _dataManipulator;
+	}
+
+	@Override
+	public boolean isEntityCacheEnabled() {
+		return _dataManipulator.isEntityCacheEnabled();
+	}
+
+	@Override
+	public boolean isFinderCacheEnabled() {
+		return _dataManipulator.isFinderCacheEnabled();
 	}
 
 	@Override

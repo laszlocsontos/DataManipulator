@@ -16,6 +16,7 @@ package com.liferay.tool.datamanipulator.model;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.model.BaseModel;
@@ -78,6 +79,9 @@ public class DataManipulatorClp extends BaseModelImpl<DataManipulator>
 		attributes.put("className", getClassName());
 		attributes.put("classPK", getClassPK());
 
+		attributes.put("entityCacheEnabled", isEntityCacheEnabled());
+		attributes.put("finderCacheEnabled", isFinderCacheEnabled());
+
 		return attributes;
 	}
 
@@ -106,6 +110,9 @@ public class DataManipulatorClp extends BaseModelImpl<DataManipulator>
 		if (classPK != null) {
 			setClassPK(classPK);
 		}
+
+		_entityCacheEnabled = GetterUtil.getBoolean("entityCacheEnabled");
+		_finderCacheEnabled = GetterUtil.getBoolean("finderCacheEnabled");
 	}
 
 	@Override
@@ -322,6 +329,16 @@ public class DataManipulatorClp extends BaseModelImpl<DataManipulator>
 	}
 
 	@Override
+	public boolean isEntityCacheEnabled() {
+		return _entityCacheEnabled;
+	}
+
+	@Override
+	public boolean isFinderCacheEnabled() {
+		return _finderCacheEnabled;
+	}
+
+	@Override
 	public String toString() {
 		StringBundler sb = new StringBundler(9);
 
@@ -373,4 +390,6 @@ public class DataManipulatorClp extends BaseModelImpl<DataManipulator>
 	private String _className;
 	private long _classPK;
 	private BaseModel<?> _dataManipulatorRemoteModel;
+	private boolean _entityCacheEnabled;
+	private boolean _finderCacheEnabled;
 }

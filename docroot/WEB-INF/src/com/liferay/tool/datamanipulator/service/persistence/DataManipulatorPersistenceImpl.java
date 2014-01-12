@@ -367,6 +367,10 @@ public class DataManipulatorPersistenceImpl extends BasePersistenceImpl<DataMani
 		OrderByComparator orderByComparator) throws SystemException {
 		int count = countByClassName(className);
 
+		if (count == 0) {
+			return null;
+		}
+
 		List<DataManipulator> list = findByClassName(className, count - 1,
 				count, orderByComparator);
 
@@ -884,6 +888,10 @@ public class DataManipulatorPersistenceImpl extends BasePersistenceImpl<DataMani
 	public DataManipulator fetchByGroupId_Last(long groupId,
 		OrderByComparator orderByComparator) throws SystemException {
 		int count = countByGroupId(groupId);
+
+		if (count == 0) {
+			return null;
+		}
 
 		List<DataManipulator> list = findByGroupId(groupId, count - 1, count,
 				orderByComparator);
@@ -1682,6 +1690,10 @@ public class DataManipulatorPersistenceImpl extends BasePersistenceImpl<DataMani
 		OrderByComparator orderByComparator) throws SystemException {
 		int count = countByG_C(groupId, className);
 
+		if (count == 0) {
+			return null;
+		}
+
 		List<DataManipulator> list = findByG_C(groupId, className, count - 1,
 				count, orderByComparator);
 
@@ -1950,6 +1962,10 @@ public class DataManipulatorPersistenceImpl extends BasePersistenceImpl<DataMani
 	private static final String _FINDER_COLUMN_G_C_CLASSNAME_1 = "dataManipulator.className IS NULL";
 	private static final String _FINDER_COLUMN_G_C_CLASSNAME_2 = "dataManipulator.className = ?";
 	private static final String _FINDER_COLUMN_G_C_CLASSNAME_3 = "(dataManipulator.className IS NULL OR dataManipulator.className = '')";
+
+	public DataManipulatorPersistenceImpl() {
+		setModelClass(DataManipulator.class);
+	}
 
 	/**
 	 * Caches the data manipulator in the entity cache if it is enabled.
@@ -2298,6 +2314,8 @@ public class DataManipulatorPersistenceImpl extends BasePersistenceImpl<DataMani
 
 		clearUniqueFindersCache(dataManipulator);
 		cacheUniqueFindersCache(dataManipulator);
+
+		dataManipulator.resetOriginalValues();
 
 		return dataManipulator;
 	}
