@@ -105,47 +105,47 @@ public class DataManipulatorLocalServiceClpInvoker {
 				"boolean"
 			};
 
-		_methodName36 = "getBeanIdentifier";
+		_methodName42 = "getBeanIdentifier";
 
-		_methodParameterTypes36 = new String[] {  };
+		_methodParameterTypes42 = new String[] {  };
 
-		_methodName37 = "setBeanIdentifier";
+		_methodName43 = "setBeanIdentifier";
 
-		_methodParameterTypes37 = new String[] { "java.lang.String" };
+		_methodParameterTypes43 = new String[] { "java.lang.String" };
 
-		_methodName42 = "addDataManipulator";
+		_methodName48 = "addDataManipulator";
 
-		_methodParameterTypes42 = new String[] {
+		_methodParameterTypes48 = new String[] {
 				"long", "java.lang.String", "long"
 			};
 
-		_methodName43 = "getDataManipulatorClassNames";
+		_methodName49 = "getDataManipulatorClassNames";
 
-		_methodParameterTypes43 = new String[] {  };
+		_methodParameterTypes49 = new String[] {  };
 
-		_methodName44 = "getDataManipulatorCountByClassName";
+		_methodName50 = "getDataManipulatorCountByClassName";
 
-		_methodParameterTypes44 = new String[] { "java.lang.String" };
+		_methodParameterTypes50 = new String[] { "java.lang.String" };
 
-		_methodName45 = "getDataManipulatorCountByG_C";
+		_methodName51 = "getDataManipulatorCountByG_C";
 
-		_methodParameterTypes45 = new String[] { "long", "java.lang.String" };
+		_methodParameterTypes51 = new String[] { "long", "java.lang.String" };
 
-		_methodName46 = "getDataManipulatorCountByGroupId";
+		_methodName52 = "getDataManipulatorCountByGroupId";
 
-		_methodParameterTypes46 = new String[] { "long" };
+		_methodParameterTypes52 = new String[] { "long" };
 
-		_methodName47 = "getDataManipulatorsByClassName";
+		_methodName53 = "getDataManipulatorsByClassName";
 
-		_methodParameterTypes47 = new String[] { "java.lang.String" };
+		_methodParameterTypes53 = new String[] { "java.lang.String" };
 
-		_methodName48 = "getDataManipulatorsByG_C";
+		_methodName54 = "getDataManipulatorsByG_C";
 
-		_methodParameterTypes48 = new String[] { "long", "java.lang.String" };
+		_methodParameterTypes54 = new String[] { "long", "java.lang.String" };
 
-		_methodName49 = "getDataManipulatorsByGroupId";
+		_methodName55 = "getDataManipulatorsByGroupId";
 
-		_methodParameterTypes49 = new String[] { "long" };
+		_methodParameterTypes55 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -237,58 +237,58 @@ public class DataManipulatorLocalServiceClpInvoker {
 				((Boolean)arguments[1]).booleanValue());
 		}
 
-		if (_methodName36.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes36, parameterTypes)) {
+		if (_methodName42.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes42, parameterTypes)) {
 			return DataManipulatorLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName37.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes37, parameterTypes)) {
+		if (_methodName43.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes43, parameterTypes)) {
 			DataManipulatorLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName42.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes42, parameterTypes)) {
+		if (_methodName48.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes48, parameterTypes)) {
 			return DataManipulatorLocalServiceUtil.addDataManipulator(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], ((Long)arguments[2]).longValue());
 		}
 
-		if (_methodName43.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes43, parameterTypes)) {
+		if (_methodName49.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes49, parameterTypes)) {
 			return DataManipulatorLocalServiceUtil.getDataManipulatorClassNames();
 		}
 
-		if (_methodName44.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes44, parameterTypes)) {
+		if (_methodName50.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes50, parameterTypes)) {
 			return DataManipulatorLocalServiceUtil.getDataManipulatorCountByClassName((java.lang.String)arguments[0]);
 		}
 
-		if (_methodName45.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes45, parameterTypes)) {
+		if (_methodName51.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes51, parameterTypes)) {
 			return DataManipulatorLocalServiceUtil.getDataManipulatorCountByG_C(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1]);
 		}
 
-		if (_methodName46.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes46, parameterTypes)) {
+		if (_methodName52.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes52, parameterTypes)) {
 			return DataManipulatorLocalServiceUtil.getDataManipulatorCountByGroupId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName47.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes47, parameterTypes)) {
+		if (_methodName53.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes53, parameterTypes)) {
 			return DataManipulatorLocalServiceUtil.getDataManipulatorsByClassName((java.lang.String)arguments[0]);
 		}
 
-		if (_methodName48.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes48, parameterTypes)) {
+		if (_methodName54.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes54, parameterTypes)) {
 			return DataManipulatorLocalServiceUtil.getDataManipulatorsByG_C(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1]);
 		}
 
-		if (_methodName49.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes49, parameterTypes)) {
+		if (_methodName55.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes55, parameterTypes)) {
 			return DataManipulatorLocalServiceUtil.getDataManipulatorsByGroupId(((Long)arguments[0]).longValue());
 		}
 
@@ -327,24 +327,24 @@ public class DataManipulatorLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName36;
-	private String[] _methodParameterTypes36;
-	private String _methodName37;
-	private String[] _methodParameterTypes37;
 	private String _methodName42;
 	private String[] _methodParameterTypes42;
 	private String _methodName43;
 	private String[] _methodParameterTypes43;
-	private String _methodName44;
-	private String[] _methodParameterTypes44;
-	private String _methodName45;
-	private String[] _methodParameterTypes45;
-	private String _methodName46;
-	private String[] _methodParameterTypes46;
-	private String _methodName47;
-	private String[] _methodParameterTypes47;
 	private String _methodName48;
 	private String[] _methodParameterTypes48;
 	private String _methodName49;
 	private String[] _methodParameterTypes49;
+	private String _methodName50;
+	private String[] _methodParameterTypes50;
+	private String _methodName51;
+	private String[] _methodParameterTypes51;
+	private String _methodName52;
+	private String[] _methodParameterTypes52;
+	private String _methodName53;
+	private String[] _methodParameterTypes53;
+	private String _methodName54;
+	private String[] _methodParameterTypes54;
+	private String _methodName55;
+	private String[] _methodParameterTypes55;
 }
