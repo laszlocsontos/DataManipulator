@@ -16,6 +16,9 @@ package com.liferay.tool.datamanipulator.datatype.categories;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.Validator;
+import com.liferay.portlet.asset.model.AssetVocabulary;
+import com.liferay.portlet.asset.service.AssetVocabularyLocalServiceUtil;
 import com.liferay.tool.datamanipulator.entry.BaseEntry;
 import com.liferay.tool.datamanipulator.entry.EntryTypeKeys;
 import com.liferay.tool.datamanipulator.entryreader.EntryTypeReader;
@@ -72,24 +75,42 @@ public class CategoriesHandler extends AbstractPortletHandler implements
 			categoryCount, categoryUpdate, categoryDepth, categorySubCount,
 			categoryEntry, null, requestProcessor);
 
-		// Asset Vocabulary
+		long parentVocabularyId = requestProcessor.getLong(
+			CategoriesDisplayFields.ASSET_VOCABULARY_ID);
 
-		int vocabularyCount = requestProcessor.getCount(
-			EntryTypeKeys.GENERAL_ASSET_VOCABULARY);
+		if (parentVocabularyId == 0) {
+			parentVocabularyId = requestProcessor.getLong(
+				CategoriesDisplayFields.ASSET_VOCABULARIES_LIST);
+		}
 
-		int vocabularyUpdate = requestProcessor.getUpdateLevel(
-			EntryTypeKeys.GENERAL_ASSET_VOCABULARY);
+		AssetVocabulary parentVocabulary =
+			AssetVocabularyLocalServiceUtil.fetchAssetVocabulary(
+				parentVocabularyId);
 
-		EntryTypeReader vocabularyEntryType = EntryReaderUtil.getEntryType(
-			EntryTypeKeys.GENERAL_ASSET_VOCABULARY);
+		if (Validator.isNotNull(parentVocabulary)) {
+			categoryHandler.generateEntries(parentVocabularyId);
+		}
+		else {
 
-		BaseEntry vocabularyEntry = new BaseEntry(vocabularyEntryType);
+			// Asset Vocabulary
 
-		EntryHandlerModel vocabularyHandler = new AssetVocabularyHandler(
-			vocabularyCount, vocabularyUpdate, 0, 0, vocabularyEntry,
-			categoryHandler, requestProcessor);
+			int vocabularyCount = requestProcessor.getCount(
+				EntryTypeKeys.GENERAL_ASSET_VOCABULARY);
 
-		vocabularyHandler.generateEntries((long)0);
+			int vocabularyUpdate = requestProcessor.getUpdateLevel(
+				EntryTypeKeys.GENERAL_ASSET_VOCABULARY);
+
+			EntryTypeReader vocabularyEntryType = EntryReaderUtil.getEntryType(
+				EntryTypeKeys.GENERAL_ASSET_VOCABULARY);
+
+			BaseEntry vocabularyEntry = new BaseEntry(vocabularyEntryType);
+
+			EntryHandlerModel vocabularyHandler = new AssetVocabularyHandler(
+				vocabularyCount, vocabularyUpdate, 0, 0, vocabularyEntry,
+				categoryHandler, requestProcessor);
+
+			vocabularyHandler.generateEntries((long)0);
+		}
 	}
 
 }
