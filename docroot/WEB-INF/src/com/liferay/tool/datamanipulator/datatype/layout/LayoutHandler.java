@@ -16,6 +16,9 @@ package com.liferay.tool.datamanipulator.datatype.layout;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.Validator;
+import com.liferay.portal.model.Layout;
+import com.liferay.portal.service.LayoutLocalServiceUtil;
 import com.liferay.tool.datamanipulator.entry.BaseEntry;
 import com.liferay.tool.datamanipulator.entry.EntryTypeKeys;
 import com.liferay.tool.datamanipulator.entryreader.EntryTypeReader;
@@ -49,6 +52,33 @@ public class LayoutHandler extends AbstractPortletHandler implements
 	public void startGenerate(RequestProcessor requestProcessor)
 		throws PortalException, SystemException {
 
+		long publicLayoutId = requestProcessor.getLong(
+			LayoutDisplayFields.PUBLIC_LAYOUT_ID);
+
+		if (publicLayoutId == 0) {
+			publicLayoutId = requestProcessor.getLong(
+				LayoutDisplayFields.PUBLIC_LAYOUT_LIST);
+		}
+
+		Layout publicLayout = LayoutLocalServiceUtil.getLayout(publicLayoutId);
+
+		long privateLayoutId = requestProcessor.getLong(
+			LayoutDisplayFields.PRIVATE_LAYOUT_ID);
+
+		if (privateLayoutId == 0) {
+			privateLayoutId = requestProcessor.getLong(
+				LayoutDisplayFields.PRIVATE_LAYOUT_LIST);
+		}
+
+		Layout privateLayout = LayoutLocalServiceUtil.getLayout(
+			privateLayoutId);
+
+		if (Validator.isNull(publicLayout) &&
+			Validator.isNotNull(privateLayout)) {
+
+			requestProcessor.set(EntryTypeKeys.GENERAL_LAYOUT_ENTRY, true);
+		}
+
 		int layoutCount = requestProcessor.getCount(
 			EntryTypeKeys.GENERAL_LAYOUT_ENTRY);
 
@@ -67,7 +97,15 @@ public class LayoutHandler extends AbstractPortletHandler implements
 			layoutCount, 0, layoutDepth, layoutSubCount, layoutEntry, null,
 			requestProcessor);
 
-		layoutHandler.generateEntries((long)0);
+		if (Validator.isNotNull(publicLayout)) {
+			layoutHandler.generateEntries(publicLayoutId);
+		}
+		else if (Validator.isNotNull(privateLayout)) {
+			layoutHandler.generateEntries(privateLayoutId);
+		}
+		else {
+			layoutHandler.generateEntries((long)0);
+		}
 	}
 
 }
