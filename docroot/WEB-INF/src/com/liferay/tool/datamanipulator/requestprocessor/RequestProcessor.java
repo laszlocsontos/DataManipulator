@@ -54,6 +54,10 @@ public class RequestProcessor {
 	}
 
 	public boolean getBoolean(String key) {
+		if (_parameters.containsKey(key)) {
+			return (Boolean)_parameters.get(key);
+		}
+
 		return ParamUtil.getBoolean(_uploadRequest, key, false);
 	}
 
