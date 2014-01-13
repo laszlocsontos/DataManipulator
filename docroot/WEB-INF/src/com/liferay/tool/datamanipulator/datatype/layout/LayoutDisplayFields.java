@@ -16,10 +16,15 @@ package com.liferay.tool.datamanipulator.datatype.layout;
 
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.KeyValuePair;
+import com.liferay.portal.kernel.util.StringPool;
+import com.liferay.portal.model.Layout;
+import com.liferay.portal.model.LayoutConstants;
 import com.liferay.portal.model.Portlet;
+import com.liferay.portal.service.LayoutLocalServiceUtil;
 import com.liferay.portal.service.PortletLocalServiceUtil;
 import com.liferay.tool.datamanipulator.displayfield.DisplayFields;
 import com.liferay.tool.datamanipulator.displayfield.Field;
+import com.liferay.tool.datamanipulator.displayfield.FieldKeys;
 import com.liferay.tool.datamanipulator.entry.EntryTypeKeys;
 
 import java.util.ArrayList;
@@ -30,7 +35,50 @@ import java.util.List;
  *
  */
 public class LayoutDisplayFields {
-	public static List<Field> getDisplayFields() throws SystemException {
+	public static final String PRIVATE_LAYOUT_ID = "private-layout-id";
+	public static final String PRIVATE_LAYOUT_LIST = "private-layout-list";
+	public static final String PUBLIC_LAYOUT_ID = "public-layout-id";
+	public static final String PUBLIC_LAYOUT_LIST = "public-layout-list";
+
+	public static List<Field> getDisplayFields(long groupId)
+		throws SystemException {
+
+		List<Layout> publicLayoutList = LayoutLocalServiceUtil.getLayouts(
+			groupId, false, LayoutConstants.DEFAULT_PARENT_LAYOUT_ID);
+
+		List<KeyValuePair> publicLayoutNameId = new ArrayList<KeyValuePair>(
+			publicLayoutList.size() + 1);
+
+		publicLayoutNameId.add(
+			new KeyValuePair(
+				EntryTypeKeys.GENERAL_LAYOUT + StringPool.DASH +
+					FieldKeys.DEFAULT_PARENT,
+				String.valueOf(LayoutConstants.DEFAULT_PARENT_LAYOUT_ID)));
+
+		for (Layout layout : publicLayoutList) {
+			publicLayoutNameId.add(
+				new KeyValuePair(
+					layout.getName(), String.valueOf(layout.getPlid())));
+		}
+
+		List<Layout> privateLayoutList = LayoutLocalServiceUtil.getLayouts(
+				groupId, true, LayoutConstants.DEFAULT_PARENT_LAYOUT_ID);
+
+		List<KeyValuePair> privateLayoutNameId = new ArrayList<KeyValuePair>(
+			privateLayoutList.size() + 1);
+
+		privateLayoutNameId.add(
+			new KeyValuePair(
+				EntryTypeKeys.GENERAL_LAYOUT + StringPool.DASH +
+					FieldKeys.DEFAULT_PARENT,
+				String.valueOf(LayoutConstants.DEFAULT_PARENT_LAYOUT_ID)));
+
+		for (Layout layout : privateLayoutList) {
+			privateLayoutNameId.add(
+				new KeyValuePair(
+					layout.getName(), String.valueOf(layout.getPlid())));
+		}
+
 		List<KeyValuePair> portletKVP = new ArrayList<KeyValuePair>();
 
 		List<Portlet> portlets = PortletLocalServiceUtil.getPortlets();
@@ -38,7 +86,7 @@ public class LayoutDisplayFields {
 		for (Portlet portlet : portlets) {
 			if (!portlet.isSystem() &&
 				!portlet.isAddDefaultResource() &&
-				(portlet.getControlPanelEntryCategory() == null)) {
+				(portlet.getControlPanelEntryCategory() == StringPool.BLANK)) {
 
 				portletKVP.add(
 					new KeyValuePair(
@@ -49,6 +97,17 @@ public class LayoutDisplayFields {
 		DisplayFields fields = new DisplayFields();
 
 		fields.addUserMultiSelect();
+		fields.addSeparator();
+
+		fields.addSelectList(PUBLIC_LAYOUT_LIST, publicLayoutNameId);
+		fields.addInput(PUBLIC_LAYOUT_ID);
+		fields.addInfo(EntryTypeKeys.GENERAL_LAYOUT + "-add-to-exist-public");
+		fields.addSelectList(PRIVATE_LAYOUT_LIST, privateLayoutNameId);
+		fields.addInput(PRIVATE_LAYOUT_ID);
+		fields.addInfo(EntryTypeKeys.GENERAL_LAYOUT + "-add-to-exist-private");
+		fields.addInfo(
+			EntryTypeKeys.GENERAL_LAYOUT + "-public-and-private-added");
+
 		fields.addSeparator();
 
 		fields.addCheckbox(EntryTypeKeys.GENERAL_LAYOUT_ENTRY);
