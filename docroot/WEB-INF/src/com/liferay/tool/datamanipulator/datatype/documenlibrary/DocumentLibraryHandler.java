@@ -16,6 +16,9 @@ package com.liferay.tool.datamanipulator.datatype.documenlibrary;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.Validator;
+import com.liferay.portlet.documentlibrary.model.DLFolder;
+import com.liferay.portlet.documentlibrary.service.DLFolderLocalServiceUtil;
 import com.liferay.tool.datamanipulator.entry.BaseEntry;
 import com.liferay.tool.datamanipulator.entry.EntryTypeKeys;
 import com.liferay.tool.datamanipulator.entryreader.EntryTypeReader;
@@ -88,7 +91,22 @@ public class DocumentLibraryHandler extends AbstractPortletHandler implements
 			folderCount, folderUpdate, folderDepth, folderSubCount, folderEntry,
 			fileEntryHandler, requestProcessor);
 
-		folderHandler.generateEntries((long)0);
+		long parentFolderId = requestProcessor.getLong(
+			DocumentLibraryDisplayFields.DOCUMENTS_AND_MEDIA_FOLDER_ID);
+
+		if (parentFolderId == 0) {
+			parentFolderId = requestProcessor.getLong(
+				DocumentLibraryDisplayFields.DOCUMENTS_AND_MEDIA_FOLDER_LIST);
+		}
+
+		DLFolder folder = DLFolderLocalServiceUtil.getDLFolder(parentFolderId);
+
+		if (Validator.isNotNull(folder)) {
+			folderHandler.generateEntries(parentFolderId);
+		}
+		else {
+			folderHandler.generateEntries((long)0);
+		}
 	}
 
 }
