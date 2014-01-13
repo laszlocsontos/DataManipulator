@@ -17,8 +17,11 @@ package com.liferay.tool.datamanipulator.datatype.documentsandmedia;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.PortalSessionThreadLocal;
+import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.security.auth.PrincipalThreadLocal;
 import com.liferay.portal.security.permission.PermissionThreadLocal;
+import com.liferay.portlet.documentlibrary.model.DLFolder;
+import com.liferay.portlet.documentlibrary.service.DLFolderLocalServiceUtil;
 import com.liferay.tool.datamanipulator.entry.BaseEntry;
 import com.liferay.tool.datamanipulator.entry.EntryTypeKeys;
 import com.liferay.tool.datamanipulator.entryreader.EntryTypeReader;
@@ -99,7 +102,23 @@ public class DocumentsAndMediaHandler extends AbstractPortletHandler implements
 			folderCount, folderUpdate, folderDepth, folderSubCount, folderEntry,
 			fileEntryHandler, requestProcessor);
 
-		folderHandler.generateEntries((long)0);
+		long parentFolderId = requestProcessor.getLong(
+			DocumentsAndMediaDisplayFields.DOCUMENTS_AND_MEDIA_FOLDER_ID);
+
+		if (parentFolderId == 0) {
+			parentFolderId = requestProcessor.getLong(
+				DocumentsAndMediaDisplayFields.DOCUMENTS_AND_MEDIA_FOLDER_LIST);
+		}
+
+		DLFolder folder = DLFolderLocalServiceUtil.fetchDLFolder(
+			parentFolderId);
+
+		if (Validator.isNotNull(folder)) {
+			folderHandler.generateEntries(parentFolderId);
+		}
+		else {
+			folderHandler.generateEntries((long)0);
+		}
 	}
 
 }
