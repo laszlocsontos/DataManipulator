@@ -16,6 +16,10 @@ package com.liferay.tool.datamanipulator.datatype.bookmarks;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.Validator;
+import com.liferay.portlet.bookmarks.model.BookmarksFolder;
+import com.liferay.portlet.bookmarks.model.BookmarksFolderConstants;
+import com.liferay.portlet.bookmarks.service.BookmarksFolderLocalServiceUtil;
 import com.liferay.tool.datamanipulator.entry.BaseEntry;
 import com.liferay.tool.datamanipulator.entry.EntryTypeKeys;
 import com.liferay.tool.datamanipulator.entryreader.EntryTypeReader;
@@ -88,7 +92,25 @@ public class BookmarksHandler extends AbstractPortletHandler implements
 			folderCount, folderUpdate, folderDepth, folderSubCount,
 			folderEntry, entryhandler, requestProcessor);
 
-		folderEntryhandler.generateEntries((long)0);
+		long parentFolderId = requestProcessor.getLong(
+			BookmarksDisplayFields.BOOKMARKS_FOLDER_ID);
+
+		if (parentFolderId == 0) {
+			parentFolderId = requestProcessor.getLong(
+				BookmarksDisplayFields.BOOKMARKS_FOLDER_LIST);
+		}
+
+		BookmarksFolder folder =
+			BookmarksFolderLocalServiceUtil.fetchBookmarksFolder(
+				parentFolderId);
+
+		if (Validator.isNotNull(folder)) {
+			folderEntryhandler.generateEntries(parentFolderId);
+		}
+		else {
+			folderEntryhandler.generateEntries(
+				BookmarksFolderConstants.DEFAULT_PARENT_FOLDER_ID);
+		}
 	}
 
 }
