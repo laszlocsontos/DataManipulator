@@ -60,7 +60,7 @@ public final class EntryDisplayFieldsFactory {
 		}
 
 		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_DOCUMENTS_AND_MEDIA)) {
-			return DocumentsAndMediaDisplayFields.getDisplayFields();
+			return DocumentsAndMediaDisplayFields.getDisplayFields(groupId);
 		}
 
 		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_JOURNAL)) {
