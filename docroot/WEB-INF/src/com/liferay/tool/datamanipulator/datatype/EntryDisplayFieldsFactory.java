@@ -68,7 +68,7 @@ public final class EntryDisplayFieldsFactory {
 		}
 
 		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_LAYOUT)) {
-			return LayoutDisplayFields.getDisplayFields();
+			return LayoutDisplayFields.getDisplayFields(groupId);
 		}
 
 		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_MESSAGE_BOARDS)) {
