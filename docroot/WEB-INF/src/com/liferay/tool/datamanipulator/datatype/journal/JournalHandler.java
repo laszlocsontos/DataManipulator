@@ -16,6 +16,9 @@ package com.liferay.tool.datamanipulator.datatype.journal;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.Validator;
+import com.liferay.portlet.journal.model.JournalFolder;
+import com.liferay.portlet.journal.service.JournalFolderLocalServiceUtil;
 import com.liferay.tool.datamanipulator.entry.BaseEntry;
 import com.liferay.tool.datamanipulator.entry.EntryTypeKeys;
 import com.liferay.tool.datamanipulator.entryreader.EntryTypeReader;
@@ -89,7 +92,23 @@ public class JournalHandler extends AbstractPortletHandler implements
 			folderCount, folderUpdate, folderDepth, folderSubCount, folderEntry,
 			articleHandler, requestProcessor);
 
-		folderEntryHandler.generateEntries((long)0);
+		long parentFolderId = requestProcessor.getLong(
+			JournalDisplayFields.JOURNAL_FOLDER_ID);
+
+		if (parentFolderId == 0) {
+			parentFolderId = requestProcessor.getLong(
+			JournalDisplayFields.JOURNAL_FOLDER_LIST);
+		}
+
+		JournalFolder folder = JournalFolderLocalServiceUtil.fetchFolder(
+			parentFolderId);
+
+		if (Validator.isNotNull(folder)) {
+			folderEntryHandler.generateEntries(parentFolderId);
+		}
+		else {
+			folderEntryHandler.generateEntries((long)0);
+		}
 	}
 
 }
