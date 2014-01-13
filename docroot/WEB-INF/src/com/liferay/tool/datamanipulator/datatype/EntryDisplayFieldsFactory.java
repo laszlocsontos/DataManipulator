@@ -52,7 +52,7 @@ public final class EntryDisplayFieldsFactory {
 		}
 
 		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_BOOKMARKS)) {
-			return BookmarksDisplayFields.getDisplayFields();
+			return BookmarksDisplayFields.getDisplayFields(groupId);
 		}
 
 		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_CALENDAR)) {
