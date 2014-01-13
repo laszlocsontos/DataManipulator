@@ -64,7 +64,7 @@ public final class EntryDisplayFieldsFactory {
 		}
 
 		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_JOURNAL)) {
-			return JournalDisplayFields.getDisplayFields();
+			return JournalDisplayFields.getDisplayFields(groupId);
 		}
 
 		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_LAYOUT)) {
