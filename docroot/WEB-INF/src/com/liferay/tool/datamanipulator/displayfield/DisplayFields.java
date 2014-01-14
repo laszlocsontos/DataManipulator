@@ -38,6 +38,7 @@ import java.util.List;
  *
  */
 public class DisplayFields {
+
 	public DisplayFields() {
 		_displayFields = new ArrayList<Field>();
 		_index = -1;
@@ -260,8 +261,8 @@ public class DisplayFields {
 			UserGroupLocalServiceUtil.getUserGroups(
 				QueryUtil.ALL_POS, QueryUtil.ALL_POS);
 
-		List<KeyValuePair> values =
-			new ArrayList<KeyValuePair>(userGroups.size());
+		List<KeyValuePair> values = new ArrayList<KeyValuePair>(
+			userGroups.size());
 
 		for (UserGroup userGroup : userGroups) {
 			values.add(
