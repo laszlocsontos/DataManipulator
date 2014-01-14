@@ -38,8 +38,8 @@ import java.util.Calendar;
  * @author Tibor Kovács
  *
  */
-public class CalendarEventHandler extends AbstractEntryHandler implements
-		EntryHandlerModel {
+public class CalendarEventHandler extends AbstractEntryHandler
+	implements EntryHandlerModel {
 
 	/**
 	 * @param count
@@ -59,6 +59,7 @@ public class CalendarEventHandler extends AbstractEntryHandler implements
 			requestProcessor);
 
 		int minutes = requestProcessor.getMinutes("duration");
+
 		if (minutes < 5) {
 			minutes = 5;
 		}
@@ -76,6 +77,7 @@ public class CalendarEventHandler extends AbstractEntryHandler implements
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel#getCreateEntryArgs(long, java.lang.String, com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor)
 	 */
+
 	@Override
 	public EntryArgs getCreateEntryArgs(
 			long parentId, String postString, RequestProcessor requestProcessor)
@@ -87,7 +89,7 @@ public class CalendarEventHandler extends AbstractEntryHandler implements
 		Calendar endDate = EntryUtil.getRandomCalendar(
 			_endDateFrom, _endDateTo);
 
-		int durationHour =  EntryUtil.nextInt(_durationHour);
+		int durationHour = EntryUtil.nextInt(_durationHour);
 		int durationMinute = EntryUtil.nextInt(_durationMinute);
 
 		if ((durationHour <= 0) && (durationMinute <= 0)) {
@@ -95,9 +97,9 @@ public class CalendarEventHandler extends AbstractEntryHandler implements
 		}
 
 		String type = StringPool.BLANK;
+
 		if (CalEventConstants.TYPES.length > 0) {
-			int typeIndex = EntryUtil.nextInt(
-				CalEventConstants.TYPES.length);
+			int typeIndex = EntryUtil.nextInt(CalEventConstants.TYPES.length);
 
 			type = CalEventConstants.TYPES[typeIndex];
 		}
@@ -144,6 +146,7 @@ public class CalendarEventHandler extends AbstractEntryHandler implements
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel#getDataManipulatorFromObject(java.lang.Object)
 	 */
+
 	@Override
 	public DataManipulator getDataManipulatorFromObject(Object createdEntry)
 		throws PortalException, SystemException {
@@ -156,16 +159,15 @@ public class CalendarEventHandler extends AbstractEntryHandler implements
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel#getUpdateEntryArgs(long, java.lang.String, com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor)
 	 */
+
 	@Override
 	public EntryArgs getUpdateEntryArgs(
 			long entryId, String postString, RequestProcessor requestProcessor)
 		throws PortalException, SystemException {
 
-		CalEvent calEvent = CalEventLocalServiceUtil.getCalEvent(
-			entryId);
+		CalEvent calEvent = CalEventLocalServiceUtil.getCalEvent(entryId);
 
-		String title = EntryUtil.getEditString(
-			calEvent.getTitle(), postString);
+		String title = EntryUtil.getEditString(calEvent.getTitle(), postString);
 
 		String description = EntryUtil.getEditString(
 			calEvent.getDescription(), postString);
@@ -176,7 +178,7 @@ public class CalendarEventHandler extends AbstractEntryHandler implements
 		Calendar endDate = EntryUtil.getRandomCalendar(
 			_endDateFrom, _endDateTo);
 
-		int durationHour =  EntryUtil.nextInt(_durationHour);
+		int durationHour = EntryUtil.nextInt(_durationHour);
 		int durationMinute = EntryUtil.nextInt(_durationMinute);
 
 		if ((durationHour <= 0) && (durationMinute <= 0)) {
@@ -184,9 +186,9 @@ public class CalendarEventHandler extends AbstractEntryHandler implements
 		}
 
 		String type = StringPool.BLANK;
+
 		if (CalEventConstants.TYPES.length > 0) {
-			int typeIndex = EntryUtil.nextInt(
-				CalEventConstants.TYPES.length);
+			int typeIndex = EntryUtil.nextInt(CalEventConstants.TYPES.length);
 
 			type = CalEventConstants.TYPES[typeIndex];
 		}
@@ -272,10 +274,8 @@ public class CalendarEventHandler extends AbstractEntryHandler implements
 
 	private int _durationHour;
 	private int _durationMinute;
-
 	private Calendar _endDateFrom;
 	private Calendar _endDateTo;
-
 	private Calendar _startDateFrom;
 	private Calendar _startDateTo;
 

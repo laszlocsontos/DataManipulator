@@ -29,15 +29,17 @@ import com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor;
  * @author Tibor Kovács
  *
  */
-public class CalendarHandler extends AbstractPortletHandler implements
-		PortletHandlerModel {
+public class CalendarHandler extends AbstractPortletHandler
+	implements PortletHandlerModel {
 
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.portlethandler.model.PortletHandlerModel#startErase(com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor)
 	 */
+
 	@Override
 	public void startErase(RequestProcessor requestProcessor)
-			throws PortalException, SystemException {
+		throws PortalException, SystemException {
+
 		// TODO Auto-generated method stub
 
 	}
@@ -45,6 +47,7 @@ public class CalendarHandler extends AbstractPortletHandler implements
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.portlethandler.model.PortletHandlerModel#startGenerate(com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor)
 	 */
+
 	@Override
 	public void startGenerate(RequestProcessor requestProcessor)
 		throws PortalException, SystemException {
