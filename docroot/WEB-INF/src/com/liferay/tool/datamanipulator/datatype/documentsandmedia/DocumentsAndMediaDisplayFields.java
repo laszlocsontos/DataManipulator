@@ -33,6 +33,7 @@ import java.util.List;
  *
  */
 public class DocumentsAndMediaDisplayFields {
+
 	public static final String DOCUMENTS_AND_MEDIA_FOLDER_ID =
 		"documents-and-media-folder-id";
 
