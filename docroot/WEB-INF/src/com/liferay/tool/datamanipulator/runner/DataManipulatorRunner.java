@@ -27,6 +27,7 @@ import com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor;
  *
  */
 public class DataManipulatorRunner extends Thread {
+
 	public DataManipulatorRunner(
 		PortletHandlerModel handler, RequestProcessor requestProcessor) {
 
