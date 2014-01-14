@@ -35,7 +35,7 @@ import com.liferay.tool.datamanipulator.service.DataManipulatorLocalServiceUtil;
  *
  */
 public class DocumentsAndMediaFolderHandler extends AbstractEntryHandler
-		implements EntryHandlerModel {
+	implements EntryHandlerModel {
 
 	/**
 	 * @param count
@@ -45,7 +45,7 @@ public class DocumentsAndMediaFolderHandler extends AbstractEntryHandler
 	 * @param baseEntry
 	 * @param subEntryHandler
 	 * @param requestProcessor
-	 * @throws SystemException 
+	 * @throws SystemException
 	 */
 	public DocumentsAndMediaFolderHandler(
 			int count, int update, int depth, int subCount, BaseEntry baseEntry,
@@ -70,6 +70,7 @@ public class DocumentsAndMediaFolderHandler extends AbstractEntryHandler
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel#getCreateEntryArgs(long, java.lang.String, com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor)
 	 */
+
 	@Override
 	public EntryArgs getCreateEntryArgs(
 			long parentId, String postString, RequestProcessor requestProcessor)
@@ -89,6 +90,7 @@ public class DocumentsAndMediaFolderHandler extends AbstractEntryHandler
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel#getDataManipulatorFromObject(java.lang.Object)
 	 */
+
 	@Override
 	public DataManipulator getDataManipulatorFromObject(Object createdEntry)
 		throws PortalException, SystemException {
@@ -101,6 +103,7 @@ public class DocumentsAndMediaFolderHandler extends AbstractEntryHandler
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel#getUpdateEntryArgs(long, java.lang.String, com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor)
 	 */
+
 	@Override
 	public EntryArgs getUpdateEntryArgs(
 			long entryId, String postString, RequestProcessor requestProcessor)

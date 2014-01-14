@@ -14,8 +14,6 @@
 
 package com.liferay.tool.datamanipulator.datatype.documentsandmedia;
 
-import java.io.File;
-
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.repository.model.FileEntry;
@@ -33,12 +31,14 @@ import com.liferay.tool.datamanipulator.model.DataManipulator;
 import com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor;
 import com.liferay.tool.datamanipulator.service.DataManipulatorLocalServiceUtil;
 
+import java.io.File;
+
 /**
  * @author Tibor Kovács
  *
  */
 public class DocumentsAndMediaFileHandler extends AbstractEntryHandler
-		implements EntryHandlerModel {
+	implements EntryHandlerModel {
 
 	/**
 	 * @param count
@@ -48,7 +48,7 @@ public class DocumentsAndMediaFileHandler extends AbstractEntryHandler
 	 * @param baseEntry
 	 * @param subEntryHandler
 	 * @param requestProcessor
-	 * @throws SystemException 
+	 * @throws SystemException
 	 */
 	public DocumentsAndMediaFileHandler(
 			int count, int update, int depth, int subCount, BaseEntry baseEntry,
@@ -75,6 +75,7 @@ public class DocumentsAndMediaFileHandler extends AbstractEntryHandler
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel#getCreateEntryArgs(long, java.lang.String, com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor)
 	 */
+
 	@Override
 	public EntryArgs getCreateEntryArgs(
 			long parentId, String postString, RequestProcessor requestProcessor)
@@ -98,6 +99,7 @@ public class DocumentsAndMediaFileHandler extends AbstractEntryHandler
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel#getDataManipulatorFromObject(java.lang.Object)
 	 */
+
 	@Override
 	public DataManipulator getDataManipulatorFromObject(Object createdEntry)
 		throws PortalException, SystemException {
@@ -110,6 +112,7 @@ public class DocumentsAndMediaFileHandler extends AbstractEntryHandler
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel#getUpdateEntryArgs(long, java.lang.String, com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor)
 	 */
+
 	@Override
 	public EntryArgs getUpdateEntryArgs(
 			long entryId, String postString, RequestProcessor requestProcessor)
@@ -136,7 +139,7 @@ public class DocumentsAndMediaFileHandler extends AbstractEntryHandler
 		return args;
 	}
 
-	private long _repositoryId;
 	private File _file;
+	private long _repositoryId;
 
 }
