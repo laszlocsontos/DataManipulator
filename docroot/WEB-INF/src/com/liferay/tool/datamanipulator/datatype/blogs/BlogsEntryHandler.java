@@ -33,8 +33,8 @@ import java.util.Calendar;
  * @author Tibor Kovács
  *
  */
-public class BlogsEntryHandler extends AbstractEntryHandler implements
-		EntryHandlerModel {
+public class BlogsEntryHandler extends AbstractEntryHandler
+	implements EntryHandlerModel {
 
 	/**
 	 * @param count
@@ -60,6 +60,7 @@ public class BlogsEntryHandler extends AbstractEntryHandler implements
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel#getCreateEntryArgs(long, java.lang.String, com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor)
 	 */
+
 	@Override
 	public EntryArgs getCreateEntryArgs(
 			long parentId, String postString, RequestProcessor requestProcessor)
@@ -90,26 +91,26 @@ public class BlogsEntryHandler extends AbstractEntryHandler implements
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel#getDataManipulatorFromObject(java.lang.Object)
 	 */
+
 	@Override
 	public DataManipulator getDataManipulatorFromObject(Object createdEntry)
 		throws PortalException, SystemException {
 
 		return DataManipulatorLocalServiceUtil.addDataManipulator(
-			((BlogsEntry)createdEntry).getGroupId(),
-			BlogsEntry.class.getName(),
+			((BlogsEntry)createdEntry).getGroupId(), BlogsEntry.class.getName(),
 			((BlogsEntry)createdEntry).getEntryId());
 	}
 
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel#getUpdateEntryArgs(long, java.lang.String, com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor)
 	 */
+
 	@Override
 	public EntryArgs getUpdateEntryArgs(
 			long entryId, String postString, RequestProcessor requestProcessor)
 		throws PortalException, SystemException {
 
-		BlogsEntry bEntry = BlogsEntryLocalServiceUtil.getEntry(
-			entryId);
+		BlogsEntry bEntry = BlogsEntryLocalServiceUtil.getEntry(entryId);
 
 		Calendar newCalendar = EntryUtil.getRandomCalendar(
 			_displayDataFrom, _displayDataTo);
