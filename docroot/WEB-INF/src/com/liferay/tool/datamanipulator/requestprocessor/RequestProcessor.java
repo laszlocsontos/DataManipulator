@@ -36,11 +36,12 @@ import javax.servlet.http.HttpSession;
  *
  */
 public class RequestProcessor {
+
 	public RequestProcessor(UploadPortletRequest uploadRequest) {
 		_uploadRequest = uploadRequest;
 
-		_themeDisplay =
-			(ThemeDisplay)_uploadRequest.getAttribute(WebKeys.THEME_DISPLAY);
+		_themeDisplay =(ThemeDisplay)_uploadRequest.getAttribute(
+			WebKeys.THEME_DISPLAY);
 
 		_parameters = new HashMap<String, Object>();
 	}
