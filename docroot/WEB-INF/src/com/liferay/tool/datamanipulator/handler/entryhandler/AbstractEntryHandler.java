@@ -33,10 +33,10 @@ import com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor;
  *
  */
 public abstract class AbstractEntryHandler implements EntryHandlerModel {
+
 	public AbstractEntryHandler(
 		int count, int update, int depth, int subCount, BaseEntry baseEntry,
-		EntryHandlerModel subEntryHandler,
-		RequestProcessor requestProcessor) {
+		EntryHandlerModel subEntryHandler, RequestProcessor requestProcessor) {
 
 		_baseEntry = baseEntry;
 		_count = count;
@@ -77,6 +77,7 @@ public abstract class AbstractEntryHandler implements EntryHandlerModel {
 		throws PortalException, SystemException {
 
 		// TODO Auto-generated method stub
+
 	}
 
 	@Override
@@ -192,7 +193,7 @@ public abstract class AbstractEntryHandler implements EntryHandlerModel {
 
 			if (exceptionString.contains("Duplicate") ||
 				(Validator.isNotNull(exceptionMessage) &&
-				exceptionMessage.contains("already exists"))) {
+				 exceptionMessage.contains("already exists"))) {
 
 				return true;
 			}
