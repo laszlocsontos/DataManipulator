@@ -32,7 +32,9 @@ import java.util.List;
  *
  */
 public class JournalDisplayFields {
+
 	public static final String JOURNAL_FOLDER_ID = "journal-folder-id";
+
 	public static final String JOURNAL_FOLDER_LIST = "journal-folder-list";
 
 	public static List<Field> getDisplayFields(long groupId)
