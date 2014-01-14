@@ -34,11 +34,13 @@ import java.util.List;
  *
  */
 public class CategoriesDisplayFields {
+
 	public static final String ASSET_VOCABULARIES_LIST = "vocabularies-list";
+
 	public static final String ASSET_VOCABULARY_ID = "vocabulary-id";
 
 	public static List<Field> getDisplayFields(long groupId)
-		throws SystemException, PortalException {
+		throws PortalException, SystemException {
 
 		List<AssetVocabulary> vocabularyList =
 			AssetVocabularyLocalServiceUtil.getGroupVocabularies(groupId);

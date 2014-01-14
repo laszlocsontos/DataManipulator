@@ -32,22 +32,25 @@ import com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor;
  * @author Tibor Kovács
  *
  */
-public class CategoriesHandler extends AbstractPortletHandler implements
-		PortletHandlerModel {
+public class CategoriesHandler extends AbstractPortletHandler
+	implements PortletHandlerModel {
 
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.portlethandler.model.PortletHandlerModel#startErase(com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor)
 	 */
+
 	@Override
 	public void startErase(RequestProcessor requestProcessor)
 		throws PortalException, SystemException {
 
 		// TODO Auto-generated method stub
+
 	}
 
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.portlethandler.model.PortletHandlerModel#startGenerate(com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor)
 	 */
+
 	@Override
 	public void startGenerate(RequestProcessor requestProcessor)
 		throws PortalException, SystemException {
