@@ -34,8 +34,8 @@ import com.liferay.tool.datamanipulator.service.DataManipulatorLocalServiceUtil;
  * @author Tibor Kovács
  *
  */
-public class LayoutEntryHandler extends AbstractEntryHandler implements
-		EntryHandlerModel {
+public class LayoutEntryHandler extends AbstractEntryHandler
+	implements EntryHandlerModel {
 
 	/**
 	 * @param count
@@ -68,6 +68,7 @@ public class LayoutEntryHandler extends AbstractEntryHandler implements
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel#getCreateEntryArgs(long, java.lang.String, com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor)
 	 */
+
 	@Override
 	public EntryArgs getCreateEntryArgs(
 			long parentId, String postString, RequestProcessor requestProcessor)
@@ -96,6 +97,7 @@ public class LayoutEntryHandler extends AbstractEntryHandler implements
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel#getDataManipulatorFromObject(java.lang.Object)
 	 */
+
 	@Override
 	public DataManipulator getDataManipulatorFromObject(Object createdEntry)
 		throws PortalException, SystemException {
@@ -119,17 +121,17 @@ public class LayoutEntryHandler extends AbstractEntryHandler implements
 		layoutTypePortlet.resetStates();
 
 		LayoutLocalServiceUtil.updateLayout(
-			layout.getGroupId(), layout.isPrivateLayout(),
-			layout.getLayoutId(), layout.getTypeSettings());
+			layout.getGroupId(), layout.isPrivateLayout(), layout.getLayoutId(),
+			layout.getTypeSettings());
 
 		return DataManipulatorLocalServiceUtil.addDataManipulator(
-			layout.getGroupId(), Layout.class.getName(),
-			layout.getPlid());
+			layout.getGroupId(), Layout.class.getName(), layout.getPlid());
 	}
 
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel#getUpdateEntryArgs(long, java.lang.String, com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor)
 	 */
+
 	@Override
 	public EntryArgs getUpdateEntryArgs(
 			long entryId, String postString, RequestProcessor requestProcessor)

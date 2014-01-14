@@ -35,9 +35,13 @@ import java.util.List;
  *
  */
 public class LayoutDisplayFields {
+
 	public static final String PRIVATE_LAYOUT_ID = "private-layout-id";
+
 	public static final String PRIVATE_LAYOUT_LIST = "private-layout-list";
+
 	public static final String PUBLIC_LAYOUT_ID = "public-layout-id";
+
 	public static final String PUBLIC_LAYOUT_LIST = "public-layout-list";
 
 	public static List<Field> getDisplayFields(long groupId)
