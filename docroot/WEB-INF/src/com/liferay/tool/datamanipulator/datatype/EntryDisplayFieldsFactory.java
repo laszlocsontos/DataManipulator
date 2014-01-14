@@ -76,7 +76,7 @@ public final class EntryDisplayFieldsFactory {
 		}
 
 		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_WIKI)) {
-			return WikiDisplayFields.getDisplayFields();
+			return WikiDisplayFields.getDisplayFields(groupId);
 		}
 
 		if (entryTypeKey.equals(EntryTypeKeys.PORTAL_ORGANIZATION)) {
