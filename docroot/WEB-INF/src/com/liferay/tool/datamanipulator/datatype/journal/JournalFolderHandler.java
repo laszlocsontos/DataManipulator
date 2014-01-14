@@ -1,6 +1,17 @@
 /**
- * 
+ * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation; either version 2.1 of the License, or (at your option)
+ * any later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
  */
+
 package com.liferay.tool.datamanipulator.datatype.journal;
 
 import com.liferay.portal.kernel.exception.PortalException;
@@ -17,11 +28,11 @@ import com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor;
 import com.liferay.tool.datamanipulator.service.DataManipulatorLocalServiceUtil;
 
 /**
- * @author KTibi
+ * @author Tibor kovács
  *
  */
-public class JournalFolderHandler extends AbstractEntryHandler implements
-		EntryHandlerModel {
+public class JournalFolderHandler extends AbstractEntryHandler
+	implements EntryHandlerModel {
 
 	/**
 	 * @param count
@@ -44,6 +55,7 @@ public class JournalFolderHandler extends AbstractEntryHandler implements
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel#getCreateEntryArgs(long, java.lang.String, com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor)
 	 */
+
 	@Override
 	public EntryArgs getCreateEntryArgs(
 			long parentId, String postString, RequestProcessor requestProcessor)
@@ -65,6 +77,7 @@ public class JournalFolderHandler extends AbstractEntryHandler implements
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel#getDataManipulatorFromObject(java.lang.Object)
 	 */
+
 	@Override
 	public DataManipulator getDataManipulatorFromObject(Object createdEntry)
 		throws PortalException, SystemException {
@@ -78,6 +91,7 @@ public class JournalFolderHandler extends AbstractEntryHandler implements
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel#getUpdateEntryArgs(long, java.lang.String, com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor)
 	 */
+
 	@Override
 	public EntryArgs getUpdateEntryArgs(
 			long entryId, String postString, RequestProcessor requestProcessor)
