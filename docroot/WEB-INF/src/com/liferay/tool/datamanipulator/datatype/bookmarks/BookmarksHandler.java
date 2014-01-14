@@ -33,15 +33,17 @@ import com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor;
  * @author Tibor Kovács
  *
  */
-public class BookmarksHandler extends AbstractPortletHandler implements
-		PortletHandlerModel {
+public class BookmarksHandler extends AbstractPortletHandler
+	implements PortletHandlerModel {
 
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.portlethandler.model.PortletHandlerModel#startErase(com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor)
 	 */
+
 	@Override
 	public void startErase(RequestProcessor requestProcessor)
-			throws PortalException, SystemException {
+		throws PortalException, SystemException {
+
 		// TODO Auto-generated method stub
 
 	}
@@ -49,6 +51,7 @@ public class BookmarksHandler extends AbstractPortletHandler implements
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.portlethandler.model.PortletHandlerModel#startGenerate(com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor)
 	 */
+
 	@Override
 	public void startGenerate(RequestProcessor requestProcessor)
 		throws PortalException, SystemException {
@@ -89,8 +92,8 @@ public class BookmarksHandler extends AbstractPortletHandler implements
 		BaseEntry folderEntry = new BaseEntry(folderEntryType);
 
 		EntryHandlerModel folderEntryhandler = new BookmarksFolderHandler(
-			folderCount, folderUpdate, folderDepth, folderSubCount,
-			folderEntry, entryhandler, requestProcessor);
+			folderCount, folderUpdate, folderDepth, folderSubCount, folderEntry,
+			entryhandler, requestProcessor);
 
 		long parentFolderId = requestProcessor.getLong(
 			BookmarksDisplayFields.BOOKMARKS_FOLDER_ID);
