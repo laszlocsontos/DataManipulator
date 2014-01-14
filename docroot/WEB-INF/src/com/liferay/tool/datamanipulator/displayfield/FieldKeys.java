@@ -31,6 +31,8 @@ public class FieldKeys {
 
 	public static final String COUNT = "count";
 
+	public static final String DEFAULT_PARENT = "default-parent";
+
 	public static final String DEPTH = "depth";
 
 	public static final String SUB_COUNT = "sub-count";
