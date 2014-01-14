@@ -16,6 +16,9 @@ package com.liferay.tool.datamanipulator.datatype.wiki;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.Validator;
+import com.liferay.portlet.wiki.model.WikiNode;
+import com.liferay.portlet.wiki.service.WikiNodeLocalServiceUtil;
 import com.liferay.tool.datamanipulator.entry.BaseEntry;
 import com.liferay.tool.datamanipulator.entry.EntryTypeKeys;
 import com.liferay.tool.datamanipulator.entryreader.EntryTypeReader;
@@ -72,24 +75,41 @@ public class WikiHandler extends AbstractPortletHandler implements
 			pageCount, pageUpdate, pageDepth, pageSubCount, pageEntry,
 			null, requestProcessor);
 
-		// Wiki Node
+		long parentWikinodeId = requestProcessor.getLong(
+			WikiDisplayFields.WIKI_NODE_ID);
 
-		int nodeCount = requestProcessor.getCount(
-			EntryTypeKeys.GENERAL_WIKI_NODE);
+		if (parentWikinodeId == 0) {
+			parentWikinodeId = requestProcessor.getLong(
+				WikiDisplayFields.WIKI_NODE_LIST);
+		}
 
-		int nodeUpdate = requestProcessor.getUpdateLevel(
-			EntryTypeKeys.GENERAL_WIKI_NODE);
+		WikiNode parentWikiNode = WikiNodeLocalServiceUtil.fetchWikiNode(
+			parentWikinodeId);
 
-		EntryTypeReader nodeEntryType = EntryReaderUtil.getEntryType(
-			EntryTypeKeys.GENERAL_WIKI_NODE);
+		if (Validator.isNotNull(parentWikiNode)) {
+			pageHandler.generateEntries(parentWikinodeId);
+		}
+		else {
 
-		BaseEntry nodeEntry = new BaseEntry(nodeEntryType);
+			// Wiki Node
 
-		EntryHandlerModel nodeHandler = new WikiNodeHandler(
-			nodeCount, nodeUpdate, 0, 0, nodeEntry, pageHandler,
-			requestProcessor);
+			int nodeCount = requestProcessor.getCount(
+				EntryTypeKeys.GENERAL_WIKI_NODE);
 
-		nodeHandler.generateEntries((long)0);
+			int nodeUpdate = requestProcessor.getUpdateLevel(
+				EntryTypeKeys.GENERAL_WIKI_NODE);
+
+			EntryTypeReader nodeEntryType = EntryReaderUtil.getEntryType(
+				EntryTypeKeys.GENERAL_WIKI_NODE);
+
+			BaseEntry nodeEntry = new BaseEntry(nodeEntryType);
+
+			EntryHandlerModel nodeHandler = new WikiNodeHandler(
+				nodeCount, nodeUpdate, 0, 0, nodeEntry, pageHandler,
+				requestProcessor);
+
+			nodeHandler.generateEntries((long)0);
+		}
 	}
 
 }
