@@ -14,8 +14,6 @@
 
 package com.liferay.tool.datamanipulator.service.impl;
 
-import java.util.List;
-
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
 import com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil;
 import com.liferay.portal.kernel.dao.orm.ProjectionFactoryUtil;
@@ -24,6 +22,8 @@ import com.liferay.portal.kernel.util.PortalClassLoaderUtil;
 import com.liferay.tool.datamanipulator.model.DataManipulator;
 import com.liferay.tool.datamanipulator.model.impl.DataManipulatorImpl;
 import com.liferay.tool.datamanipulator.service.base.DataManipulatorLocalServiceBaseImpl;
+
+import java.util.List;
 
 /**
  * The implementation of the data manipulator local service.
@@ -41,12 +41,12 @@ import com.liferay.tool.datamanipulator.service.base.DataManipulatorLocalService
  */
 public class DataManipulatorLocalServiceImpl
 	extends DataManipulatorLocalServiceBaseImpl {
-	/*
+
+	/**
 	 * NOTE FOR DEVELOPERS:
 	 *
 	 * Never reference this interface directly. Always use {@link com.liferay.tool.datamanipulator.service.DataManipulatorLocalServiceUtil} to access the data manipulator local service.
 	 */
-
 	public DataManipulator addDataManipulator(
 			long groupId, String className, long classPK)
 		throws SystemException {
