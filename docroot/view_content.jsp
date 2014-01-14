@@ -14,10 +14,11 @@
  */
 --%>
 
-<%@ page import="com.liferay.tool.datamanipulator.entry.EntryTypeKeys"%>
+<%@ page import="com.liferay.tool.datamanipulator.entry.EntryTypeKeys" %>
+
 <%@ page import="java.util.ArrayList" %>
 
-<%@include file="/init.jsp" %>
+<%@ include file="/init.jsp" %>
 
 <%
 List<String> entryTypeNavigation = new ArrayList<String>();
@@ -26,4 +27,4 @@ entryTypeNavigation.add(EntryTypeKeys.ENTRY_TYPE_GENERAL);
 entryTypeNavigation.add(EntryTypeKeys.ENTRY_TYPE_PLUGIN);
 %>
 
-<%@include file="/view_base.jsp" %>
+<%@ include file="/view_base.jsp" %>

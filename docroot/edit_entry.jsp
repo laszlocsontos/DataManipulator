@@ -14,23 +14,22 @@
  */
 --%>
 
-<%@ page import="com.liferay.tool.datamanipulator.datatype.EntryDisplayFieldsFactory"%>
-<%@ page import="com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel"%>
 <%@ page import="com.liferay.portal.kernel.util.CalendarFactoryUtil" %>
 <%@ page import="com.liferay.portal.kernel.util.KeyValuePair" %>
 <%@ page import="com.liferay.portal.kernel.util.StringPool" %>
+<%@ page import="com.liferay.tool.datamanipulator.datatype.EntryDisplayFieldsFactory" %>
 <%@ page import="com.liferay.tool.datamanipulator.displayfield.Field" %>
 <%@ page import="com.liferay.tool.datamanipulator.displayfield.FieldTypeKeys" %>
+<%@ page import="com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel" %>
 
 <%@ page import="java.util.Calendar" %>
 <%@ page import="java.util.List" %>
 
-<%@include file="/init.jsp" %>
+<%@ include file="/init.jsp" %>
 
 <portlet:actionURL name="generateData" var="editEntryTypeURL">
 	<portlet:param name="struts_action" value="/admin/view" />
 </portlet:actionURL>
-
 
 <aui:form action="<%= editEntryTypeURL %>" enctype="multipart/form-data" method="post" name="fm">
 	<aui:input name="<%= Constants.CMD %>" type="hidden" />

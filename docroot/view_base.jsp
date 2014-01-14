@@ -20,7 +20,7 @@
 
 <%@ page import="javax.portlet.PortletURL" %>
 
-<%@include file="/init.jsp" %>
+<%@ include file="/init.jsp" %>
 
 <liferay-ui:success key="dataGenerated" message="data-generated-successfully" />
 <liferay-ui:error key="errorOccurred" message="error-occurred" />
