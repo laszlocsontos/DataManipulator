@@ -32,15 +32,17 @@ import com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor;
  * @author Tibor Kovács
  *
  */
-public class WikiHandler extends AbstractPortletHandler implements
-		PortletHandlerModel {
+public class WikiHandler extends AbstractPortletHandler
+	implements PortletHandlerModel {
 
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.portlethandler.model.PortletHandlerModel#startErase(com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor)
 	 */
+
 	@Override
 	public void startErase(RequestProcessor requestProcessor)
-			throws PortalException, SystemException {
+		throws PortalException, SystemException {
+
 		// TODO Auto-generated method stub
 
 	}
@@ -48,6 +50,7 @@ public class WikiHandler extends AbstractPortletHandler implements
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.portlethandler.model.PortletHandlerModel#startGenerate(com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor)
 	 */
+
 	@Override
 	public void startGenerate(RequestProcessor requestProcessor)
 		throws PortalException, SystemException {
@@ -72,8 +75,8 @@ public class WikiHandler extends AbstractPortletHandler implements
 		BaseEntry pageEntry = new BaseEntry(pageEntryType);
 
 		EntryHandlerModel pageHandler = new WikiPageHandler(
-			pageCount, pageUpdate, pageDepth, pageSubCount, pageEntry,
-			null, requestProcessor);
+			pageCount, pageUpdate, pageDepth, pageSubCount, pageEntry, null,
+			requestProcessor);
 
 		long parentWikinodeId = requestProcessor.getLong(
 			WikiDisplayFields.WIKI_NODE_ID);
