@@ -72,7 +72,7 @@ public final class EntryDisplayFieldsFactory {
 		}
 
 		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_MESSAGE_BOARDS)) {
-			return MessageBoardsDisplayFields.getDisplayFields();
+			return MessageBoardsDisplayFields.getDisplayFields(groupId);
 		}
 
 		if (entryTypeKey.equals(EntryTypeKeys.GENERAL_WIKI)) {
