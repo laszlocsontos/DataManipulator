@@ -16,6 +16,9 @@ package com.liferay.tool.datamanipulator.datatype.messageboards;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.Validator;
+import com.liferay.portlet.messageboards.model.MBCategory;
+import com.liferay.portlet.messageboards.service.MBCategoryLocalServiceUtil;
 import com.liferay.tool.datamanipulator.entry.BaseEntry;
 import com.liferay.tool.datamanipulator.entry.EntryTypeKeys;
 import com.liferay.tool.datamanipulator.entryreader.EntryTypeReader;
@@ -108,7 +111,23 @@ public class MessageBoardsHandler extends AbstractPortletHandler implements
 
 		// Start create
 
-		categoryHandler.generateEntries((long)0);
+		long parentCategoryId = requestProcessor.getLong(
+			MessageBoardsDisplayFields.MESSAGE_BOARDS_CATEGORY_ID);
+
+		if (parentCategoryId == 0) {
+			parentCategoryId = requestProcessor.getLong(
+				MessageBoardsDisplayFields.MESSAGE_BOARDS_CATEGORY_LIST);
+		}
+
+		MBCategory category = MBCategoryLocalServiceUtil.fetchMBCategory(
+			parentCategoryId);
+
+		if (Validator.isNotNull(category)) {
+			categoryHandler.generateEntries(parentCategoryId);
+		}
+		else {
+			categoryHandler.generateEntries((long)0);
+		}
 	}
 
 }
