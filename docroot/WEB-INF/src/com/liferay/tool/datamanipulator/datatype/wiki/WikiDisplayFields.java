@@ -33,11 +33,13 @@ import java.util.List;
  *
  */
 public class WikiDisplayFields {
+
 	public static final String WIKI_NODE_ID = "wiki-node-id";
+
 	public static final String WIKI_NODE_LIST = "wiki-node-list";
 
 	public static List<Field> getDisplayFields(long groupId)
-		throws SystemException, PortalException {
+		throws PortalException, SystemException {
 
 		List<WikiNode> wikiNodeList = WikiNodeLocalServiceUtil.getNodes(
 			groupId);
