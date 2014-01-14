@@ -24,11 +24,13 @@ package com.liferay.tool.datamanipulator.model.impl;
  * @author Tibor KovĂˇcs
  */
 public class DataManipulatorImpl extends DataManipulatorBaseImpl {
-	/*
+
+	/**
 	 * NOTE FOR DEVELOPERS:
 	 *
 	 * Never reference this class directly. All methods that expect a data manipulator model instance should use the {@link com.liferay.tool.datamanipulator.model.DataManipulator} interface instead.
 	 */
 	public DataManipulatorImpl() {
 	}
+
 }
