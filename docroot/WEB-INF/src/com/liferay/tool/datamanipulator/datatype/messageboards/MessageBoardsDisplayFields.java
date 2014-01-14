@@ -14,11 +14,19 @@
 
 package com.liferay.tool.datamanipulator.datatype.messageboards;
 
+import com.liferay.portal.kernel.dao.orm.QueryUtil;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.KeyValuePair;
+import com.liferay.portal.kernel.util.StringPool;
+import com.liferay.portlet.messageboards.model.MBCategory;
+import com.liferay.portlet.messageboards.model.MBCategoryConstants;
+import com.liferay.portlet.messageboards.service.MBCategoryLocalServiceUtil;
 import com.liferay.tool.datamanipulator.displayfield.DisplayFields;
 import com.liferay.tool.datamanipulator.displayfield.Field;
+import com.liferay.tool.datamanipulator.displayfield.FieldKeys;
 import com.liferay.tool.datamanipulator.entry.EntryTypeKeys;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,10 +34,45 @@ import java.util.List;
  *
  */
 public class MessageBoardsDisplayFields {
-	public static List<Field> getDisplayFields() throws SystemException {
+	public static final String MESSAGE_BOARDS_CATEGORY_ID =
+		"message-boards-category-id";
+
+	public static final String MESSAGE_BOARDS_CATEGORY_LIST =
+		"message-boards-category-list";
+
+	public static List<Field> getDisplayFields(long groupId)
+		throws SystemException {
+
+		List<MBCategory> mbCategoryList =
+			MBCategoryLocalServiceUtil.getCategories(
+				groupId, MBCategoryConstants.DEFAULT_PARENT_CATEGORY_ID,
+				QueryUtil.ALL_POS, QueryUtil.ALL_POS);
+
+		List<KeyValuePair> mbCategoryNameId = new ArrayList<KeyValuePair>(
+			mbCategoryList.size() + 1);
+
+		mbCategoryNameId.add(
+			new KeyValuePair(
+				EntryTypeKeys.GENERAL_MESSAGE_BOARDS + StringPool.DASH +
+					FieldKeys.DEFAULT_PARENT,
+				String.valueOf(
+					MBCategoryConstants.DEFAULT_PARENT_CATEGORY_ID)));
+
+		for (MBCategory category : mbCategoryList) {
+			mbCategoryNameId.add(
+				new KeyValuePair(
+					category.getName(),
+					String.valueOf(category.getCategoryId())));
+		}
+
 		DisplayFields fields = new DisplayFields();
 
 		fields.addUserMultiSelect();
+		fields.addSeparator();
+
+		fields.addSelectList(MESSAGE_BOARDS_CATEGORY_LIST, mbCategoryNameId);
+		fields.addInput(MESSAGE_BOARDS_CATEGORY_ID);
+		fields.addInfo(EntryTypeKeys.GENERAL_MESSAGE_BOARDS + "-add-to-exits");
 		fields.addSeparator();
 
 		fields.addCount(EntryTypeKeys.GENERAL_MESSAGE_BOARDS_CATEGORY);
