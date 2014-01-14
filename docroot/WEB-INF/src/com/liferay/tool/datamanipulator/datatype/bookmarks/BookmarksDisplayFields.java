@@ -33,7 +33,9 @@ import java.util.List;
  *
  */
 public class BookmarksDisplayFields {
+
 	public static final String BOOKMARKS_FOLDER_ID = "bookmarks-folder-id";
+
 	public static final String BOOKMARKS_FOLDER_LIST = "bookmarks-folder-list";
 
 	public static List<Field> getDisplayFields(long groupId)
