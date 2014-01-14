@@ -35,6 +35,7 @@ import javax.portlet.ActionResponse;
  *
  */
 public class DataManipulatorAdminPortlet extends MVCPortlet {
+
 	public void generateData(
 			ActionRequest actionRequest, ActionResponse actionResponse)
 		throws Exception {
@@ -44,8 +45,8 @@ public class DataManipulatorAdminPortlet extends MVCPortlet {
 
 		RequestProcessor requestProcessor = new RequestProcessor(uploadRequest);
 
-		ThemeDisplay themeDisplay =
-			(ThemeDisplay)uploadRequest.getAttribute(WebKeys.THEME_DISPLAY);
+		ThemeDisplay themeDisplay = (ThemeDisplay)uploadRequest.getAttribute(
+			WebKeys.THEME_DISPLAY);
 
 		String entryType = ParamUtil.getString(uploadRequest, "entryType");
 
