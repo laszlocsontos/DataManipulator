@@ -110,9 +110,9 @@ public class EntryTypeKeys {
 
 	public static final String PORTAL_ROLE = "role";
 
-	public static final String PORTAL_TEAM = "team";
-
 	public static final String PORTAL_SITE = "site";
+
+	public static final String PORTAL_TEAM = "team";
 
 	public static final String PORTAL_USER = "user";
 
