@@ -49,7 +49,6 @@ public class EntryParameterReader {
 	}
 
 	private String _name;
-
 	private String _type;
 
 }

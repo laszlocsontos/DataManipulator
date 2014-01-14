@@ -34,7 +34,8 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement(name = "method")
 public class EntryMethodReader {
-/* public Class<?> getClazz() throws ClassNotFoundException {
+
+	/* public Class<?> getClazz() throws ClassNotFoundException {
 		return Class.forName(this._clazz);
 	}*/
 
@@ -165,8 +166,8 @@ public class EntryMethodReader {
 		this._type = methodType;
 	}
 
-	@XmlElementWrapper(name = "parameter-list")
 	@XmlElement(name = "parameter")
+	@XmlElementWrapper(name = "parameter-list")
 	public void setParameterList(ArrayList<EntryParameterReader> parameters) {
 		this._parameters = parameters;
 	}
@@ -174,11 +175,8 @@ public class EntryMethodReader {
 	private static Log _log = LogFactoryUtil.getLog(EntryMethodReader.class);
 
 	private String _clazz;
-
 	private String _methodName;
-
 	private ArrayList<EntryParameterReader> _parameters;
-
 	private String _type;
 
 }

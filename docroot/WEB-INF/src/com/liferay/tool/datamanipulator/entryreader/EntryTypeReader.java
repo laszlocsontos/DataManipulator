@@ -26,6 +26,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement(name = "entry")
 public class EntryTypeReader {
+
 	public EntryMethodReader getMethod(String methodType)
 		throws NoSuchMethodException {
 
@@ -58,7 +59,6 @@ public class EntryTypeReader {
 	}
 
 	private ArrayList<EntryMethodReader> _methods;
-
 	private String _name;
 
 }
