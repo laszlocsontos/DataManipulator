@@ -15,9 +15,9 @@
 --%>
 
 <%@ page import="com.liferay.portal.kernel.util.Validator" %>
-<%@ page import="com.liferay.tool.datamanipulator.entry.EntryTypeKeys"%>
+<%@ page import="com.liferay.tool.datamanipulator.entry.EntryTypeKeys" %>
 
-<%@include file="/init.jsp" %>
+<%@ include file="/init.jsp" %>
 
 <portlet:actionURL name="selectEntryType" var="selectEntryTypeURL">
 	<portlet:param name="struts_action" value="/admin/view" />
