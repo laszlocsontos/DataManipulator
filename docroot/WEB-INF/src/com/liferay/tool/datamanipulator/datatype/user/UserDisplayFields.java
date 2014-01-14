@@ -26,6 +26,7 @@ import java.util.List;
  *
  */
 public class UserDisplayFields {
+
 	public static List<Field> getDisplayFields() throws SystemException {
 		DisplayFields fields = new DisplayFields();
 
