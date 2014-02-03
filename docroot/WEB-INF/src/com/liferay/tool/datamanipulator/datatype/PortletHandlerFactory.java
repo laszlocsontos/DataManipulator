@@ -25,6 +25,7 @@ import com.liferay.tool.datamanipulator.datatype.journal.JournalHandler;
 import com.liferay.tool.datamanipulator.datatype.layout.LayoutHandler;
 import com.liferay.tool.datamanipulator.datatype.messageboards.MessageBoardsHandler;
 import com.liferay.tool.datamanipulator.datatype.organization.OrganizationHandler;
+import com.liferay.tool.datamanipulator.datatype.site.SiteHandler;
 import com.liferay.tool.datamanipulator.datatype.team.TeamHandler;
 import com.liferay.tool.datamanipulator.datatype.user.UserHandler;
 import com.liferay.tool.datamanipulator.datatype.wiki.WikiHandler;
@@ -82,6 +83,10 @@ public final class PortletHandlerFactory {
 
 		if (entryTypeKey.equals(EntryTypeKeys.PORTAL_TEAM)) {
 			return new TeamHandler();
+		}
+
+		if (entryTypeKey.equals(EntryTypeKeys.PORTAL_SITE)) {
+			return new SiteHandler();
 		}
 
 		if (entryTypeKey.equals(EntryTypeKeys.PORTAL_USER)) {

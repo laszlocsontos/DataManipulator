@@ -548,7 +548,45 @@
 			</parameter-list>
 		</method>
 	</entry>
-	<entry name="team">
+	<entry name="site">
+		<method type="add">
+			<clazz>com.liferay.portal.service.GroupLocalServiceUtil</clazz>
+			<method-name>addGroup</method-name>
+			<parameter-list>
+				<parameter name="userId" type="long" />
+				<parameter name="parentGroupId" type="long" />
+				<parameter name="className" type="java.lang.String" />
+				<parameter name="classPK" type="long" />
+				<parameter name="liveGroupId" type="long" />
+				<parameter name="name" type="java.lang.String" />
+				<parameter name="description" type="java.lang.String" />
+				<parameter name="type" type="int" />
+				<parameter name="manualMembership" type="boolean" />
+				<parameter name="membershipRestriction" type="int" />
+				<parameter name="friendlyURL" type="java.lang.String" />
+				<parameter name="site" type="boolean" />
+				<parameter name="active" type="boolean" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+		<method type="update">
+			<clazz>com.liferay.portal.service.GroupLocalServiceUtil</clazz>
+			<method-name>updateGroup</method-name>
+			<parameter-list>
+				<parameter name="groupId" type="long" />
+				<parameter name="parentGroupId" type="long" />
+				<parameter name="name" type="java.lang.String" />
+				<parameter name="description" type="java.lang.String" />
+				<parameter name="type" type="int" />
+				<parameter name="manualMembership" type="boolean" />
+				<parameter name="membershipRestriction" type="int" />
+				<parameter name="friendlyURL" type="java.lang.String" />
+				<parameter name="active" type="boolean" />
+				<parameter name="serviceContext" type="com.liferay.portal.service.ServiceContext" />
+			</parameter-list>
+		</method>
+	</entry>
+		<entry name="team">
 		<method type="add">
 			<clazz>com.liferay.portal.service.TeamLocalServiceUtil</clazz>
 			<method-name>addTeam</method-name>
