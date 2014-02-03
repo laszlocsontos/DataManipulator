@@ -45,7 +45,11 @@ public class DisplayFields {
 	}
 
 	public void addCheckbox(String key) {
-		_put(key, FieldTypeKeys.CHECK_BOX);
+		addCheckbox(key, false);
+	}
+
+	public void addCheckbox(String key, boolean checked) {
+		_put(key, FieldTypeKeys.CHECK_BOX, checked);
 	}
 
 	public void addCount(String key) {

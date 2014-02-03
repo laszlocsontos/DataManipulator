@@ -52,7 +52,7 @@
 		if (field.isTypeOf(FieldTypeKeys.CHECK_BOX)) {
 			%>
 
-			<aui:input label="<%= label %>" name="<%= field.getKey() %>" type="checkbox" />
+			<aui:input label="<%= label %>" name="<%= field.getKey() %>" type="checkbox" value="<%= ((field.getValue() != null) && (Boolean.valueOf(field.getValue()) == true)) %>" />
 
 			<%
 		}

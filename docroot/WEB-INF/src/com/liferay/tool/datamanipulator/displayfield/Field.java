@@ -37,7 +37,7 @@ public class Field {
 	}
 
 	public String getValue() {
-		return (String)_values;
+		return String.valueOf(_values);
 	}
 
 	@SuppressWarnings("unchecked")
