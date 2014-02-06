@@ -23,6 +23,11 @@ import java.util.ArrayList;
 public class EntryTypeKeys {
 	//Lists and base names
 
+	public static final String ENTRY_TYPE_CUSTOM = "custom-entry-type";
+
+	public static final ArrayList<String> ENTRY_TYPE_CUSTOM_LIST =
+		_customEntryTypes();
+
 	public static final String ENTRY_TYPE_GENERAL = "general-entry-type";
 
 	public static final ArrayList<String> ENTRY_TYPE_GENERAL_LIST =
@@ -119,6 +124,12 @@ public class EntryTypeKeys {
 	public static final String PORTAL_USERGROUP = "usergroup";
 
 	//Private methods for declare the DataTypes location
+
+	private static ArrayList<String> _customEntryTypes() {
+		ArrayList<String> types = new ArrayList<String>();
+
+		return types;
+	}
 
 	private static ArrayList<String> _generalEntryTypes() {
 		ArrayList<String> types = new ArrayList<String>();

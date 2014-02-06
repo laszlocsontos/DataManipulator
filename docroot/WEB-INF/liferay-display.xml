@@ -4,6 +4,7 @@
 <display>
 	<category name="category.hidden">
 		<portlet id="data-manipulator-content" />
+		<portlet id="data-manipulator-custom" />
 		<portlet id="data-manipulator-portal" />
 	</category>
 </display>

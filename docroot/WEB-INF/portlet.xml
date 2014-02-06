@@ -30,6 +30,28 @@
 		</security-role-ref>
 	</portlet>
 	<portlet>
+		<portlet-name>data-manipulator-custom</portlet-name>
+		<display-name>Data Manipulator Custom</display-name>
+		<portlet-class>com.liferay.tool.datamanipulator.portlet.DataManipulatorAdminPortlet</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/html/custom/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content/Language</resource-bundle>
+		<portlet-info>
+			<title>Data Manipulator (Custom)</title>
+			<short-title>Data Manipulator (Custom)</short-title>
+			<keywords>Data Manipulator (Custom)</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
 		<portlet-name>data-manipulator-portal</portlet-name>
 		<display-name>Data Manipulator Portal</display-name>
 		<portlet-class>com.liferay.tool.datamanipulator.portlet.DataManipulatorAdminPortlet</portlet-class>
