@@ -14,6 +14,7 @@
 
 package com.liferay.tool.datamanipulator.entry.util;
 
+import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.service.ServiceContext;
@@ -134,6 +135,29 @@ public class EntryUtil {
 
 		return val;
 	}
+
+	public static String nextString() {
+		return nextString(8);
+	}
+
+	public static String nextString(int maxCharacter) {
+		StringBundler sb = new StringBundler(maxCharacter);
+
+		for (int i = 0; i < maxCharacter; i++) {
+			int index = nextInt(_ALLOWED_DIGITS.length);
+
+			sb.append(_ALLOWED_DIGITS[index]);
+		}
+
+		return sb.toString();
+	}
+
+	private static final char[] _ALLOWED_DIGITS = {
+		'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
+		'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b',
+		'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+		'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+	};
 
 	private static Random _rnd;
 
