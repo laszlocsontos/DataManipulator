@@ -64,6 +64,8 @@ public class AssetVocabularyHandler extends AbstractEntryHandler
 			long parentId, String postString, RequestProcessor requestProcessor)
 		throws PortalException, SystemException {
 
+		postString += EntryUtil.nextString();
+
 		EntryArgs args = new EntryArgs(requestProcessor);
 
 		String title = "Test Vocabulary" + postString + " Title";

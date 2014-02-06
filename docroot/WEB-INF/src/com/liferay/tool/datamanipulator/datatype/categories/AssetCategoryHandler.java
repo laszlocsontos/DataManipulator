@@ -64,6 +64,8 @@ public class AssetCategoryHandler extends AbstractEntryHandler
 			long parentId, String postString, RequestProcessor requestProcessor)
 		throws PortalException, SystemException {
 
+		postString += EntryUtil.nextString();
+
 		long parentCategoryId =
 			AssetCategoryConstants.DEFAULT_PARENT_CATEGORY_ID;
 
