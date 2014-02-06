@@ -101,7 +101,7 @@ public class UserEntryHandler extends AbstractEntryHandler
 		throws PortalException, SystemException {
 
 		return DataManipulatorLocalServiceUtil.addDataManipulator(
-			((User)createdEntry).getGroupId(), User.class.getName(),
+			((User)createdEntry).getCompanyId(), User.class.getName(),
 			((User)createdEntry).getUserId());
 	}
 
