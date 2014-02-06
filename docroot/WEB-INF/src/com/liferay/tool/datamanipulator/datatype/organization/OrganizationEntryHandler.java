@@ -97,7 +97,7 @@ public class OrganizationEntryHandler extends AbstractEntryHandler
 			org.getOrganizationId(), _userIds);
 
 		return DataManipulatorLocalServiceUtil.addDataManipulator(
-			org.getGroupId(), Organization.class.getName(),
+			org.getCompanyId(), Organization.class.getName(),
 			org.getOrganizationId());
 	}
 
