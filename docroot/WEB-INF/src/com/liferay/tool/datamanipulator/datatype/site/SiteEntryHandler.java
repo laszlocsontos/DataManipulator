@@ -104,7 +104,7 @@ public class SiteEntryHandler extends AbstractEntryHandler
 		UserLocalServiceUtil.addGroupUsers(site.getGroupId(), _userIds);
 
 		return DataManipulatorLocalServiceUtil.addDataManipulator(
-			site.getGroupId(), Group.class.getName(), site.getGroupId());
+			site.getCompanyId(), Group.class.getName(), site.getGroupId());
 	}
 
 	/* (non-Javadoc)
