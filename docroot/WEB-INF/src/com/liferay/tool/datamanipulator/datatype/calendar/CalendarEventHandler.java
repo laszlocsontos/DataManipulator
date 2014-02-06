@@ -83,6 +83,8 @@ public class CalendarEventHandler extends AbstractEntryHandler
 			long parentId, String postString, RequestProcessor requestProcessor)
 		throws PortalException, SystemException {
 
+		postString += EntryUtil.nextString();
+
 		Calendar startDate = EntryUtil.getRandomCalendar(
 			_startDateFrom, _startDateTo);
 
