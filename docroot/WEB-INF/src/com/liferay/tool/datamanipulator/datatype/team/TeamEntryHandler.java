@@ -87,7 +87,7 @@ public class TeamEntryHandler extends AbstractEntryHandler
 		}
 
 		return DataManipulatorLocalServiceUtil.addDataManipulator(
-			team.getGroupId(), Team.class.getName(), team.getTeamId());
+			team.getCompanyId(), Team.class.getName(), team.getTeamId());
 	}
 
 	/* (non-Javadoc)
