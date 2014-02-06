@@ -25,10 +25,10 @@
 <%@ page import="java.util.Calendar" %>
 <%@ page import="java.util.List" %>
 
-<%@ include file="/init.jsp" %>
+<%@ include file="/html/init.jsp" %>
 
 <portlet:actionURL name="generateData" var="editEntryTypeURL">
-	<portlet:param name="struts_action" value="/admin/view" />
+	<portlet:param name="struts_action" value="/html/edit_entry" />
 </portlet:actionURL>
 
 <aui:form action="<%= editEntryTypeURL %>" enctype="multipart/form-data" method="post" name="fm">

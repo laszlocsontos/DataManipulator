@@ -20,7 +20,7 @@
 
 <%@ page import="javax.portlet.PortletURL" %>
 
-<%@ include file="/init.jsp" %>
+<%@ include file="/html/init.jsp" %>
 
 <liferay-ui:success key="dataGenerated" message="data-generated-successfully" />
 <liferay-ui:error key="errorOccurred" message="error-occurred" />
@@ -37,19 +37,19 @@ String backURL = ParamUtil.getString(request, "backURL", redirect);
 
 PortletURL portletURL = renderResponse.createRenderURL();
 
-portletURL.setParameter("struts_action", "/admin/view");
+portletURL.setParameter("struts_action", "/html/view_base");
 portletURL.setParameter(Constants.CMD, Constants.EDIT);
 portletURL.setParameter("redirect", backURL);
 %>
 
-<%@ include file="/main_navigation.jspf" %>
+<%@ include file="/html/navigation.jspf" %>
 
 <c:choose>
 	<c:when test="<%= cmd.equals(Constants.VIEW) %>">
-		<%@ include file="/view_summary.jsp" %>
+		<%@ include file="/html/view_summary.jsp" %>
 	</c:when>
 	<c:otherwise>
-		<%@ include file="/edit_entry.jsp" %>
+		<%@ include file="/html/edit_entry.jsp" %>
 	</c:otherwise>
 </c:choose>
 
@@ -62,7 +62,7 @@ portletURL.setParameter("redirect", backURL);
 			<%
 			PortletURL addEntryTypesURL = renderResponse.createRenderURL();
 
-			addEntryTypesURL.setParameter("struts_action", "/admin/view");
+			addEntryTypesURL.setParameter("struts_action", "/html/view_base");
 			addEntryTypesURL.setParameter(Constants.CMD, Constants.EDIT);
 			addEntryTypesURL.setParameter("entryType", entryType);
 			%>

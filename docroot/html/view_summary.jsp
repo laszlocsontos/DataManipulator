@@ -14,17 +14,12 @@
  */
 --%>
 
-<%@ page import="com.liferay.tool.datamanipulator.entry.EntryTypeKeys" %>
+<%@ include file="/html/init.jsp" %>
 
-<%@ page import="java.util.ArrayList" %>
-
-<%@ include file="/init.jsp" %>
+<h3><liferay-ui:message key="summary" /></h3>
 
 <%
-List<String> entryTypeNavigation = new ArrayList<String>();
 
-entryTypeNavigation.add(EntryTypeKeys.ENTRY_TYPE_GENERAL);
-entryTypeNavigation.add(EntryTypeKeys.ENTRY_TYPE_PLUGIN);
+//SearchContainer searchContainse = new SearchContainer(renderRequest, currentURL, "there-are-no-products");
+
 %>
-
-<%@ include file="/view_base.jsp" %>

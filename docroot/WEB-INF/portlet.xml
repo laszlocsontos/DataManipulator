@@ -7,7 +7,7 @@
 		<portlet-class>com.liferay.tool.datamanipulator.portlet.DataManipulatorAdminPortlet</portlet-class>
 		<init-param>
 			<name>view-jsp</name>
-			<value>/view_content.jsp</value>
+			<value>/html/content/view.jsp</value>
 		</init-param>
 		<expiration-cache>0</expiration-cache>
 		<supports>
@@ -35,7 +35,7 @@
 		<portlet-class>com.liferay.tool.datamanipulator.portlet.DataManipulatorAdminPortlet</portlet-class>
 		<init-param>
 			<name>view-jsp</name>
-			<value>/view_portal.jsp</value>
+			<value>/html/portal/view.jsp</value>
 		</init-param>
 		<expiration-cache>0</expiration-cache>
 		<supports>
