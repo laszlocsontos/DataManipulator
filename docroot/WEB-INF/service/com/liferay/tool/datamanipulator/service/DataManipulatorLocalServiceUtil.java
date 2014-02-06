@@ -274,6 +274,11 @@ public class DataManipulatorLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	/**
+	* NOTE FOR DEVELOPERS:
+	*
+	* Never reference this interface directly. Always use {@link com.liferay.tool.datamanipulator.service.DataManipulatorLocalServiceUtil} to access the data manipulator local service.
+	*/
 	public static com.liferay.tool.datamanipulator.model.DataManipulator addDataManipulator(
 		long groupId, java.lang.String className, long classPK)
 		throws com.liferay.portal.kernel.exception.SystemException {

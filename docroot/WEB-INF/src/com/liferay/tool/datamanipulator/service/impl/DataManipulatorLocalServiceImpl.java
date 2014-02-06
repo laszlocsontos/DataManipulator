@@ -18,7 +18,6 @@ import com.liferay.portal.kernel.dao.orm.DynamicQuery;
 import com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil;
 import com.liferay.portal.kernel.dao.orm.ProjectionFactoryUtil;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.util.PortalClassLoaderUtil;
 import com.liferay.tool.datamanipulator.model.DataManipulator;
 import com.liferay.tool.datamanipulator.model.impl.DataManipulatorImpl;
 import com.liferay.tool.datamanipulator.service.base.DataManipulatorLocalServiceBaseImpl;
@@ -68,8 +67,7 @@ public class DataManipulatorLocalServiceImpl
 
 	public List<?> getDataManipulatorClassNames() throws SystemException {
 		DynamicQuery dynamicQuery = DynamicQueryFactoryUtil.forClass(
-			DataManipulator.class, DataManipulatorImpl.TABLE_NAME,
-			PortalClassLoaderUtil.getClassLoader());
+			DataManipulator.class, DataManipulatorImpl.TABLE_NAME);
 
 		dynamicQuery.setProjection(
 			ProjectionFactoryUtil. groupProperty("className"));

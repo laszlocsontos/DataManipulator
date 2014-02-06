@@ -2310,7 +2310,7 @@ public class DataManipulatorPersistenceImpl extends BasePersistenceImpl<DataMani
 
 		EntityCacheUtil.putResult(DataManipulatorModelImpl.ENTITY_CACHE_ENABLED,
 			DataManipulatorImpl.class, dataManipulator.getPrimaryKey(),
-			dataManipulator);
+			dataManipulator, false);
 
 		clearUniqueFindersCache(dataManipulator);
 		cacheUniqueFindersCache(dataManipulator);

@@ -248,6 +248,11 @@ public interface DataManipulatorLocalService extends BaseLocalService,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
 
+	/**
+	* NOTE FOR DEVELOPERS:
+	*
+	* Never reference this interface directly. Always use {@link com.liferay.tool.datamanipulator.service.DataManipulatorLocalServiceUtil} to access the data manipulator local service.
+	*/
 	public com.liferay.tool.datamanipulator.model.DataManipulator addDataManipulator(
 		long groupId, java.lang.String className, long classPK)
 		throws com.liferay.portal.kernel.exception.SystemException;
