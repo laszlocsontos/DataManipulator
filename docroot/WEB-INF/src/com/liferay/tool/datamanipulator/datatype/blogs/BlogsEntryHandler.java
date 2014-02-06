@@ -66,6 +66,8 @@ public class BlogsEntryHandler extends AbstractEntryHandler
 			long parentId, String postString, RequestProcessor requestProcessor)
 		throws PortalException, SystemException {
 
+		postString += EntryUtil.nextString();
+
 		Calendar newCalendar = EntryUtil.getRandomCalendar(
 			_displayDataFrom, _displayDataTo);
 
