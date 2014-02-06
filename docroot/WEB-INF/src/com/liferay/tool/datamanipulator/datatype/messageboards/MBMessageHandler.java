@@ -70,6 +70,8 @@ public class MBMessageHandler extends AbstractEntryHandler
 			long parentId, String postString, RequestProcessor requestProcessor)
 		throws PortalException, SystemException {
 
+		postString += EntryUtil.nextString();
+
 		long threadId = parentId;
 
 		MBThread parentThread = MBThreadLocalServiceUtil.getThread(threadId);

@@ -72,6 +72,8 @@ public class MBCategoryHandler extends AbstractEntryHandler
 			long parentId, String postString, RequestProcessor requestProcessor)
 		throws PortalException, SystemException {
 
+		postString += EntryUtil.nextString();
+
 		EntryArgs args = new EntryArgs(requestProcessor);
 
 		args.setParameter("parentCategoryId", parentId);
