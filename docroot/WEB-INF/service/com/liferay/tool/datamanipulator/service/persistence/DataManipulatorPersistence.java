@@ -25,7 +25,7 @@ import com.liferay.tool.datamanipulator.model.DataManipulator;
  * Caching information and settings can be found in <code>portal.properties</code>
  * </p>
  *
- * @author Tibor KovĂˇcs
+ * @author Tibor Kovács
  * @see DataManipulatorPersistenceImpl
  * @see DataManipulatorUtil
  * @generated

@@ -21,7 +21,7 @@ import com.liferay.tool.datamanipulator.model.DataManipulator;
 import com.liferay.tool.datamanipulator.service.DataManipulatorLocalServiceUtil;
 
 /**
- * @author Tibor KovĂˇcs
+ * @author Tibor Kovács
  * @generated
  */
 public abstract class DataManipulatorActionableDynamicQuery

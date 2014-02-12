@@ -19,7 +19,7 @@ import com.liferay.portal.model.PersistedModel;
 /**
  * The extended model interface for the DataManipulator service. Represents a row in the &quot;DM_DataManipulator&quot; database table, with each column mapped to a property of this class.
  *
- * @author Tibor KovĂˇcs
+ * @author Tibor Kovács
  * @see DataManipulatorModel
  * @see com.liferay.tool.datamanipulator.model.impl.DataManipulatorImpl
  * @see com.liferay.tool.datamanipulator.model.impl.DataManipulatorModelImpl

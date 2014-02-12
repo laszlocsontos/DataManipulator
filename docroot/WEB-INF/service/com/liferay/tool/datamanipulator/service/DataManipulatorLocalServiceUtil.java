@@ -26,7 +26,7 @@ import com.liferay.portal.service.InvokableLocalService;
  * based on the propagated JAAS credentials because this service can only be
  * accessed from within the same VM.
  *
- * @author Tibor KovĂˇcs
+ * @author Tibor Kovács
  * @see DataManipulatorLocalService
  * @see com.liferay.tool.datamanipulator.service.base.DataManipulatorLocalServiceBaseImpl
  * @see com.liferay.tool.datamanipulator.service.impl.DataManipulatorLocalServiceImpl

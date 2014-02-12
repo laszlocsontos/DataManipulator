@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * This class is used by SOAP remote services.
  *
- * @author Tibor KovĂˇcs
+ * @author Tibor Kovács
  * @generated
  */
 public class DataManipulatorSoap implements Serializable {

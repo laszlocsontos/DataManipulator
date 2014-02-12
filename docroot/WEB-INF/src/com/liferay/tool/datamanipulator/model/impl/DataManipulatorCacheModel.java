@@ -28,7 +28,7 @@ import java.io.ObjectOutput;
 /**
  * The cache model class for representing DataManipulator in entity cache.
  *
- * @author Tibor KovĂˇcs
+ * @author Tibor Kovács
  * @see DataManipulator
  * @generated
  */

@@ -25,7 +25,7 @@ import java.util.Map;
  * This class is a wrapper for {@link DataManipulator}.
  * </p>
  *
- * @author Tibor KovĂˇcs
+ * @author Tibor Kovács
  * @see DataManipulator
  * @generated
  */

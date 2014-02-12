@@ -59,7 +59,7 @@ import java.util.Set;
  * Caching information and settings can be found in <code>portal.properties</code>
  * </p>
  *
- * @author Tibor KovĂˇcs
+ * @author Tibor Kovács
  * @see DataManipulatorPersistence
  * @see DataManipulatorUtil
  * @generated
@@ -2019,7 +2019,7 @@ public class DataManipulatorPersistenceImpl extends BasePersistenceImpl<DataMani
 			CacheRegistryUtil.clear(DataManipulatorImpl.class.getName());
 		}
 
-		EntityCacheUtil.clearCache(DataManipulatorImpl.class.getName());
+		EntityCacheUtil.clearCache(DataManipulatorImpl.class);
 
 		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_ENTITY);
 		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITH_PAGINATION);

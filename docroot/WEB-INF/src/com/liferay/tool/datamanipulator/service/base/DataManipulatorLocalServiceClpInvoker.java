@@ -19,7 +19,7 @@ import com.liferay.tool.datamanipulator.service.DataManipulatorLocalServiceUtil;
 import java.util.Arrays;
 
 /**
- * @author Tibor KovĂˇcs
+ * @author Tibor Kovács
  * @generated
  */
 public class DataManipulatorLocalServiceClpInvoker {

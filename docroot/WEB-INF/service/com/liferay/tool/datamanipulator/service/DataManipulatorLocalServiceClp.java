@@ -17,7 +17,7 @@ package com.liferay.tool.datamanipulator.service;
 import com.liferay.portal.service.InvokableLocalService;
 
 /**
- * @author Tibor KovĂˇcs
+ * @author Tibor Kovács
  * @generated
  */
 public class DataManipulatorLocalServiceClp

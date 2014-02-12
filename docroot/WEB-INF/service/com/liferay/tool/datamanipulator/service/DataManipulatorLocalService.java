@@ -29,7 +29,7 @@ import com.liferay.portal.service.PersistedModelLocalService;
  * credentials because this service can only be accessed from within the same
  * VM.
  *
- * @author Tibor KovĂˇcs
+ * @author Tibor Kovács
  * @see DataManipulatorLocalServiceUtil
  * @see com.liferay.tool.datamanipulator.service.base.DataManipulatorLocalServiceBaseImpl
  * @see com.liferay.tool.datamanipulator.service.impl.DataManipulatorLocalServiceImpl
