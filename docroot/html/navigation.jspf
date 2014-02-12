@@ -14,8 +14,11 @@
  */
 --%>
 
+<%@ page import="com.liferay.portal.kernel.util.ObjectValuePair" %>
 <%@ page import="com.liferay.portal.kernel.util.Validator" %>
 <%@ page import="com.liferay.tool.datamanipulator.entry.EntryTypeKeys" %>
+
+<%@ page import="java.util.List" %>
 
 <%@ include file="/html/init.jsp" %>
 
@@ -28,56 +31,28 @@
 		<aui:select changesContext="<%= true %>" name="entry-type-navigator" onchange='<%= renderResponse.getNamespace() + "generateEntryType(this);" %>'>
 			<aui:option label="" />
 
-			<c:if test = "<%= entryTypeNavigation.contains(com.liferay.tool.datamanipulator.entry.EntryTypeKeys.ENTRY_TYPE_GENERAL) %>">
-				<optgroup label="<liferay-ui:message key="<%= EntryTypeKeys.ENTRY_TYPE_GENERAL %>" />">
+			<%
+			for (ObjectValuePair<String, List<String>> entryTypeObjectValurPair : entryTypeNavigation) {
+				%>
+
+				<optgroup label="<liferay-ui:message key="<%= entryTypeObjectValurPair.getKey() %>" />">
 
 					<%
-					for (String generalType : EntryTypeKeys.ENTRY_TYPE_GENERAL_LIST) {
-						portletURL.setParameter("entryType", generalType);
+					for (String selectEntryType : (List<String>)entryTypeObjectValurPair.getValue()) {
+						portletURL.setParameter("entryType", selectEntryType);
 						%>
 
-						<aui:option label="<%= generalType %>" selected="<%= _isCurrent(portletURL.toString(), entryType) %>" value="<%= portletURL.toString() %>" />
+						<aui:option label="<%= selectEntryType %>" selected="<%= _isCurrent(portletURL.toString(), entryType) %>" value="<%= portletURL.toString() %>" />
 
 						<%
 					}
 					%>
 
 				</optgroup>
-			</c:if>
 
-			<c:if test = "<%= entryTypeNavigation.contains(EntryTypeKeys.ENTRY_TYPE_PLUGIN) %>">
-				<optgroup label="<liferay-ui:message key="<%= EntryTypeKeys.ENTRY_TYPE_PLUGIN %>" />">
-
-					<%
-					for (String pluginType : EntryTypeKeys.ENTRY_TYPE_PLUGIN_LIST) {
-						portletURL.setParameter("entryType", pluginType);
-						%>
-
-						<aui:option label="<%= pluginType %>" selected="<%= _isCurrent(portletURL.toString(), entryType) %>" value="<%= portletURL.toString() %>" />
-
-						<%
-					}
-					%>
-
-				</optgroup>
-			</c:if>
-
-			<c:if test = "<%= entryTypeNavigation.contains(EntryTypeKeys.ENTRY_TYPE_PORTAL) %>">
-				<optgroup label="<liferay-ui:message key="<%= EntryTypeKeys.ENTRY_TYPE_PORTAL %>" />">
-
-					<%
-					for (String portalType : EntryTypeKeys.ENTRY_TYPE_PORTAL_LIST) {
-						portletURL.setParameter("entryType", portalType);
-						%>
-
-						<aui:option label="<%= portalType %>" selected="<%= _isCurrent(portletURL.toString(), entryType) %>" value="<%= portletURL.toString() %>" />
-
-						<%
-					}
-					%>
-
-				</optgroup>
-			</c:if>
+				<%
+			}
+			%>
 
 		</aui:select>
 	</aui:fieldset>

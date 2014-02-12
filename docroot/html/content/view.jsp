@@ -14,17 +14,21 @@
  */
 --%>
 
+<%@ page import="com.liferay.portal.kernel.util.ObjectValuePair" %>
 <%@ page import="com.liferay.tool.datamanipulator.entry.EntryTypeKeys" %>
-
-<%@ page import="java.util.ArrayList" %>
 
 <%@ include file="/html/init.jsp" %>
 
 <%
-List<String> entryTypeNavigation = new ArrayList<String>();
+List<ObjectValuePair<String, List<String>>> entryTypeNavigation = new ArrayList<ObjectValuePair<String, List<String>>>();
 
-entryTypeNavigation.add(EntryTypeKeys.ENTRY_TYPE_GENERAL);
-entryTypeNavigation.add(EntryTypeKeys.ENTRY_TYPE_PLUGIN);
+entryTypeNavigation.add(new ObjectValuePair(EntryTypeKeys.ENTRY_TYPE_GENERAL, EntryTypeKeys.ENTRY_TYPE_GENERAL_LIST));
+entryTypeNavigation.add(new ObjectValuePair(EntryTypeKeys.ENTRY_TYPE_PLUGIN, EntryTypeKeys.ENTRY_TYPE_PLUGIN_LIST));
+
+List<String> entryTypeNavigationKeys = new ArrayList<String>(1);
+
+entryTypeNavigationKeys.add(EntryTypeKeys.ENTRY_TYPE_GENERAL);
+entryTypeNavigationKeys.add(EntryTypeKeys.ENTRY_TYPE_PLUGIN);
 %>
 
 <%@ include file="/html/view_base.jsp" %>

@@ -15,6 +15,7 @@
 --%>
 
 <%@ page import="com.liferay.portal.kernel.util.KeyValuePair" %>
+<%@ page import="com.liferay.portal.kernel.util.ObjectValuePair" %>
 <%@ page import="com.liferay.tool.datamanipulator.entry.EntryTypeKeys" %>
 <%@ page import="com.liferay.tool.datamanipulator.service.DataManipulatorLocalServiceUtil" %>
 
@@ -32,10 +33,11 @@ List<KeyValuePair> generatedClassEntryCount = new ArrayList<KeyValuePair>(classN
 
 for (Object className : classNames) {
 	int count = 0;
-	if (entryTypeNavigation.contains(EntryTypeKeys.ENTRY_TYPE_CUSTOM)) {
+
+	if (entryTypeNavigationKeys.contains(EntryTypeKeys.ENTRY_TYPE_CUSTOM)) {
 		count = DataManipulatorLocalServiceUtil.getDataManipulatorCountByClassName((String)className);
 	}
-	else if (entryTypeNavigation.contains(EntryTypeKeys.ENTRY_TYPE_PORTAL)) {
+	else if (entryTypeNavigationKeys.contains(EntryTypeKeys.ENTRY_TYPE_PORTAL)) {
 		count = DataManipulatorLocalServiceUtil.getDataManipulatorCountByG_C(themeDisplay.getCompanyId(), (String)className);
 	}
 	else {
