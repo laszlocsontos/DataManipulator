@@ -20,6 +20,7 @@ import com.liferay.tool.datamanipulator.datatype.blogs.BlogsHandler;
 import com.liferay.tool.datamanipulator.datatype.bookmarks.BookmarksHandler;
 import com.liferay.tool.datamanipulator.datatype.calendar.CalendarHandler;
 import com.liferay.tool.datamanipulator.datatype.categories.CategoriesHandler;
+import com.liferay.tool.datamanipulator.datatype.custom.CustomVocabularyHandler;
 import com.liferay.tool.datamanipulator.datatype.documentsandmedia.DocumentsAndMediaHandler;
 import com.liferay.tool.datamanipulator.datatype.journal.JournalHandler;
 import com.liferay.tool.datamanipulator.datatype.layout.LayoutHandler;
@@ -33,7 +34,7 @@ import com.liferay.tool.datamanipulator.entry.EntryTypeKeys;
 import com.liferay.tool.datamanipulator.handler.portlethandler.model.PortletHandlerModel;
 
 /**
- * @author Tibor Kovács
+ * @author Tibor Kovï¿½cs
  *
  */
 public final class PortletHandlerFactory {
@@ -91,6 +92,10 @@ public final class PortletHandlerFactory {
 
 		if (entryTypeKey.equals(EntryTypeKeys.PORTAL_USER)) {
 			return new UserHandler();
+		}
+
+		if (entryTypeKey.equals(EntryTypeKeys.CUSTOM_ENTRY_HANDLER)) {
+			return new CustomVocabularyHandler();
 		}
 
 		return null;

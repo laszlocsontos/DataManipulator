@@ -29,13 +29,14 @@ import com.liferay.tool.datamanipulator.datatype.site.SiteDisplayFields;
 import com.liferay.tool.datamanipulator.datatype.team.TeamDisplayFields;
 import com.liferay.tool.datamanipulator.datatype.user.UserDisplayFields;
 import com.liferay.tool.datamanipulator.datatype.wiki.WikiDisplayFields;
+import com.liferay.tool.datamanipulator.displayfield.DisplayFields;
 import com.liferay.tool.datamanipulator.displayfield.Field;
 import com.liferay.tool.datamanipulator.entry.EntryTypeKeys;
 
 import java.util.List;
 
 /**
- * @author Tibor Kovács
+ * @author Tibor Kovï¿½cs
  *
  */
 public final class EntryDisplayFieldsFactory {
@@ -94,6 +95,10 @@ public final class EntryDisplayFieldsFactory {
 
 		if (entryTypeKey.equals(EntryTypeKeys.PORTAL_USER)) {
 			return UserDisplayFields.getDisplayFields();
+		}
+
+		if (entryTypeKey.equals(EntryTypeKeys.CUSTOM_ENTRY_HANDLER)) {
+			return new DisplayFields().getDisplayFields();
 		}
 
 		return null;

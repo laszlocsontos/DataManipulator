@@ -17,10 +17,15 @@ package com.liferay.tool.datamanipulator.entry;
 import java.util.ArrayList;
 
 /**
- * @author Tibor Kovács
+ * @author Tibor Kovï¿½cs
  *
  */
 public class EntryTypeKeys {
+
+	// Custom handler
+
+	public static final String CUSTOM_ENTRY_HANDLER = "LPS-44236";
+
 	//Lists and base names
 
 	public static final String ENTRY_TYPE_CUSTOM = "custom-entry-type";
@@ -127,6 +132,8 @@ public class EntryTypeKeys {
 
 	private static ArrayList<String> _customEntryTypes() {
 		ArrayList<String> types = new ArrayList<String>();
+
+		types.add(CUSTOM_ENTRY_HANDLER);
 
 		return types;
 	}
