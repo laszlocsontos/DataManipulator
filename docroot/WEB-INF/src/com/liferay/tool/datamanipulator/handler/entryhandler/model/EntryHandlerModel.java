@@ -44,4 +44,6 @@ public interface EntryHandlerModel {
 			long entryId, String postString, RequestProcessor requestProcessor)
 		throws PortalException, SystemException;
 
+	public void setGroupId(long groupId);
+
 }

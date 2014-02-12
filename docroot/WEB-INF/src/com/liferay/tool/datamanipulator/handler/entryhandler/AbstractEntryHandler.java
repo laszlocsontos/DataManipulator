@@ -20,6 +20,7 @@ import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.kernel.util.Validator;
+import com.liferay.portal.model.Group;
 import com.liferay.tool.datamanipulator.displayfield.FieldKeys;
 import com.liferay.tool.datamanipulator.entry.BaseEntry;
 import com.liferay.tool.datamanipulator.entry.EntryArgs;
@@ -102,6 +103,8 @@ public abstract class AbstractEntryHandler implements EntryHandlerModel {
 
 		int i = 1;
 		while (i <= count) {
+			Object entry = null;
+
 			String post = StringPool.DASH + String.valueOf(i) + postString;
 
 			DataManipulator dataM = null;
@@ -110,7 +113,7 @@ public abstract class AbstractEntryHandler implements EntryHandlerModel {
 				EntryArgs args = getCreateEntryArgs(
 					parentId, post, _requestProcessor);
 
-				Object entry = _baseEntry.createEntry(args);
+				entry = _baseEntry.createEntry(args);
 
 				dataM = getDataManipulatorFromObject(entry);
 			}
@@ -176,10 +179,21 @@ public abstract class AbstractEntryHandler implements EntryHandlerModel {
 			if (Validator.isNotNull(_subEntryHandler) &&
 				_subEntryHandler.enableAddToParent(depth)) {
 
+				if (entry instanceof Group) {
+					_subEntryHandler.setGroupId(((Group)entry).getGroupId());
+				}
+
 				_subEntryHandler.generateEntries(dataM.getClassPK());
 			}
 
 			i++;
+		}
+	}
+
+	@Override
+	public void setGroupId(long groupId) {
+		if (groupId > 0) {
+			_requestProcessor.setGroupId(groupId);
 		}
 	}
 
